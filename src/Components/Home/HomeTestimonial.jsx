@@ -7,22 +7,23 @@ import 'swiper/css/navigation'
 
 const testimonials = [
   {
-    text: `ThemesPark Is Incredibly Talented And Detail-Oriented. They Took The Time To Understand My Brand And Created Something Truly Unique`,
-    name: "Cameron Williamson",
-    role: "Ui/Ux Designer",
-    image: "/assets/images/testimonial/bg-image-1png.png",
+    text: `"We've been working with HNH Soft Tech Solutions for over 3 years now, and their commitment to delivering high-quality software solutions is unmatched. Their team is professional, responsive, and always goes the extra mile."`,
+    name: "Emma Johnson",
+    role: "Operations Manager",
+    image: "assets/images/testimonial/testimonial-img-1.jpeg",
   },
   {
-    text: `A Personal Portfolio Is A Curated Collection Of An Individual’s Professional Work, Showcasing Their Skills, Experience, And Achievements`,
-    name: "Cameron Williamson",
-    role: "Ui/Ux Designer",
-    image: "/assets/images/testimonial/bg-image-2.png",
+    text: `"HNH Soft Tech Solutions helped us transform our outdated system into a sleek, user-friendly platform. Their experience and deep technical knowledge made a huge difference in our project's success."`,
+    name: "Michael Roberts",
+    role: "CEO",
+    image: "assets/images/testimonial/testimonial-img-2.jpeg",
   },
   {
-    text: `Working with themespark was an absolute pleasure! They understood my vision immediately and brought it to life even better than I’d imagined.`,
-    name: "Cameron Williamson",
-    role: "Ui/Ux Designer",
-    image: "/assets/images/testimonial/bg-image-1png.png",
+    text: `
+"From the first meeting to the final delivery, HNH Soft Tech Solutions proved to be a reliable partner. They understood our needs perfectly and provided innovative solutions that exceeded our expectations."`,
+    name: "Olivia Harris",
+    role: "Marketing Head",
+    image: "assets/images/testimonial/testimonial-img-1.jpeg",
   },
 
 ]
@@ -30,6 +31,17 @@ const testimonials = [
 const HomeTestimonial = () => {
   return (
     <section className="bg-black py-20">
+      <div className="section-head mb--50">
+        <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+          <span className="subtitle">eTestimonials</span>
+        </div>
+        <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
+          What People Say
+        </h2>
+        {/* <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
+          {" "}IT Technology services built specifically for your business.{" "}
+        </p> */}
+      </div>
       <div className="container mx-auto px-4">
         <Swiper
           modules={[Navigation]}

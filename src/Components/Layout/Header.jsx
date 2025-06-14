@@ -20,7 +20,7 @@ const Header = () => {
               <Link to="/">
                 <img
                   className="logo-dark"
-                  src="assets/images/logo/white-logo-reeni.png"
+                  src="assets/images/logo/logo-white.png"
                   alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                 />
                 <img

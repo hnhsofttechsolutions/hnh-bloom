@@ -7,101 +7,97 @@ const Footer = () => {
   return (
       <>
         {/* Start Footer Area  */}
-        <footer className="footer-area footer-style-one-wrapper bg-color-footer bg_images tmp-section-gap">
-          <div className="container">
-            <div className="footer-main footer-style-one">
-              <div className="row g-5">
-                <div className="col-lg-5 col-md-6">
-                  <div className="single-footer-wrapper border-right mr--20">
-                    <div className="logo">
-                      <Link to="/">
-                        <img
-                          src="assets/images/logo/white-logo-reeni.png"
-                          alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                        />
-                      </Link>
-                    </div>
-                    <p className="description">
-                      <span>Get Ready</span> To Create Great
-                    </p>
-                    <form action="#" className="newsletter-form-1 mt--40">
-                      <input type="email" placeholder="Email Adress" />
-                      <span className="form-icon">
-                        <i className="fa-regular fa-envelope" />
-                      </span>
-                    </form>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="single-footer-wrapper quick-link-wrap">
-                    <h5 className="ft-title">Quick Link</h5>
-                    <ul className="ft-link tmp-link-animation">
-                      <li>
-                        <Link to="/about">About Me</Link>
-                      </li>
-                      <li>
-                        <Link to="/service">Service</Link>
-                      </li>
-                      <li>
-                        <Link to="/contact">Contact Me</Link>
-                      </li>
-                      <li>
-                        <Link to="/blog">Blog Post</Link>
-                      </li>
-                      <li>
-                        <Link to="/contact">Pricing</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                  <div className="single-footer-wrapper contact-wrap">
-                    <h5 className="ft-title">Contact </h5>
-                    <ul className="ft-link tmp-link-animation">
-                      <li>
-                        <span className="ft-icon">
-                          <i className="fa-solid fa-envelope" />
-                        </span>
-                        <Link to="#">example@gmail.com</Link>
-                      </li>
-                      <li>
-                        <span className="ft-icon">
-                          <i className="fa-solid fa-location-dot" />
-                        </span>
-                        3891 Ranchview Dr. Richardson
-                      </li>
-                      <li>
-                        <span className="ft-icon">
-                          <i className="fa-solid fa-phone" />
-                        </span>
-                        <Link to="#">01245789321</Link>
-                      </li>
-                    </ul>
-                    <div className="social-link footer">
-                      <Link to="#">
-                        <i className="fa-brands fa-instagram" />
-                      </Link>
-                      <Link to="#">
-                        <i className="fa-brands fa-linkedin-in" />
-                      </Link>
-                      <Link to="#">
-                        <i className="fa-brands fa-twitter" />
-                      </Link>
-                      <Link to="#">
-                        <i className="fa-brands fa-facebook-f" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+     <footer className="footer-area footer-style-one-wrapper bg-color-footer bg_images tmp-section-gap">
+  <div className="container">
+    <div className="footer-main footer-style-one">
+      <div className="row g-5">
+        {/* Column 1: Logo & Description */}
+        <div className="col-lg-3 col-md-6">
+          <div className="single-footer-wrapper border-right mr--20">
+            <Link to="/">
+              <img
+                src="assets/images/logo/logo-white.png"
+                alt="Reeni - Personal Portfolio HTML Template"
+                className="mb-4 h-[50px]"
+              />
+            </Link>
+            <p className="text-4xl">
+              We work with a passion of taking <br /> challenges and creating new <br /> ones in advertising sector.
+            </p>
+            <form action="#" className="newsletter-form-1 mt--40">
+              <input type="email" placeholder="Email Address" />
+              <span className="form-icon">
+                <i className="fa-regular fa-envelope" />
+              </span>
+            </form>
+          </div>
+        </div>
+
+        {/* Column 2: Quick Link Set 1 */}
+        <div className="col-lg-3 col-md-6">
+          <div className="single-footer-wrapper quick-link-wrap">
+            <h5 className="ft-title">Quick Link</h5>
+            <ul className="ft-link tmp-link-animation">
+              <li><Link to="/about">Home</Link></li>
+              <li><Link to="/service">About</Link></li>
+              <li><Link to="/contact">Service</Link></li>
+              <li><Link to="/blog">Portfolio</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Column 3: Quick Link Set 2 */}
+        <div className="col-lg-3 col-md-6">
+          <div className="single-footer-wrapper quick-link-wrap">
+            <h5 className="ft-title">Services</h5>
+            <ul className="ft-link tmp-link-animation">
+              <li><Link to="/privacy-policy">Web Development</Link></li>
+              <li><Link to="/terms">App Development</Link></li>
+              <li><Link to="/faq">UI/UX Design</Link></li>
+              <li><Link to="/team">Digital Marketing</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Column 4: Contact Info */}
+        <div className="col-lg-3 col-md-6">
+          <div className="single-footer-wrapper contact-wrap">
+            <h5 className="ft-title">Contact Information</h5>
+            <ul className="ft-link tmp-link-animation">
+              <li>
+                <span className="ft-icon"><i className="fa-solid fa-envelope" /></span>
+                <Link to="#">info@hnhsofttechsolutions.com</Link>
+              </li>
+              <li>
+                <span className="ft-icon"><i className="fa-solid fa-location-dot" /></span>
+                Address: 1E 14/9 Nazimabad, Karachi, Pakistan
+              </li>
+              <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">US: +1 972 777-4163</Link></li>
+              <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">UK: +44 2045 155008</Link></li>
+              <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">US: +1 940 3440 682</Link></li>
+              <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">UK: +44 7539 305980</Link></li>
+              <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">DE: +49 152 1665 2405</Link></li>
+            </ul>
+            <div className="social-link footer">
+              <Link to="#"><i className="fa-brands fa-instagram" /></Link>
+              <Link to="#"><i className="fa-brands fa-linkedin-in" /></Link>
+              <Link to="#"><i className="fa-brands fa-twitter" /></Link>
+              <Link to="#"><i className="fa-brands fa-facebook-f" /></Link>
             </div>
           </div>
-        </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
         <div className="copyright-area-one">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
-                <div className="main-wrapper">
+                <p className='text-center'>© 2025 HNH Soft Tech Solutions. All rights reserved.</p>
+                {/* <div className="main-wrapper">
                   <p className="copy-right-para tmp-link-animation">
                     {" "}
                     ©
@@ -123,7 +119,7 @@ const Footer = () => {
                       <Link to="/contact">Contact Us</Link>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
