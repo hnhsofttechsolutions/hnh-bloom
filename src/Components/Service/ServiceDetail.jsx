@@ -15,8 +15,8 @@ const service = locationService || (storedService && JSON.parse(storedService));
 
       <div className="w-full  container mx-auto relative z-10">
         {/* Back Button */}
-        {/* <button
-          onClick={() => navigate(-1)}
+        <button
+          onClick={() => navigate('/service')}
           className="flex items-center gap-2 w-auto !border-2 rounded-lg border-[#ff014f]  px-3 py-3 text-white !hover:text-[#ff014f]  mb-8 group transition-all"
         >
           <ArrowLeft  
@@ -24,7 +24,7 @@ const service = locationService || (storedService && JSON.parse(storedService));
             className="group-hover:-translate-x-1 transition-transform" 
           />
           <span className="text-sm font-medium mt-2">Back to Services</span>
-        </button> */}
+        </button>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-10 items-start">

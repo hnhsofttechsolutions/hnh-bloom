@@ -120,22 +120,24 @@ const Header = () => {
       </div>
     </div>
   </header>
+
   {/* tpm-header-area end */}
   <div className="d-none d-xl-block ">
     <div className={`tmp-sidebar-area tmp_side_bar ${sidebar ? "tmp_side_bar_open" : ""}`}>
       <div className="inner">
         <div className="top-area">
           <Link to="/" className="logo">
-            <img
+      <h1 className="font-bold text-3xl"> HNH SOFT TECH SOLUTIONS</h1>
+            {/* <img
               className="logo-dark"
-              src="assets/images/logo/white-logo-reeni.png"
+              src="assets/images/logo/logo-white.png"
               alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
             />
             <img
               className="logo-white"
               src="assets/images/logo/logo-white.png"
               alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-            />
+            /> */}
           </Link>
           <div onClick={()=>{setSideBar(false)}} className="close-icon-area">
             <button className="tmp-round-action-btn close_side_menu_active">
@@ -146,18 +148,16 @@ const Header = () => {
         <div className="content-wrapper">
           <div className="image-area-feature">
             <Link to="index.html">
-              <img src="assets/images/logo/man.png" alt="personal-logo" />
+              <img src="assets/images/banner/home-hero.jpeg" alt="personal-logo" />
             </Link>
           </div>
           <h5 className="title mt--30">
-            Freelancer delivering exceptional Webflow, and Next.js solutions.
+           Have a question or need assistance? Get in touch with our team, and we'll be happy to assist you with all your needs.
           </h5>
           <p className="disc">
-            I am a skilled freelancer specializing in Webflow development, Figma
-            design, and Next.js projects. I deliver creative, dynamic, and
-            user-centric web solutions.
+           Have a question or want to work together? Drop us a message, and we'll get back to you as soon as possible.
           </p>
-          <div className="short-contact-area">
+          <div className="short-contact-area mt-4">
             {/* single contact information */}
             <div className="single-contact">
               <i className="fa-solid fa-phone" />

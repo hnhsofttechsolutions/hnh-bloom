@@ -37,9 +37,9 @@ const BlogClassic = () => {
               >
                 {blogData.map((item, index) => (
                   <SwiperSlide key={item.id}>
-                    <div  onClick={() => handleClick(item)} className={`blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in animation-order-${index + 1}`}>
-                      <div className="img-box">
-                        <Link to="/blog-detail">
+                    <div  onClick={() => handleClick(item)} className={`blog-classic-card cursor-pointer tmp-scroll-trigger tmponhover tmp-fade-in animation-order-${index + 1}`}>
+                      <div className="img-box !h-[300px]">
+                      
                           <img
                             className="img-primary hidden-on-mobile"
                             src={item.image}
@@ -50,9 +50,9 @@ const BlogClassic = () => {
                             src={item.image}
                             alt="Blog Thumbnail"
                           />
-                        </Link>
+                    
                       </div>
-                      <div className="blog-classic-content">
+                      <div className="blog-classic-content ">
                         <div className="blog-classic-tag">
                           <ul>
                             {item.tags.map((tag, i) => (
@@ -74,13 +74,12 @@ const BlogClassic = () => {
                           </ul>
                         </div>
                         <h2 className="title">
-                          <Link to="#">{item.title}</Link>
+                          {item.title}
                         </h2>
                         <p className="para">{item.paragraphs[0]}</p>
                         <div className="tmp-button-here">
                           <Link
                             className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                            to="/blog-detail"
                           >
                             <span className="icon-reverse-wrapper">
                               <span className="btn-text">Read More</span>
@@ -123,19 +122,19 @@ const BlogClassic = () => {
                     <h3 className="title">Recent Post</h3>
                   </div>
                   <div className="body">
-                    {recentBlogPosts.map((post, index) => (
-                      <div key={index} className="single-post-card tmp-hover-link">
+                    {recentBlogPosts.map((item, index) => (
+                      <div onClick={() => handleClick(item)} key={index} className="single-post-card tmp-hover-link cursor-pointer">
                         <div className="single-post-card-img">
-                          <img src={post.image} alt="" />
+                          <img src={item.image} alt="" />
                         </div>
                         <div className="single-post-right">
                           <div className="single-post-top">
                             <i className="fa-regular fa-folder-open" />
-                            <p className="post-title">{post.category}</p>
+                            <p className="post-title">{item.category}</p>
                           </div>
                           <h3 className="post-title">
                             <Link className="link" to="#">
-                              {post.title}
+                              {item.title}
                             </Link>
                           </h3>
                         </div>
