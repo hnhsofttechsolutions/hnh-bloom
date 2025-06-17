@@ -12,8 +12,8 @@ const ContactInfo = () => {
             <i className="fa-solid fa-location-dot" />
           </div>
           <h3 className="title">Address</h3>
-          <p className="para">Dhaka 102, utl 1216, road 45</p>
-          <p className="para">house of street</p>
+          <p className="para">New York, NY 10001</p>
+          {/* <p className="para">house of street</p> */}
         </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -23,11 +23,11 @@ const ContactInfo = () => {
           </div>
           <h3 className="title">E-mail</h3>
           <a href="mailto:themespark11@gmail.com">
-            <p className="para">hasan@yourmail.com</p>
+            <p className="para">contact@example.com</p>
           </a>
-          <a href="mailto:themespark11@gmail.com">
+          {/* <a href="mailto:themespark11@gmail.com">
             <p className="para">themespark11@gmail.com</p>
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -36,8 +36,8 @@ const ContactInfo = () => {
             <i className="fa-solid fa-phone" />
           </div>
           <h3 className="title">Call Me</h3>
-          <p className="para">0000 - 000 - 000 00</p>
-          <p className="para">+1234 - 000</p>
+          <p className="para">+1 (555) 123-4567</p>
+          {/* <p className="para">+1234 - 000</p> */}
         </div>
       </div>
     </div>
