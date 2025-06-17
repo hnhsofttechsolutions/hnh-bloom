@@ -10,15 +10,13 @@ const HomeGetInTouch = () => {
             <div className="col-lg-5">
               <div className="section-head text-align-left">
                 <div className="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                  <span className="subtitle">GET IN TOUCH</span>
+                  <span className="subtitle !text-4xl">Contact Us</span>
                 </div>
-                <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
+                {/* <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
                   Elevate your brand with Me{" "}
-                </h2>
+                </h2> */}
                 <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  ished fact that a reader will be distrol acted bioiiy desig
-                  ished fact that a reader will acted ished fact that a reader
-                  will be distrol acted{" "}
+                  Have a question or need assistance? Get in touch with our team, and we'll be happy to assist you with all your needs.{" "}
                 </p>
               </div>
             </div>

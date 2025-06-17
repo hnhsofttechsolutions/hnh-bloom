@@ -202,3 +202,83 @@ export const recentBlogPosts = [
     title: "SEO Isn't Dead — It's Smarter Than Ever",
   },
 ];
+export const portfolioAll = [
+  {
+    id: 1,
+    title: 'A full-featured e-commerce platform with advanced filtering and payment integration.',
+    subtitle: 'E-commerce Platform',
+    image: 'assets/images/portfolio/portfolio-one.jpg',
+    showIcon: true,
+  },
+  {
+    id: 2,
+    title: 'Cross-platform mobile app for tracking workouts and nutrition.',
+    subtitle: 'Fitness Tracking App',
+    image: 'assets/images/portfolio/portfolio-two.jpg',
+    showIcon: true,
+  },
+  {
+    id: 3,
+    title: 'Modern corporate website with dynamic content management.',
+    subtitle: 'Corporate Website',
+    image: 'assets/images/portfolio/portfolio-three.jpg',
+    showIcon: true,
+  },
+  {
+    id: 4,
+    title: 'Comprehensive cloud resource management dashboard.',
+    subtitle: 'Cloud Management Dashboard',
+    image: 'assets/images/portfolio/portfolio-four.jpg',
+    showIcon: true,
+  },
+];
+export const portfolioMobile = [
+  {
+    id: 1,
+    title: 'A full-featured e-commerce platform with advanced filtering and payment integration.',
+    subtitle: 'E-commerce Platform',
+    image: 'assets/images/portfolio/portfolio-one.jpg',
+    showIcon: true,
+  },
+  {
+    id: 4,
+    title: 'Comprehensive cloud resource management dashboard.',
+    subtitle: 'Cloud Management Dashboard',
+    image: 'assets/images/portfolio/portfolio-four.jpg',
+    showIcon: true,
+  },
+];
+export const portfolioWeb = [
+  {
+    id: 2,
+    title: 'Cross-platform mobile app for tracking workouts and nutrition.',
+    subtitle: 'Fitness Tracking App',
+    image: 'assets/images/portfolio/portfolio-two.jpg',
+    showIcon: true,
+  },
+  {
+    id: 3,
+    title: 'Modern corporate website with dynamic content management.',
+    subtitle: 'Corporate Website',
+    image: 'assets/images/portfolio/portfolio-three.jpg',
+    showIcon: true,
+  },
+];
+export const portfolioDesign = [
+  {
+    id: 4,
+    title: 'Comprehensive cloud resource management dashboard.',
+    subtitle: 'Cloud Management Dashboard',
+    image: 'assets/images/portfolio/portfolio-four.jpg',
+    showIcon: true,
+  },
+];
+export const portfolioCloud = [
+  {
+    id: 1,
+    title: 'A full-featured e-commerce platform with advanced filtering and payment integration.',
+    subtitle: 'E-commerce Platform',
+    image: 'assets/images/portfolio/portfolio-one.jpg',
+    showIcon: true,
+  },
+];

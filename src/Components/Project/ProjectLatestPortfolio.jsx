@@ -1,44 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { portfolioAll, portfolioCloud, portfolioDesign, portfolioMobile, portfolioWeb } from '../../utils/data';
 
-const portfolioData = [
-  {
-    id: 1,
-    title: 'Digital Transformation Advisors',
-    subtitle: 'Development Coaches',
-    image: 'assets/images/latest-portfolio/tab-image-4.png',
-    showIcon: true,
-  },
-  {
-    id: 2,
-    title: 'Digital Transformation Advisors',
-    subtitle: 'Development Coaches',
-    image: 'assets/images/latest-portfolio/tab-image-5.png',
-    showIcon: true,
-  },
-  {
-    id: 3,
-    title: 'Digital Transformation Advisors',
-    subtitle: 'Development Coaches',
-    image: 'assets/images/latest-portfolio/tab-image-6.png',
-    showIcon: true,
-  },
-  {
-    id: 4,
-    title: 'Digital Transformation Advisors',
-    subtitle: 'Development Coaches',
-    image: 'assets/images/latest-portfolio/tab-image-7.png',
-    showIcon: true,
-  },
-];
 
 const ProjectLatestPortfolio = () => {
+  const [data, setData] = useState(portfolioAll);
   return (
     <>
-      {/* Tpm Our Latest Portfolio Area Start */}
       <div className="container">
         <div className="row">
-          {portfolioData.map((item) => (
+          <div className='w-full flex justify-center items-center pt-10'>
+            <button  onClick={()=> setData(portfolioAll)} className=' bg-transparent text-[20px] text-white space-x-1 font-semibold p-2 rounded-full'>All</button>
+            <button onClick={()=> setData(portfolioWeb)} className=' bg-transparent text-[20px] text-white space-x-1 font-semibold p-2 rounded-full'>Web Development</button>
+            <button  onClick={()=> setData(portfolioMobile)} className=' bg-transparent text-[20px] text-white space-x-1 font-semibold p-2 rounded-full'>Mobile Development</button>
+            <button  onClick={()=> setData(portfolioDesign)} className=' bg-transparent text-[20px] text-white space-x-1 font-semibold p-2 rounded-full'>Web Design</button>
+            <button  onClick={()=> setData(portfolioCloud)} className=' bg-transparent text-[20px] text-white space-x-1 font-semibold p-2 rounded-full'>Cloud Solution</button>
+          </div>
+          {data.map((item) => (
             <div className="col-lg-6 col-md-6 col-12" key={item.id}>
               <div className="latest-portfolio-card v5 tmp-hover-link">
                 <div className="portfoli-card-img">
