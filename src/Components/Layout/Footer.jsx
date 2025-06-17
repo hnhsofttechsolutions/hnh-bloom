@@ -92,7 +92,7 @@ const Footer = () => {
   </div>
 </footer>
 
-        <div className="copyright-area-one">
+        <div className="copyright-area-one pb-10">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">

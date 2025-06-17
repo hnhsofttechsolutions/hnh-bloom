@@ -1,92 +1,92 @@
-
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import { testimonials } from '../../utils/data'
 
-const testimonials = [
-  {
-    text: `"We've been working with HNH Soft Tech Solutions for over 3 years now, and their commitment to delivering high-quality software solutions is unmatched. Their team is professional, responsive, and always goes the extra mile."`,
-    name: "Emma Johnson",
-    role: "Operations Manager",
-    image: "assets/images/testimonial/testimonial-img-1.jpeg",
-  },
-  {
-    text: `"HNH Soft Tech Solutions helped us transform our outdated system into a sleek, user-friendly platform. Their experience and deep technical knowledge made a huge difference in our project's success."`,
-    name: "Michael Roberts",
-    role: "CEO",
-    image: "assets/images/testimonial/testimonial-img-2.jpeg",
-  },
-  {
-    text: `
-"From the first meeting to the final delivery, HNH Soft Tech Solutions proved to be a reliable partner. They understood our needs perfectly and provided innovative solutions that exceeded our expectations."`,
-    name: "Olivia Harris",
-    role: "Marketing Head",
-    image: "assets/images/testimonial/testimonial-img-1.jpeg",
-  },
 
-]
 
 const HomeTestimonial = () => {
   return (
-    <section className="bg-black py-20">
-      <div className="section-head mb--50">
-        <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-          <span className="subtitle">eTestimonials</span>
-        </div>
-        <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-          What People Say
-        </h2>
-        {/* <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-          {" "}IT Technology services built specifically for your business.{" "}
-        </p> */}
-      </div>
+    <section className=" mt-10 py-20">
       <div className="container mx-auto px-4">
+        {/* Section Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-5xl font-bold text-[#ff014f] mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-2xl text-white max-w-xl mx-auto">
+            Trusted by startups and enterprises alike — here’s how we’ve made an impact.
+          </p>
+        </div>
+
+        {/* Swiper */}
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Pagination]}
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.testimonial-next',
+            prevEl: '.testimonial-prev',
+          }}
+          pagination={{
+            clickable: true,
+            el: '.testimonial-pagination',
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active !bg-[#ff014f]',
           }}
           spaceBetween={30}
           slidesPerView={1}
           breakpoints={{
-            1024: {
+            768: {
               slidesPerView: 2,
             },
           }}
+          className="pb-16"
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-black text-white flex flex-col md:flex-row items-center p-8 gap-6">
-                {/* Left: Text Content */}
-                <div className="flex-1">
-                  <h2 className="text-white text-2xl md:text-2xl lg:text-3xl font-semibold leading-relaxed mb-6">
-                    {item.text}
-                  </h2>
-                  <h3 className="text-2xl font-bold">{item.name}</h3>
-                  <p className="text-[20px] text-gray-400">{item.role}</p>
-                  <div className="testimonital-icon">
-                    <img
-                      src="assets/images/testimonial/testimonial-icon.svg"
-                      alt="testimonial-icon"
-                    />
-                  </div>
-
+              <div className="bg-[#141414] py-20 rounded-2xl border-t-4 border-[#ff014f] shadow-md hover:shadow-xl transition duration-300 p-8 h-full flex flex-col justify-between">
+                <div className="flex mb-4 text-[#ff014f]">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                  ))}
                 </div>
-                {/* Right: Image */}
-                <div className="flex-1">
+                <p className="text-white italic relative mb-6 ">
+                  {item.text}
+                </p>
+                <div className="flex items-center">
                   <img
                     src={item.image}
-                    alt="testimonial"
-                    className=" rounded-xl w-full object-cover"
+                    alt={item.name}
+                    className="w-36 h-36 rounded-full object-cover border-4 border-[#ff014f]/30 shadow-sm mr-4"
                   />
+                  <div>
+                    <h4 className="text-2xl font-semibold text-white">{item.name}</h4>
+                    <p className="text-[#ff014f] text-4xl">{item.role}</p>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Navigation */}
+        <div className="flex justify-center items-center mt-10">
+          <button className="testimonial-prev w-20 h-20 flex items-center justify-center rounded-full border border-[#ff014f]/50 text-[#ff014f] hover:bg-[#ff014f] hover:text-white transition">
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div className="testimonial-pagination flex space-x-2 mx-6  "></div>
+          <button className="testimonial-next w-20 h-20 flex items-center justify-center rounded-full border border-[#ff014f]/50 text-[#ff014f] hover:bg-[#ff014f] hover:text-white transition">
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   )
