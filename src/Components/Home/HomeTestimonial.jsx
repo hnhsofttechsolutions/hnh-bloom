@@ -80,7 +80,7 @@ const HomeTestimonial = () => {
                   <img
                     src={item.image}
                     alt="testimonial"
-                    className="rounded-md w-full object-cover"
+                    className=" rounded-xl w-full object-cover"
                   />
                 </div>
               </div>

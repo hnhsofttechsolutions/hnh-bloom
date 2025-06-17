@@ -1,20 +1,13 @@
-import React from 'react'
 import Banner from '../Components/Banner'
-import HomeService from '../Components/Home/HomeService'
-import HomeSkills from '../Components/Home/HomeSkills'
-import HomeCounter from '../Components/Home/HomeCounter'
-import AboutEducation from '../Components/About/AboutEducation'
 import AboutOurPricing from '../Components/About/AboutOurPricing'
 import HomeGetInTouch from '../Components/Home/HomeGetInTouch'
+import AboutService from '../Components/About/AboutService'
 
 const About = () => {
   return (
    <>
-  <Banner heading={"About"} text={"About"}/>
-  <HomeService/>
-  <HomeSkills/>
-  <div className='my-16'>  <HomeCounter/></div>
-  <AboutEducation/>
+  <Banner heading={"About Us"} text={"About Us"}/>
+  <AboutService/>
   <AboutOurPricing/>
   <div className='my-20'><HomeGetInTouch/></div>
    </>

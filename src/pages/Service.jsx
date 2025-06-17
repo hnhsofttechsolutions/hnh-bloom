@@ -1,12 +1,18 @@
 import React from 'react'
-import LatestService from '../Components/Service/LatestService'
 import AboutOurPricing from '../Components/About/AboutOurPricing'
 import Banner from '../Components/Banner'
+import ServiceHero from '../Components/Service/ServiceHero'
+import WhyChooseUs from '../Components/Service/WhyChooseUs'
+import ServiceCards from '../Components/Service/ServiceCards'
+import OurProcess from '../Components/Service/OurProcess'
 const Service = () => {
   return (
    <>
    <Banner heading={"Service"} text={"Service"}/>
-   <LatestService/>
+   <ServiceHero/>
+   <WhyChooseUs />
+   <ServiceCards/>
+   <OurProcess/>
    <AboutOurPricing/>
    </>
   )
