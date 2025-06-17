@@ -1,6 +1,4 @@
 import React from 'react'
-import { services } from '../../utils/data'
-console.log("🚀 ~ services:", services)
 
 const HomeLatestService = () => {
   return (
@@ -11,26 +9,31 @@ const HomeLatestService = () => {
     <div className="container">
       <div className="section-head mb--50">
         <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-          <span className="subtitle">Our Awesome Services</span>
+          <span className="subtitle">Latest Service</span>
         </div>
         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-          We Are Dedicated To <br />Serve You All Time.
+          Inspiring The World One
+          <br /> Project
         </h2>
         <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-          {" "}IT Technology services built specifically for your business.{" "}
+          {" "}
+          Business consulting consultants provide expert advice and guida
+          businesses to help them improve their performance, efficiency, and
+          organizational{" "}
         </p>
       </div>
       <div className="row">
-        <div className="col-lg-12 services-grid">
-          {services.map((data , index) => <div key={index} className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1 h-[90%]">
+        <div className="col-lg-6">
+          <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
             <h2 className="service-card-num">
-              <span>{data.indx}</span>{data.title}
+              <span>01.</span>A Portfolio of Creativity
             </h2>
             <p className="service-para">
-            {data.description}
+              Business consulting consultants provide expert advice and guida
+              the a businesses to help theme their performance efficiency
             </p>
-          </div>)}
-          {/* <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+          </div>
+          <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
             <h2 className="service-card-num">
               <span>02.</span>My Portfolio of Innovation
             </h2>
@@ -38,19 +41,19 @@ const HomeLatestService = () => {
               My work is driven by the belief that thoughtful design and
               strategic planning can empower brands, transform businesses
             </p>
-          </div> */}
-          {/* <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+          </div>
+          <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
             <h2 className="service-card-num">
               <span>03.</span>A Showcase of My Projects
             </h2>
             <p className="service-para">
               In this portfolio, you’ll find a curated selection of projects
-              that highlight my skills in Main Areas, e.g., responsive web
+              that highlight my skills in [Main Areas, e.g., responsive web
               design
             </p>
-          </div> */}
+          </div>
         </div>
-        {/* <div className="col-lg-6">
+        <div className="col-lg-6">
           <div className="service-card-user-image">
             <img
               className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
@@ -58,7 +61,7 @@ const HomeLatestService = () => {
               alt="latest-user-image"
             />
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   </section>
