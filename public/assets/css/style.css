@@ -21581,7 +21581,7 @@ body.loaded {
   }
 }
 .my-skill-card .card-icon {
-  /* color: var(--color-body); */
+  color: var(--color-body);
   font-size: 34px;
   font-weight: 600;
   transition: all 0.4s ease;

@@ -23,11 +23,6 @@ const Header = () => {
                   src="assets/images/logo/logo-white.png"
                   alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
                 />
-                <img
-                  className="logo-white"
-                  src="assets/images/logo/logo-white.png"
-                  alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
-                />
               </Link>
             </div>
             <nav className="tmp-mainmenu-nav d-none d-xl-block">
@@ -164,7 +159,7 @@ const Header = () => {
               <div className="information tmp-link-animation">
                 <span>Call Now</span>
                 <Link to="#" className="number">
-                  +92 (8800) - 98670
+                  +1 (555) 123-4567
                 </Link>
               </div>
             </div>
@@ -175,7 +170,7 @@ const Header = () => {
               <div className="information tmp-link-animation">
                 <span>Mail Us</span>
                 <Link to="#" className="number">
-                  example@info.com
+                  contact@example.com
                 </Link>
               </div>
             </div>
@@ -185,7 +180,7 @@ const Header = () => {
               <i className="fa-solid fa-location-crosshairs" />
               <div className="information tmp-link-animation">
                 <span>My Address</span>
-                <span className="number">66 Broklyant, New York 3269</span>
+                <span className="number">New York, NY 10001</span>
               </div>
             </div>
             {/* single contact information end */}

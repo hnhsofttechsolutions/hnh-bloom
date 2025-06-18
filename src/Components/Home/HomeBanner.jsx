@@ -14,7 +14,7 @@ const HomeBanner = () => {
             <div className="banner-right-content ">
               <img
                 className="tmp-scroll-trigger tmp-zoom-in animation-order-1  "
-                src="assets/images/banner/home-hero.jpeg"
+                src="assets/images/banner/HnH Soft Tech-whit.png"
                 alt="banner-img"
               />
               {/* <h2 className="banner-big-text-1 up-down">WEB DESIGNER</h2>
@@ -51,7 +51,7 @@ const HomeBanner = () => {
               <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
                 <Link
                   className="tmp-btn hover-icon-reverse radius-round"
-                  to="/project"
+                  to="/contact"
                 >
                   <span className="icon-reverse-wrapper">
                     <span className="btn-text">Contact US</span>

@@ -91,7 +91,6 @@ const Footer = () => {
     </div>
   </div>
 </footer>
-
         <div className="copyright-area-one pb-10">
           <div className="container">
             <div className="row">
@@ -125,7 +124,6 @@ const Footer = () => {
           </div>
         </div>
         {/* End Footer Area  */}
-
         {/* ready chatting option via email */}
         <div className="ready-chatting-option tmp-ready-chat">
           <input type="checkbox" id="click" />
@@ -237,7 +235,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
         <div className={`demo-modal-area ${demoModal ? "open" : ""}` }>
           <div className="wrapper">
             <div className="tmp-modal-inner">
@@ -1605,7 +1602,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>                                                                                                                                                                                                          
       </>
   )
 }
