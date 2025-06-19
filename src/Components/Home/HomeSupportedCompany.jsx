@@ -3,14 +3,14 @@ import React from 'react'
 
 const HomeSupportedCompany = () => {
  const company = [
-    "assets/images/our-supported-company/company-logo-1.png",
-    "assets/images/our-supported-company/company-logo-2.png",
-    "assets/images/our-supported-company/company-logo-3.png",
-    "assets/images/our-supported-company/company-logo-4.png",
-    "assets/images/our-supported-company/company-logo-5.png",
-    "assets/images/our-supported-company/company-logo-6.png",
-    "assets/images/our-supported-company/company-logo-7.png",
-    "assets/images/our-supported-company/company-logo-8.png"
+    "assets/images/our-supported-company/company-logo-9.png",
+    "assets/images/our-supported-company/company-logo-10.png",
+    "assets/images/our-supported-company/company-logo-13.png",
+    "assets/images/our-supported-company/company-logo-22.png",
+    "assets/images/our-supported-company/company-logo-18.png",
+    "assets/images/our-supported-company/company-logo-14.png",
+    "assets/images/our-supported-company/company-logo-26.png",
+    "assets/images/our-supported-company/company-logo-20.png"
   ];
 
   return (
@@ -29,7 +29,7 @@ const HomeSupportedCompany = () => {
             <img
               src={img}
               alt={`Company Logo ${indx + 1}`}
-              className='h-[50px]'
+              className='h-[70px]'
             />
           </div>
         </div>

@@ -35,16 +35,14 @@ const HomePortfolio = () => {
         <div className="container">
           <div className="section-head mb--60">
             <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-              <span className="subtitle">Latest Portfolio</span>
+              <span className="subtitle">Our Featured Projects</span>
             </div>
             <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
               Transforming Ideas into
               <br /> Exceptional
             </h2>
             <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-              Business consulting consultants provide expert advice and guida
-              businesses to help them improve their performance, efficiency, and
-              organizational
+              Each project reflects our commitment to innovation, precision, and client success. Browse through our latest work to see how we help businesses improve performance, efficiency, and digital presence.
             </p>
           </div>
 

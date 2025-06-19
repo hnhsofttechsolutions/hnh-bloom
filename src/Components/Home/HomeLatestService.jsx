@@ -9,47 +9,41 @@ const HomeLatestService = () => {
     <div className="container">
       <div className="section-head mb--50">
         <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-          <span className="subtitle">Latest Service</span>
+          <span className="subtitle">Our Latest Services</span>
         </div>
         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-          Inspiring The World One
-          <br /> Project
+          Inspiring Businesses Through Every Project We Deliver
+          <br />
         </h2>
         <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
           {" "}
-          Business consulting consultants provide expert advice and guida
-          businesses to help them improve their performance, efficiency, and
-          organizational{" "}
+          We provide expert business consulting and digital solutions designed to improve performance, efficiency, and organizational growth. From creative strategy to execution, we transform ideas into impactful results.{" "}
         </p>
       </div>
       <div className="row">
         <div className="col-lg-6">
           <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
             <h2 className="service-card-num">
-              <span>01.</span>A Portfolio of Creativity
+              <span>01.</span>Creative Solutions Portfolio
             </h2>
             <p className="service-para">
-              Business consulting consultants provide expert advice and guida
-              the a businesses to help theme their performance efficiency
+              Explore how our consulting services and digital innovations help businesses overcome challenges, streamline operations, and achieve sustainable growth.
             </p>
           </div>
           <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
             <h2 className="service-card-num">
-              <span>02.</span>My Portfolio of Innovation
+              <span>02.</span>Innovation-Led Project Delivery
             </h2>
             <p className="service-para">
-              My work is driven by the belief that thoughtful design and
-              strategic planning can empower brands, transform businesses
+              We believe that smart design, strategic thinking, and the right technology can empower brands and transform their digital presence across industries.
             </p>
           </div>
           <div className="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
             <h2 className="service-card-num">
-              <span>03.</span>A Showcase of My Projects
+              <span>03.</span>Featured Project Showcase
             </h2>
             <p className="service-para">
-              In this portfolio, you’ll find a curated selection of projects
-              that highlight my skills in [Main Areas, e.g., responsive web
-              design
+              Browse a curated selection of successful projects—from responsive web design and custom software to cross-platform apps and digital strategy implementation.
             </p>
           </div>
         </div>

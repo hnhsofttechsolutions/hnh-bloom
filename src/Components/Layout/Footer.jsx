@@ -21,10 +21,16 @@ const Footer = () => {
                 className="mb-4 h-[50px]"
               />
             </Link>
-            <p className="text-4xl">
-              We work with a passion of taking <br /> challenges and creating new <br /> ones in advertising sector.
+            <p className="text-3xl">
+             We thrive on taking on bold challenges and crafting innovative advertising solutions that make brands stand out and succeed in a competitive digital world.
             </p>
-            <form action="#" className="newsletter-form-1 mt--40">
+            <div className="social-link footer">
+              <Link to="#"><i className="fa-brands fa-instagram" /></Link>
+              <Link to="#"><i className="fa-brands fa-linkedin-in" /></Link>
+              <Link to="#"><i className="fa-brands fa-twitter" /></Link>
+              <Link to="#"><i className="fa-brands fa-facebook-f" /></Link>
+            </div>
+            <form action="#" className="newsletter-form-1 mt--10">
               <input type="email" placeholder="Email Address" />
               <span className="form-icon">
                 <i className="fa-regular fa-envelope" />
@@ -79,12 +85,12 @@ const Footer = () => {
               <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">UK: +44 7539 305980</Link></li>
               <li><span className="ft-icon"><i className="fa-solid fa-phone" /></span><Link to="#">DE: +49 152 1665 2405</Link></li>
             </ul>
-            <div className="social-link footer">
+            {/* <div className="social-link footer">
               <Link to="#"><i className="fa-brands fa-instagram" /></Link>
               <Link to="#"><i className="fa-brands fa-linkedin-in" /></Link>
               <Link to="#"><i className="fa-brands fa-twitter" /></Link>
               <Link to="#"><i className="fa-brands fa-facebook-f" /></Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

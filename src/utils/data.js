@@ -34,26 +34,26 @@ export const services = [
 export const service = [
   {
     icon: "assets/images/owsem-service/service-icon-1.png",
-    title: "Marketing Strategy",
-    description: "Effective campaigns, SEO, and targeting strategies to reach and retain the right audience.",
+    title: "Digital Marketing Strategy",
+    description: "Maximize your reach with data-driven marketing campaigns, search engine optimization, and targeted advertising designed to convert traffic into loyal customers.",
     link: "/"
   },
   {
     icon: "assets/images/owsem-service/service-icon-2.png",
-    title: "Business Strategy",
-    description: "Align your goals with scalable digital strategies that drive results.",
+    title: "Business Transformation Strategy",
+    description: "Align your business objectives with smart, scalable digital strategies that boost efficiency, profitability, and competitive edge.",
     link: "/"
   },
   {
     icon: "assets/images/owsem-service/service-icon-3.png",
-    title: "Search Optimization",
-    description: "Boost online visibility and discoverability through smart search engine strategies.",
+    title: "Advanced Search Engine Optimization (SEO)",
+    description: "Rank higher on Google with powerful SEO techniques that improve your website’s visibility, domain authority, and organic traffic.",
     link: "/"
   },
   {
     icon: "assets/images/owsem-service/service-icon-4.png",
-    title: "Cross-Platform App Dev",
-    description: "Engage users on iOS, Android, and web with seamless cross-platform applications.",
+    title: "Cross-Platform App Development",
+    description: "Develop robust and engaging applications for iOS, Android, and the web using modern frameworks that ensure smooth performance across all devices.",
     link: "/"
   }
 ];
