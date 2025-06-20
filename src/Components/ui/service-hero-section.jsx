@@ -1,23 +1,13 @@
-const HomeGetInTouch = () => {
+import React from "react";
+
+const ServiceHeroSection = ({ serviceData }) => {
+
   return (
-  <>
-  {/* Tpm Get In touch start */}
-  <section className="get-in-touch-area tmp-section-gapTop">
-    <div className="container">
-      <div className="contact-get-in-touch-wrap">
-        <div className="get-in-touch-wrapper tmponhover">
-          <div className="row g-5 align-items-center">
-            <div className="col-lg-5">
-              <div className="section-head text-align-left">
-                <div className="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                  <span className="subtitle !text-4xl">Contact Us</span>
-                </div>
-                <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  Have a question or need assistance? Get in touch with our team, and we'll be happy to assist you with all your needs.{" "}
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-7">
+    <>
+      <div className="container">
+        <div className="banner-one-main-wrapper">
+          <div className="row align-items-center">
+            <div className="col-lg-6 order-lg-2 ">
               <div className="contact-inner">
                 <div className="contact-form">
                   <div id="form-messages" className="error" />
@@ -111,15 +101,44 @@ const HomeGetInTouch = () => {
                 </div>
               </div>
             </div>
+            <div className="col-lg-6 order-lg-1">
+              <div className="inner">
+                <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
+                  <span className="header-caption">
+                    <span className="cd-headline clip is-full-width">
+                      <span className="cd-words-wrapper">
+                        <b className="is-visible theme-gradient !text-6xl">
+                          {serviceData?.heading?.split(" ")?.length > 5 ? (
+                            <>
+                              {serviceData?.heading?.split(" ")?.map((word, index) =>
+                                index === 5 ? (
+                                  <>
+                                    <br />
+                                    {word}{" "}
+                                  </>
+                                ) : (
+                                  <>{word} </>
+                                )
+                              )}
+                            </>
+                          ) : (
+                            serviceData?.heading
+                          )}
+                        </b>
+                      </span>
+                    </span>
+                  </span>
+                </h1>
+                <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
+                  {serviceData?.paragraph}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  {/* Tpm Get In touch End */}
-</>
+    </>
+  );
+};
 
-  )
-}
-
-export default HomeGetInTouch
+export default ServiceHeroSection;

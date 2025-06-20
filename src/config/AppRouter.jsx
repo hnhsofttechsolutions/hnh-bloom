@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { RouterList } from "../utils/Routlist";
-import ScrollToTop from "../Components/ScrollToTop/ScrollToTop";
+import Layout from "../Components/Layout/Layout";
 
 const AppRouter = () => {
   return (
@@ -9,7 +9,7 @@ const AppRouter = () => {
      
       <Routes>
         {RouterList.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
+          <Route key={index} path={route.path} element={<Layout>{route.element}</Layout>} />
         ))}
       </Routes>
     </>

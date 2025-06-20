@@ -5,7 +5,6 @@ const HomeBanner = () => {
   return (
    <>
    <>
-  {/* tmp banner area start */}
   <div className="tmp-banner-one-area">
     <div className="container">
       <div className="banner-one-main-wrapper">
@@ -17,8 +16,6 @@ const HomeBanner = () => {
                 src="assets/images/banner/HnH Soft Tech-whit.png"
                 alt="banner-img"
               />
-              {/* <h2 className="banner-big-text-1 up-down">WEB DESIGNER</h2>
-              <h2 className="banner-big-text-2 up-down-2">WEB DESIGNER</h2> */}
             </div>
           </div>
           <div className="col-lg-6 order-lg-1">
@@ -33,13 +30,6 @@ const HomeBanner = () => {
                     <span className="cd-words-wrapper">
                       <b className="is-visible theme-gradient">Digital Transformation </b>
                       <b className="is-hidden theme-gradient">with Scalable IT Solutions</b>
-                      {/* <b className="is-hidden theme-gradient">
-                        UI/UX Designer.
-                      </b> */}
-                      {/* <b className="is-hidden theme-gradient">Freelancer.</b> */}
-                      {/* <b className="is-hidden theme-gradient">
-                        Content Writer.
-                      </b> */}
                     </span>
                   </span>
                 </span>
@@ -70,7 +60,6 @@ const HomeBanner = () => {
       </div>
     </div>
   </div>
-  {/* tmp banner area end */}
 </>
 
    </>

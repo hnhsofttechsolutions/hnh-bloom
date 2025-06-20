@@ -2,25 +2,25 @@ import { Link } from 'react-router-dom';
 
 const portfolioData = [
   {
-    img: 'assets/images/portfolio/portfolio-img-1.png',
+    img: 'assets/images/portfolio/portfolio-img-10.jpg',
     title: 'Digital Transformation Advisors',
-    subtitle: 'Development Coaches',
+    subtitle: 'Web Design',
     link: '/project-detail',
   },
   {
-    img: 'assets/images/portfolio/portfolio-img-2.png',
+    img: 'assets/images/portfolio/portfolio-img-6.jpg',
     title: 'My work is driven by the belief that thoughtful.',
-    subtitle: 'Development App',
+    subtitle: 'App Development',
     link: '/project-detail',
   },
   {
-    img: 'assets/images/portfolio/portfolio-img-3.png',
+    img: 'assets/images/portfolio/portfolio-img-9.jpg',
     title: 'In this portfolio, you’ll find a curated selection',
     subtitle: 'Web Design',
     link: '/project-detail',
   },
   {
-    img: 'assets/images/portfolio/portfolio-img-4.png',
+    img: 'assets/images/portfolio/portfolio-img-8.jpg',
     title: 'I’ve had the privilege of working with various',
     subtitle: 'App Development',
     link: '/project-detail',

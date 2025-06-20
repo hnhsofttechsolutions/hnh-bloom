@@ -3,7 +3,7 @@ import React from 'react'
 
 const HomeSupportedCompany = () => {
  const company = [
-    "assets/images/our-supported-company/company-logo-9.png",
+    "assets/images/our-supported-company/company-logo-12.png",
     "assets/images/our-supported-company/company-logo-10.png",
     "assets/images/our-supported-company/company-logo-13.png",
     "assets/images/our-supported-company/company-logo-22.png",

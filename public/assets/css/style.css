@@ -11257,7 +11257,7 @@ header.header-full-width.header--sticky.sticky {
 }
 .tmp-mainmenu-nav .tmp-mainmenu > li.has-dropdown .submenu {
   padding: 10px;
-  min-width: 230px;
+  min-width:260px;
   height: auto;
   position: absolute;
   top: 100%;

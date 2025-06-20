@@ -22,7 +22,7 @@ const HomeSkills = () => {
               </h2>
               {/* Start Single Progress Charts */}
               <div className="progress-charts">
-                <h6 className="heading heading-h6">PHOTOSHOT</h6>
+                <h6 className="heading heading-h6">PHOTOSHOP</h6>
                 <div className="progress">
                   <div
                     className="progress-bar wow fadeInLeft"

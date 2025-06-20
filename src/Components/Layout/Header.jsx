@@ -3,6 +3,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { serviceData } from "../../utils/temp";
+
 const Header = () => {
   const [sidebar, setSideBar] = useState(false);
   const [mobileSideBar, setMobileSideBar] = useState(false);
@@ -38,10 +40,20 @@ const Header = () => {
                         <i className="fa-regular fa-chevron-down" />
                       </Link>
                       <ul className="submenu">
-                        <li>
-                          <Link to="/service">.Net Development Services</Link>
+                        {serviceData?.map(e => ( <li className="has-dropdown-custom">
+                          <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
+                          <ul className="submenu-custom">
+                             {e?.child?.map(c=> <li>
+                                <Link to={`/service?value=${c?.path}`}>
+                                 {c?.title}
+                                </Link>
+                              </li>)}
+                            </ul>
                         </li>
-                        <li className="has-dropdown-custom">
+                          )
+                        )}
+
+                         {/* <li className="has-dropdown-custom">
                           <Link to="/service">Enterprise Web Development</Link>
                           <ul className="submenu-custom">
                               <li>
@@ -91,10 +103,7 @@ const Header = () => {
                         </li>
                         <li>
                           <Link to="/service">Service</Link>
-                        </li>
-                        <li>
-                          <Link to="/service-detail">Service Details</Link>
-                        </li>
+                        </li>  */}
                       </ul>
                     </li>
                     <li className="has-dropdown">
