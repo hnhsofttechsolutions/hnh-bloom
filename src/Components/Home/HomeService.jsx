@@ -9,14 +9,14 @@ const HomeService = () => {
         <div className="container">
           <div className="section-head mb--50">
         <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-          <span className="subtitle">Our Awsome Service</span>
+          <span className="subtitle">What We Offer</span>
         </div>
-        <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-          We Are Dedicated To Serve You All Time.
-        </h2>
-        {/* <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-          {" "}IT Technology services built specifically for your business.{" "}
-        </p> */}
+        <h3 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
+          Results-Driven IT Services to Accelerate Your Digital Growth
+        </h3>
+        <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
+          {" "}Enhance your business with expertly crafted IT solutions—from digital marketing and SEO to scalable software and cross-platform applications. Our services are tailored to deliver performance, visibility, and long-term value.{" "}
+        </p>
       </div>
           <div className="row justify-content-center">
             {service.map((service, index) => (

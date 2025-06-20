@@ -5,7 +5,6 @@ const HomeBanner = () => {
   return (
    <>
    <>
-  {/* tmp banner area start */}
   <div className="tmp-banner-one-area">
     <div className="container">
       <div className="banner-one-main-wrapper">
@@ -17,8 +16,6 @@ const HomeBanner = () => {
                 src="assets/images/banner/HnH Soft Tech-whit.png"
                 alt="banner-img"
               />
-              {/* <h2 className="banner-big-text-1 up-down">WEB DESIGNER</h2>
-              <h2 className="banner-big-text-2 up-down-2">WEB DESIGNER</h2> */}
             </div>
           </div>
           <div className="col-lg-6 order-lg-1">
@@ -31,22 +28,15 @@ const HomeBanner = () => {
                 <span className="header-caption">
                   <span className="cd-headline clip is-full-width">
                     <span className="cd-words-wrapper">
-                      <b className="is-visible theme-gradient">Digital Transformation</b>
-                      {/* <b className="is-hidden theme-gradient">Web Developer.</b> */}
-                      {/* <b className="is-hidden theme-gradient">
-                        UI/UX Designer.
-                      </b> */}
-                      {/* <b className="is-hidden theme-gradient">Freelancer.</b> */}
-                      {/* <b className="is-hidden theme-gradient">
-                        Content Writer.
-                      </b> */}
+                      <b className="is-visible theme-gradient">Digital Transformation </b>
+                      <b className="is-hidden theme-gradient">with Scalable IT Solutions</b>
                     </span>
                   </span>
                 </span>
               </h1>
               <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
                 {" "}
-                Unlock business success with cutting-edge IT services tailored to your needs. From strategy to execution, we deliver excellence.{" "}
+                Build smarter, faster, and future-ready with custom software, web, and mobile app development tailored to your business needs.{" "}
               </p>
               <div className="button-area-banner-one tmp-scroll-trigger tmp-fade-in animation-order-4">
                 <Link
@@ -70,7 +60,6 @@ const HomeBanner = () => {
       </div>
     </div>
   </div>
-  {/* tmp banner area end */}
 </>
 
    </>

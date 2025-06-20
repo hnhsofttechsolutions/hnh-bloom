@@ -19,10 +19,10 @@ const Home = () => {
       <div className="my-10"><HomeCounter /></div>
       <div className="my-10"><HomeSkills /></div>
       <HomeLatestService />
-      <HomeExperience />
+      <div className="mt-10"><HomeExperience /></div>
       <div className="md:my-20"><HomeSupportedCompany /></div>
       <HomePortfolio />
-      <HomeMySkills />
+      <div className="mt-10"><HomeMySkills /></div>
       <HomeTestimonial />
       <div className="mt-10"><HomeGetInTouch /></div>
       <HomeBlog />

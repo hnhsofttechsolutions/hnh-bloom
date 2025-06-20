@@ -9,11 +9,12 @@ const HomeMySkills = () => {
     <div className="container">
       <div className="section-head text-align-left mb--50">
         <div className="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-          <span className="subtitle">My Skill</span>
+          <span className="subtitle">Elevated Designs, Personalized Experiences</span>
         </div>
         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-          Elevated Designs Personalized <br /> the best Experiences
+          Crafting Exceptional Digital  <br />Interfaces That Drive Engagement
         </h2>
+        <p>My work is rooted in thoughtful design, user behavior, and strategic planning — helping brands connect, convert, and stand out in competitive markets.</p>
       </div>
       <div className="services-widget v1">
         <div className="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
@@ -23,12 +24,10 @@ const HomeMySkills = () => {
             </div>
             <div className="card-title">
               <h3 className="main-title">Ui/visual Design</h3>
-              <p className="sub-title">21 Done</p>
+              <p className="sub-title">Projects Completed: 21</p>
             </div>
             <p className="card-para">
-              My work is driven by the belief that thoughtful design and
-              strategic planning can empower brands strategic planning can
-              empower brands
+              A showcase of sleek, responsive, and user-friendly interfaces designed for optimal user experience. From web to mobile, each design aligns with brand identity and user goals.
             </p>
             <a href="#" className="read-more-btn">
               Read More{" "}
@@ -45,13 +44,11 @@ const HomeMySkills = () => {
               <i className="fa-light fa-calendar" />
             </div>
             <div className="card-title">
-              <h3 className="main-title">Ui/visual Design</h3>
-              <p className="sub-title">21 Done</p>
+              <h3 className="main-title">Web Interface &  <br />Visual Strategy</h3>
+              <p className="sub-title">Projects Completed: 21</p>
             </div>
             <p className="card-para">
-              In this portfolio, you’ll find a curated selection of projects
-              that highlight my skills in [Main Areas, e.g., responsive web
-              design
+              Explore a curated portfolio featuring design solutions for responsive websites, SaaS platforms, and custom dashboards — all built for performance and scalability.
             </p>
             <a href="#" className="read-more-btn">
               Read More{" "}
@@ -68,12 +65,11 @@ const HomeMySkills = () => {
               <i className="fa-light fa-pen-nib" />
             </div>
             <div className="card-title">
-              <h3 className="main-title">Motion Design</h3>
-              <p className="sub-title">20 Done</p>
+              <h3 className="main-title">Motion Design & <br />Animation</h3>
+              <p className="sub-title">Projects Completed: 20</p>
             </div>
             <p className="card-para">
-              Each project here showcases my commitment to excellence and
-              adaptability, tailored to meet each client’s unique needs
+              From animated UI elements to full motion graphics, these projects reflect dynamic storytelling and brand communication through movement and interaction.
             </p>
             <a href="#" className="read-more-btn">
               Read More{" "}

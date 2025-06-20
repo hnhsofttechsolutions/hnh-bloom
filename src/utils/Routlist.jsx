@@ -46,5 +46,5 @@ export const RouterList = [
   {
     path:"/contact",
     element:<Contact/>,
-  }
+  },
 ];
