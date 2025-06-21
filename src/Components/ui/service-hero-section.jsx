@@ -4,7 +4,7 @@ const ServiceHeroSection = ({ serviceData }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container py-24">
         <div className="banner-one-main-wrapper">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2 ">

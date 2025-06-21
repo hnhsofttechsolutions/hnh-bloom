@@ -27201,3 +27201,50 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
     transform: translateY(0rem);
   }
 }
+.tabs {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tab-header {
+  display: flex;
+  color:black;
+  font:bolder;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-header div {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-header div:hover {
+  background-color: #f0f0f0;
+}
+
+.tab-header .active {
+  border-bottom: 3px solid rgb(243, 0, 73);
+  font-weight: bold;
+  color: rgb(243, 0, 73);
+}
+
+.tab-content {
+  padding: 20px;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+.logo-images img{
+  height: 150px;
+  width: 250px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}

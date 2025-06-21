@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 // eslint-disable-next-line no-unused-vars
 // const portfolioData = [
@@ -28,9 +29,9 @@ import { Link } from 'react-router-dom';
 //   },
 // ];
 
-const HomePortfolio = ({data}) => {
-
-
+const HomePortfolio = ({ data }) => {
+  const [tabCurrent, setTabCurrent] = useState("Logos");
+  const location = useLocation();
 
   return (
     <>
@@ -46,15 +47,47 @@ const HomePortfolio = ({data}) => {
               <br /> Exceptional
             </h2>
             <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-              Each project reflects our commitment to innovation, precision, and client success. Browse through our latest work to see how we help businesses improve performance, efficiency, and digital presence.
+              Each project reflects our commitment to innovation, precision, and
+              client success. Browse through our latest work to see how we help
+              businesses improve performance, efficiency, and digital presence.
             </p>
           </div>
+          {location.pathname === "/project" ? (
+            <div className="tabs mb-4">
+              <div className="tab-header" id="tabButtons">
+                <div
+                  className={tabCurrent === "WebAPPlications" ? "active" : undefined}
+                  onClick={() => setTabCurrent("WebAPPlications")}
+                >
+                  Web APPlications
+                </div>
+                <div
+                  className={
+                    tabCurrent === "MobileApplications" ? "active" : undefined
+                  }
+                  onClick={() => setTabCurrent("MobileApplications")}
+                >
+                  Mobile Applications
+                </div>
+                <div
+                  className={
+                    tabCurrent === "Logos" ? "active" : undefined
+                  }
+                  onClick={() => setTabCurrent("Logos")}
+                >
+                  Logos
+                </div>
+              </div>
+            </div>
+          ) : null}
 
           <div className="row">
             {data?.projects?.data.map((item, index) => (
               <div className="col-lg-6 col-sm-6" key={index}>
                 <div
-                  className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}
+                  className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${
+                    index + 1
+                  }`}
                 >
                   <div className="portfoli-card-img">
                     <div className="img-box v2">
@@ -62,8 +95,11 @@ const HomePortfolio = ({data}) => {
                         className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
                         to={`/project-detail/${item?.id}`}
                       >
-                        <img className="w-100"
-                        src={`https://api.hnhtechsolutions.com${item.images[0]}`} alt="Thumbnail" />
+                        <img
+                          className="w-100"
+                          src={`https://api.hnhtechsolutions.com${item.images[0]}`}
+                          alt="Thumbnail"
+                        />
                       </Link>
                     </div>
                   </div>
@@ -74,9 +110,14 @@ const HomePortfolio = ({data}) => {
                           {item.title}
                         </Link>
                       </h3>
-                      <p className="portfoli-card-para">{item.categories[0].name}</p>
+                      <p className="portfoli-card-para">
+                        {item.categories[0].name}
+                      </p>
                     </div>
-                    <Link to={item?.ProjectDemoLink[0]?.link} className="tmp-arrow-icon-btn">
+                    <Link
+                      to={item?.ProjectDemoLink[0]?.link}
+                      className="tmp-arrow-icon-btn"
+                    >
                       <div className="btn-inner">
                         <i className="tmp-icon fa-solid fa-arrow-up-right" />
                         <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />
