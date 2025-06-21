@@ -40,7 +40,7 @@ export const RouterList = [
     element: <Project />,
   },
    {
-    path: "/project-detail",
+    path: "/project-detail/:id",
     element: <ProjectDetail />,
   },
   {

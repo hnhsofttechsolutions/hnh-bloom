@@ -22,7 +22,7 @@ const Header = () => {
                     <img
                       className="logo-dark"
                       src="assets/images/logo/logo-white.png"
-                      alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                      alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                     />
                   </Link>
                 </div>
@@ -107,32 +107,31 @@ const Header = () => {
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <Link to="#">
+                      <Link to="/blog">
                         Blog
-                        <i className="fa-regular fa-chevron-down" />
+                        {/* <i className="fa-regular fa-chevron-down" /> */}
                       </Link>
-                      <ul className="submenu">
+                      {/* <ul className="submenu">
                         <li>
                           <Link to="/blog">Blog Classic</Link>
                         </li>
                         <li>
                           <Link to="/blog-detail">Blog Details</Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li className="has-dropdown">
-                      <Link to="#">
+                      <Link to="/project">
                         Project
-                        <i className="fa-regular fa-chevron-down" />
                       </Link>
-                      <ul className="submenu">
+                      {/* <ul className="submenu">
                         <li>
                           <Link to="/project">Project</Link>
                         </li>
                         <li>
                           <Link to="/project-detail">Project Details</Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
@@ -142,16 +141,13 @@ const Header = () => {
                 <div className="tmp-header-right">
                   <div className="social-share-wrapper d-none d-md-block">
                     <div className="social-link">
-                      <Link to="#">
+                      <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                         <i className="fa-brands fa-instagram" />
                       </Link>
                       <Link to="#">
                         <i className="fa-brands fa-linkedin-in" />
                       </Link>
-                      <Link to="#">
-                        <i className="fa-brands fa-twitter" />
-                      </Link>
-                      <Link to="#">
+                      <Link to="https://www.facebook.com/hnhtechsolutions">
                         <i className="fa-brands fa-facebook-f" />
                       </Link>
                     </div>
@@ -199,12 +195,12 @@ const Header = () => {
                 {/* <img
               className="logo-dark"
               src="assets/images/logo/logo-white.png"
-              alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+              alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
             />
             <img
               className="logo-white"
               src="assets/images/logo/logo-white.png"
-              alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+              alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
             /> */}
               </Link>
               <div
@@ -222,7 +218,7 @@ const Header = () => {
               <div className="image-area-feature">
                 <Link to="index.html">
                   <img
-                    src="assets/images/banner/home-hero.jpeg"
+                    src="assets/images/banner/HnH Soft Tech-whit.png"
                     alt="personal-logo"
                   />
                 </Link>
@@ -272,16 +268,13 @@ const Header = () => {
               <div className="social-wrapper mt--20">
                 <span className="subtitle">find with me</span>
                 <div className="social-link">
-                  <Link to="#">
+                  <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                     <i className="fa-brands fa-instagram" />
                   </Link>
                   <Link to="#">
                     <i className="fa-brands fa-linkedin-in" />
                   </Link>
-                  <Link to="#">
-                    <i className="fa-brands fa-twitter" />
-                  </Link>
-                  <Link to="#">
+                  <Link to="https://www.facebook.com/hnhtechsolutions">
                     <i className="fa-brands fa-facebook-f" />
                   </Link>
                 </div>
@@ -296,7 +289,7 @@ const Header = () => {
         />
       </div>
 
-      {/* mobile responsive */}
+      {/* mobile responsive */}                                                                          
       <div className="d-block d-xl-none ">
         <div
           className={`tmp-popup-mobile-menu ${mobileSideBar ? "active" : ""}`}
@@ -307,13 +300,13 @@ const Header = () => {
                 <Link to="/" className="logo-area">
                   <img
                     className="logo-dark"
-                    src="assets/images/logo/white-logo-reeni.png"
-                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                    src="assets/images/logo/logo-white.png"
+                    alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                   />
                   <img
                     className="logo-white"
                     src="assets/images/logo/logo-white.png"
-                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                    alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                   />
                 </Link>
               </div>
@@ -462,16 +455,13 @@ const Header = () => {
             <div className="social-wrapper mt--40">
               <span className="subtitle">find with me</span>
               <div className="social-link">
-                <Link to="#">
+                <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                   <i className="fa-brands fa-instagram" />
                 </Link>
                 <Link to="#">
                   <i className="fa-brands fa-linkedin-in" />
                 </Link>
-                <Link to="#">
-                  <i className="fa-brands fa-twitter" />
-                </Link>
-                <Link to="#">
+                <Link to="https://www.facebook.com/hnhtechsolutions">
                   <i className="fa-brands fa-facebook-f" />
                 </Link>
               </div>

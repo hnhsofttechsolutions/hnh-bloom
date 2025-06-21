@@ -1,33 +1,37 @@
 import { Link } from 'react-router-dom';
 
-const portfolioData = [
-  {
-    img: 'assets/images/portfolio/portfolio-img-10.jpg',
-    title: 'Digital Transformation Advisors',
-    subtitle: 'Web Design',
-    link: '/project-detail',
-  },
-  {
-    img: 'assets/images/portfolio/portfolio-img-6.jpg',
-    title: 'My work is driven by the belief that thoughtful.',
-    subtitle: 'App Development',
-    link: '/project-detail',
-  },
-  {
-    img: 'assets/images/portfolio/portfolio-img-9.jpg',
-    title: 'In this portfolio, you’ll find a curated selection',
-    subtitle: 'Web Design',
-    link: '/project-detail',
-  },
-  {
-    img: 'assets/images/portfolio/portfolio-img-8.jpg',
-    title: 'I’ve had the privilege of working with various',
-    subtitle: 'App Development',
-    link: '/project-detail',
-  },
-];
+// eslint-disable-next-line no-unused-vars
+// const portfolioData = [
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-10.jpg',
+//     title: 'Digital Transformation Advisors',
+//     subtitle: 'Web Design',
+//     link: '/project-detail',
+//   },
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-6.jpg',
+//     title: 'My work is driven by the belief that thoughtful.',
+//     subtitle: 'App Development',
+//     link: '/project-detail',
+//   },
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-9.jpg',
+//     title: 'In this portfolio, you’ll find a curated selection',
+//     subtitle: 'Web Design',
+//     link: '/project-detail',
+//   },
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-8.jpg',
+//     title: 'I’ve had the privilege of working with various',
+//     subtitle: 'App Development',
+//     link: '/project-detail',
+//   },
+// ];
 
-const HomePortfolio = () => {
+const HomePortfolio = ({data}) => {
+
+
+
   return (
     <>
       {/* Tpm Latest Portfolio Area Start */}
@@ -47,7 +51,7 @@ const HomePortfolio = () => {
           </div>
 
           <div className="row">
-            {portfolioData.map((item, index) => (
+            {data?.projects?.data.map((item, index) => (
               <div className="col-lg-6 col-sm-6" key={index}>
                 <div
                   className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}
@@ -56,9 +60,10 @@ const HomePortfolio = () => {
                     <div className="img-box v2">
                       <Link
                         className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                        to={item.link}
+                        to={`/project-detail/${item?.id}`}
                       >
-                        <img className="w-100" src={item.img} alt="Thumbnail" />
+                        <img className="w-100"
+                        src={`https://api.hnhtechsolutions.com${item.images[0]}`} alt="Thumbnail" />
                       </Link>
                     </div>
                   </div>
@@ -69,9 +74,9 @@ const HomePortfolio = () => {
                           {item.title}
                         </Link>
                       </h3>
-                      <p className="portfoli-card-para">{item.subtitle}</p>
+                      <p className="portfoli-card-para">{item.categories[0].name}</p>
                     </div>
-                    <Link to={item.link} className="tmp-arrow-icon-btn">
+                    <Link to={item?.ProjectDemoLink[0]?.link} className="tmp-arrow-icon-btn">
                       <div className="btn-inner">
                         <i className="tmp-icon fa-solid fa-arrow-up-right" />
                         <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />

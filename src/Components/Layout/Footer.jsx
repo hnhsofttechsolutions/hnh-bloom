@@ -28,16 +28,13 @@ const Footer = () => {
                     and succeed in a competitive digital world.
                   </p>
                   <div className="social-link footer">
-                    <Link to="#">
+                    <Link to="https://www.facebook.com/hnhtechsolutions">
                       <i className="fa-brands fa-instagram" />
                     </Link>
                     <Link to="#">
                       <i className="fa-brands fa-linkedin-in" />
                     </Link>
-                    <Link to="#">
-                      <i className="fa-brands fa-twitter" />
-                    </Link>
-                    <Link to="#">
+                    <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                       <i className="fa-brands fa-facebook-f" />
                     </Link>
                   </div>
