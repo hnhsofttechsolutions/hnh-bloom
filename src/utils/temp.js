@@ -1,7 +1,7 @@
 export const serviceData = [
   {
     path:'dot-net-developer',
-    title: ".Net Developer Services",
+    title: ".Net Development Services",
     heading: ".NET Development Services",
     paragraph:"Welcome to Invision Solutions where our unmatched .NET development services are at the forefront of empowering businesses with tailored, and cutting-edge solutions. With a blend of technical prowess and innovative strategies, our experienced team of .NET developers is dedicated to delivering exceptional .NET development services that meet the evolving demands of the digital era.",
   },

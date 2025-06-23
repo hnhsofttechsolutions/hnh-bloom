@@ -91,3 +91,33 @@ query AllProjects {
   }
 }
 `
+export const CREATE_CONTACT_MUTATION = gql`
+  mutation CreateContact(
+    $firstName: String!
+    $lastName: String!
+    $subject: String!
+    $comment: String!
+    $email: String
+    $phone: String
+    $companyName: String
+  ) {
+    createContact(
+      firstName: $firstName
+      lastName: $lastName
+      subject: $subject
+      comment: $comment
+      email: $email
+      phone: $phone
+      companyName: $companyName
+    ) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      subject
+      comment
+      companyName
+    }
+  }
+`;

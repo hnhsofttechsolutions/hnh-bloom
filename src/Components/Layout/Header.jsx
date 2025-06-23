@@ -238,7 +238,7 @@ const Header = () => {
                   <div className="information tmp-link-animation">
                     <span>Call Now</span>
                     <Link to="#" className="number">
-                      +1 (555) 123-4567
+                      +1 (972) 777-4163
                     </Link>
                   </div>
                 </div>
@@ -249,7 +249,7 @@ const Header = () => {
                   <div className="information tmp-link-animation">
                     <span>Mail Us</span>
                     <Link to="#" className="number">
-                      contact@example.com
+                      info@hnhsofttechsolutions.com
                     </Link>
                   </div>
                 </div>
@@ -259,7 +259,7 @@ const Header = () => {
                   <i className="fa-solid fa-location-crosshairs" />
                   <div className="information tmp-link-animation">
                     <span>My Address</span>
-                    <span className="number">New York, NY 10001</span>
+                    <span className="number">3900 West northwest highway Apt 1172 Dallas TX 75220</span>
                   </div>
                 </div>
                 {/* single contact information end */}

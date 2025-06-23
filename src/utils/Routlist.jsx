@@ -11,7 +11,7 @@ import Contact from "../pages/Contact";
 export const RouterList = [
   {
     path: "/",
-    element: <Home />,
+    element: <Home/>,
   },
    {
     path: "/about",
