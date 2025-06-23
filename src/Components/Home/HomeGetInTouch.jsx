@@ -2,20 +2,25 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { CREATE_CONTACT_MUTATION } from "../../queries/get-post";
+import Loading from "../loading/Loading";
 
 
 const HomeGetInTouch = () => {
-   const [ { CreateContact }] = useMutation(CREATE_CONTACT_MUTATION);
+  // eslint-disable-next-line no-unused-vars
+  const [createContact, { loading, error }] = useMutation(CREATE_CONTACT_MUTATION);
   
-
-  const [contactData, setContactData] = useState({
+   const [contactData, setContactData] = useState({
     name: "",
+    lname: "",
     phone: "",
     email: "",
     subject: "",
     message: "",
   });
-
+  if(loading){
+    return <div><Loading/></div>
+  }
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setContactData((prev) => ({
@@ -24,18 +29,50 @@ const HomeGetInTouch = () => {
     }));
   };
 
-  const submitData = (e) => {
-    e.preventDefault();
-    console.log("Form Data:", contactData);
+  const submitData = async (e) => {
+  e.preventDefault();
+
+  if (
+    !contactData.name.trim() ||
+    !contactData.phone.trim() ||
+    !contactData.email.trim() ||
+    !contactData.subject.trim() ||
+    !contactData.message.trim()
+  ) {
+    toast.error("❌ Please fill in all fields");
+    return;
+  }
+
+  try {
+    const response = await createContact({
+      variables: {
+        firstName: contactData.name,
+        lastName: contactData.lname,
+        subject: contactData.subject,
+        email: contactData.email,
+        phone: contactData.phone,
+        comment: contactData.message,
+        companyName: "HNH Soft Tech Solutions",
+      },
+    });
+
+    console.log("✅ Data posted:", response.data);
+    toast.success("✅ Submit Successful");
+
     setContactData({
       name: "",
+      lname: "",
       phone: "",
       email: "",
       subject: "",
       message: "",
     });
-    toast.success("Submit Successfully");
-  };
+  } catch (err) {
+    console.error("❌ Error submitting form:", err);
+    toast.error("❌ Something went wrong");
+  }
+};
+
 
   return (
     <>
@@ -73,10 +110,23 @@ const HomeGetInTouch = () => {
                               <input
                                 className="input-field"
                                 name="name"
-                                placeholder="Full Name"
+                                placeholder="First Name"
                                 type="text"
                                 required
                                 value={contactData.name}
+                                onChange={handleChange}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-lg-6">
+                            <div className="form-group">
+                              <input
+                                className="input-field"
+                                name="lname"
+                                placeholder="Last Name"
+                                type="text"
+                                required
+                                value={contactData.lname}
                                 onChange={handleChange}
                               />
                             </div>
