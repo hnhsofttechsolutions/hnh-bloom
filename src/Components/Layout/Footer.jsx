@@ -77,12 +77,12 @@ const Footer = () => {
                 <div className="single-footer-wrapper quick-link-wrap">
                   <h5 className="ft-title">Services</h5>
                   <ul className="ft-link tmp-link-animation">
-                    {serviceData?.map((e) => (
-                      <li className="has-dropdown-custom">
+                    {serviceData?.map((e , i) => (
+                      <li key={i} className="has-dropdown-custom">
                         <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
                         <ul className="submenu-custom">
-                          {e?.child?.map((c) => (
-                            <li>
+                          {e?.child?.map((c , id) => (
+                            <li key={id}>
                               <Link to={`/service?value=${c?.path}`}>
                                 {c?.title}
                               </Link>
@@ -384,7 +384,7 @@ const Footer = () => {
                       <div className="single-demo">
                         <div className="inner">
                           <div className="thumbnail">
-                            <Link to="index.html">
+                            <Link to="/">
                               <img
                                 className="w-100"
                                 src="assets/images/demo/home-1.png"
@@ -400,7 +400,7 @@ const Footer = () => {
                           </div>
                           <div className="inner">
                             <h3 className="title">
-                              <Link to="index.html">Main Demo</Link>
+                              <Link to="/">Main Demo</Link>
                             </h3>
                           </div>
                         </div>

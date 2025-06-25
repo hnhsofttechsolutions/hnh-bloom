@@ -47,10 +47,10 @@ const Header = () => {
                         <i className="fa-regular fa-chevron-down" />
                       </Link>
                       <ul className="submenu">
-                        {serviceData?.map(e => ( <li className="has-dropdown-custom">
+                        {serviceData?.map((e , i) => ( <li key={i} className="has-dropdown-custom">
                           <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
                           <ul className="submenu-custom">
-                             {e?.child?.map(c=> <li>
+                             {e?.child?.map((c , id)=> <li key={id}>
                                 <Link to={`/service?value=${c?.path}`}>
                                  {c?.title}
                                 </Link>
