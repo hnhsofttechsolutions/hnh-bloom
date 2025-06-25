@@ -31,18 +31,6 @@ const HomeGetInTouch = () => {
 
   const submitData = async (e) => {
   e.preventDefault();
-
-  if (
-    !contactData.name.trim() ||
-    !contactData.phone.trim() ||
-    !contactData.email.trim() ||
-    !contactData.subject.trim() ||
-    !contactData.message.trim()
-  ) {
-    toast.error("❌ Please fill in all fields");
-    return;
-  }
-
   try {
     const response = await createContact({
       variables: {
@@ -55,10 +43,8 @@ const HomeGetInTouch = () => {
         companyName: "HNH Soft Tech Solutions",
       },
     });
-
-    console.log("✅ Data posted:", response.data);
-    toast.success("✅ Submit Successful");
-
+    console.log("🚀 ~ submitData ~ response:", response)
+    toast.success("Message received! I’ll contact you shortly.")
     setContactData({
       name: "",
       lname: "",
@@ -68,8 +54,7 @@ const HomeGetInTouch = () => {
       message: "",
     });
   } catch (err) {
-    console.error("❌ Error submitting form:", err);
-    toast.error("❌ Something went wrong");
+    console.error("Error submitting form:", err);
   }
 };
 
@@ -157,7 +142,7 @@ const HomeGetInTouch = () => {
                               />
                             </div>
                           </div>
-                          <div className="col-lg-6">
+                          <div className="col-lg-12">
                             <div className="form-group">
                               <input
                                 className="input-field"

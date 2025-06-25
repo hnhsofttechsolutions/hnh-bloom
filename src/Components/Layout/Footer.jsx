@@ -32,7 +32,7 @@ const Footer = () => {
                     <Link to="https://www.facebook.com/hnhtechsolutions">
                       <i className="fa-brands fa-instagram" />
                     </Link>
-                    <Link to="#">
+                    <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                       <i className="fa-brands fa-linkedin-in" />
                     </Link>
                     <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">

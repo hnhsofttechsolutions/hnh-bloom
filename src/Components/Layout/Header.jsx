@@ -20,6 +20,10 @@ const Header = () => {
                 <div className="logo">
                   <Link to="/">
                     <img
+                      onClick={() => window.scrollTo({
+                        top:0,
+                        behavior:"smooth"
+                      })}
                       className="logo-dark"
                       src="assets/images/logo/logo-white.png"
                       alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
@@ -28,7 +32,10 @@ const Header = () => {
                 </div>
                 <nav className="tmp-mainmenu-nav d-none d-xl-block">
                   <ul className="tmp-mainmenu">
-                    <li>
+                    <li onClick={() => window.scrollTo({
+                      top:0,
+                      behavior:"smooth"
+                    })}>
                       <Link to="/">Home</Link>
                     </li>
                     <li>
@@ -144,7 +151,7 @@ const Header = () => {
                       <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                         <i className="fa-brands fa-instagram" />
                       </Link>
-                      <Link to="#">
+                      <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                         <i className="fa-brands fa-linkedin-in" />
                       </Link>
                       <Link to="https://www.facebook.com/hnhtechsolutions">
@@ -216,7 +223,7 @@ const Header = () => {
             </div>
             <div className="content-wrapper">
               <div className="image-area-feature">
-                <Link to="index.html">
+                <Link to="">
                   <img
                     src="assets/images/banner/HnH Soft Tech-whit.png"
                     alt="personal-logo"
@@ -271,7 +278,7 @@ const Header = () => {
                   <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                     <i className="fa-brands fa-instagram" />
                   </Link>
-                  <Link to="#">
+                  <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                     <i className="fa-brands fa-linkedin-in" />
                   </Link>
                   <Link to="https://www.facebook.com/hnhtechsolutions">
@@ -326,6 +333,10 @@ const Header = () => {
                 <Link
                   onClick={() => {
                     setMobileSideBar(false);
+                    window.scrollTo({
+                      top:0,
+                      behavior:"smooth"
+                    })
                   }}
                   to="/"
                 >
@@ -458,7 +469,7 @@ const Header = () => {
                 <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                   <i className="fa-brands fa-instagram" />
                 </Link>
-                <Link to="#">
+                <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                   <i className="fa-brands fa-linkedin-in" />
                 </Link>
                 <Link to="https://www.facebook.com/hnhtechsolutions">

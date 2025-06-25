@@ -53,7 +53,7 @@ const BlogClassic = () => {
                     
                       </div>
                       <div className="blog-classic-content ">
-                        <div className="blog-classic-tag">
+                        {/* <div className="blog-classic-tag">
                           <ul>
                             {item.tags.map((tag, i) => (
                               <li key={i}>
@@ -72,7 +72,7 @@ const BlogClassic = () => {
                               </li>
                             ))}
                           </ul>
-                        </div>
+                        </div> */}
                         <h2 className="title">
                           {item.title}
                         </h2>

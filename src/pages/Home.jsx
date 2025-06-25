@@ -15,10 +15,9 @@ import GETDATA from "../queries/get-post";
 import Loading from "../Components/loading/Loading";
 
 const Home = () => {
-  const { data, loading } = useQuery(GETDATA, {
-    variables: { skip: 1, limit: 4, categoryId: undefined },
+  const { data , loading } = useQuery(GETDATA, {
+    variables: { skip: 0, limit: 4, categoryId:undefined },
   });
-  console.log("🚀 ~ Home ~ data:", data)
 
   if (loading) return <div><Loading/></div>;
 
@@ -39,15 +38,15 @@ const Home = () => {
       <div className="md:my-20">
         <HomeSupportedCompany />
       </div>
-      <HomePortfolio data={data}  />
+      <HomePortfolio data={data} />
       <div className="mt-10">
         <HomeMySkills />
       </div>
       <HomeTestimonial />
-      <div className="mt-10">
+      <div className="py-10">
         <HomeGetInTouch />
       </div>
-      <HomeBlog />
+      {/* <HomeBlog /> */}
     </>
   );
 };

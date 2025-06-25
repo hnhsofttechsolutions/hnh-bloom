@@ -8,7 +8,7 @@ import Loading from '../Components/loading/Loading';
 
 const Project = () => {
    const { data , loading } = useQuery(GETDATA, {
-      variables: { skip: 1, limit: 9, categoryId: undefined },
+      variables: { skip: 0, limit: 11, categoryId: undefined },
     });
     
     

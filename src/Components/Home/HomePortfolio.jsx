@@ -28,10 +28,19 @@ import { Link, useLocation } from "react-router-dom";
 //     link: '/project-detail',
 //   },
 // ];
-
+// var app = 28;
 const HomePortfolio = ({ data }) => {
-  const [tabCurrent, setTabCurrent] = useState("Logos");
+  console.log("🚀 ~ HomePortfolio ~ data:", data)
+  
+  const [tabCurrent, setTabCurrent] = useState("App Development");
+
+    const filtered = data?.projects?.data?.filter((items)=> items?.categories[0]?.name === tabCurrent)
+    console.log("🚀 ~ filtered ~ filtered:", filtered)
+ 
+  
+  
   const location = useLocation();
+  
 
   return (
     <>
@@ -55,34 +64,34 @@ const HomePortfolio = ({ data }) => {
           {location.pathname === "/project" ? (
             <div className="tabs mb-4">
               <div className="tab-header" id="tabButtons">
-                <div
-                  className={tabCurrent === "WebAPPlications" ? "active" : undefined}
-                  onClick={() => setTabCurrent("WebAPPlications")}
-                >
-                  Web APPlications
-                </div>
-                <div
+                 <div
                   className={
-                    tabCurrent === "MobileApplications" ? "active" : undefined
+                    tabCurrent === "App Development" ? "active" : undefined
                   }
-                  onClick={() => setTabCurrent("MobileApplications")}
+                  onClick={() => setTabCurrent("App Development")}
                 >
                   Mobile Applications
                 </div>
                 <div
+                  className={tabCurrent === "Web Development" ? "active" : undefined}
+                  onClick={() => setTabCurrent("Web Development")}
+                >
+                  Web APPlications
+                </div>
+                {/* <div
                   className={
                     tabCurrent === "Logos" ? "active" : undefined
                   }
                   onClick={() => setTabCurrent("Logos")}
                 >
                   Logos
-                </div>
+                </div> */}
               </div>
             </div>
           ) : null}
 
           <div className="row">
-            {data?.projects?.data.map((item, index) => (
+            {location.pathname === "/project" ? filtered?.map((item, index) => (
               <div className="col-lg-6 col-sm-6" key={index}>
                 <div
                   className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${
@@ -111,7 +120,7 @@ const HomePortfolio = ({ data }) => {
                         </Link>
                       </h3>
                       <p className="portfoli-card-para">
-                        {item.categories[0].name}
+                        {item.categories[0]?.name}
                       </p>
                     </div>
                     <Link
@@ -126,7 +135,53 @@ const HomePortfolio = ({ data }) => {
                   </div>
                 </div>
               </div>
-            ))}
+            )): 
+            data?.projects?.data?.map((item, index) => (
+              <div className="col-lg-6 col-sm-6" key={index}>
+                <div
+                  className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${
+                    index + 1
+                  }`}
+                >
+                  <div className="portfoli-card-img">
+                    <div className="img-box v2">
+                      <Link
+                        className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
+                        to={`/project-detail/${item?.id}`}
+                      >
+                        <img
+                          className="w-100"
+                          src={`https://api.hnhtechsolutions.com${item.images[0]}`}
+                          alt="Thumbnail"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="portfolio-card-content-wrap">
+                    <div className="content-left">
+                      <h3 className="portfolio-card-title">
+                        <Link className="link" to={item.link}>
+                          {item.title}
+                        </Link>
+                      </h3>
+                      <p className="portfoli-card-para">
+                        {item.categories[0]?.name}
+                      </p>
+                    </div>
+                    <Link
+                      to={item?.ProjectDemoLink[0]?.link}
+                      className="tmp-arrow-icon-btn"
+                    >
+                      <div className="btn-inner">
+                        <i className="tmp-icon fa-solid fa-arrow-up-right" />
+                        <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))
+            }
           </div>
         </div>
       </div>
