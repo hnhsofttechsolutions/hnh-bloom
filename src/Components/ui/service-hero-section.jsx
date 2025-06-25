@@ -106,7 +106,7 @@ const ServiceHeroSection = ({ serviceData }) => {
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
-                      <span className="cd-words-wrapper">
+                      <span className="">
                         <b className="is-visible theme-gradient !text-6xl">
                           {serviceData?.heading?.split(" ")?.length > 5 ? (
                             <>
