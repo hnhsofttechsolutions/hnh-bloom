@@ -1,7 +1,7 @@
 export const serviceData = [
   {
     path:'dot-net-developer',
-    title: ".Net Developer Services",
+    title: ".Net Development Services",
     heading: ".NET Development Services",
     paragraph:"Welcome to Invision Solutions where our unmatched .NET development services are at the forefront of empowering businesses with tailored, and cutting-edge solutions. With a blend of technical prowess and innovative strategies, our experienced team of .NET developers is dedicated to delivering exceptional .NET development services that meet the evolving demands of the digital era.",
   },
@@ -11,6 +11,7 @@ export const serviceData = [
     title: "Enterprise Web Development",
     heading: "Web Development Service",
     paragraph:"We are a team of forward-thinking developers, delivering web development service that are not only innovative but also tailor-made to meet the unique demands of your business. Our solutions are designed to streamline processes, enhance user experience, and drive growth in ways that set you apart in your industry. Partner with us to elevate your business to the next level of success in the digital world.",
+    p:'Building the future, tailored to your needs – Our custom developed solutions pave the way for innovative and efficient businesses.',
     child:[
         {
          path:"angular-development-company",
@@ -26,6 +27,7 @@ export const serviceData = [
     title: " Mobile App Development Services",
     heading: "Mobile App Development Services",
     paragraph:"With a focus on delivering results and user-friendly experiences, we bring your vision to life through our combination of cutting-edge technology, creative design, and unparalleled expertise. Whether you’re looking to enhance your business or disrupt an industry, we are here to make your app dreams a reality.",
+    p:"With a focus on innovation, creativity, and effectiveness, we bring the future of mobile apps to fruition",
     child: [
       {
         path:"android-development-service",
@@ -54,35 +56,36 @@ export const serviceData = [
     title: "Metaverse Development",
     heading: "Metaverse Development Company",
     paragraph:"Embark on a transformative journey to the future with our leading Metaverse Development Company. As seasoned experts in the field, we specialize in crafting immersive virtual worlds that seamlessly blur the lines between reality and fantasy. From conceptualization to meticulous execution, we breathe life into your vision, ushering in a new realm of existence where the impossible becomes possible. Join forces with us as we shape the metaverse into a dynamic and perpetually evolving space, redefining the boundaries of human experience.",
+    p:"Let us be your guide as we craft a metaverse filled with endless possibility and beauty. A place where dreams come to life, where reality is redefined",
   },
   {
     path:"quality-assurancet-testing-services",
     title: "QA & Testing",
     heading: "Quality Assurance Testing Services",
-    paragraph:
-      "Achieve software excellence with our comprehensive testing and QA services. Our team of experts use the latest tools and techniques to ensure your software meets the highest standards of reliability, performance, and security. With a sharp eye for detail and a passion for quality, we deliver results you can trust.",
+    paragraph:"Achieve software excellence with our comprehensive testing and QA services. Our team of experts use the latest tools and techniques to ensure your software meets the highest standards of reliability, performance, and security. With a sharp eye for detail and a passion for quality, we deliver results you can trust.",
+    p:"Elevate your software to new heights with Quality-Driven Testing and QA.",
   },
   {
     path:"business-intelligence-services",
     title: "Business Intelligence",
     heading: "Business Intelligence Services",
-    paragraph:
-      "Transform your data into actionable insights with our state-of-the-art Business Intelligence services. Our team of experts utilizes the latest technologies, including advanced analytics and big data processing, to deliver customized solutions that meet the unique needs of your organization. From real-time dashboards and interactive reports to predictive modeling and deep data analysis, we help you gain a competitive advantage and make informed decisions that drive business success.",
+    paragraph:"Transform your data into actionable insights with our state-of-the-art Business Intelligence services. Our team of experts utilizes the latest technologies, including advanced analytics and big data processing, to deliver customized solutions that meet the unique needs of your organization. From real-time dashboards and interactive reports to predictive modeling and deep data analysis, we help you gain a competitive advantage and make informed decisions that drive business success.",
+    p:"Partner with us to leverage the power of data and stay ahead in today’s ever-evolving market.",
   },
   {
     path:"talent-acquisition-services",
     title: "Talent Acquisition Services",
     heading: "Talent Acquisition",
-    paragraph:
-      "At our core, we understand that acquiring exceptional technical talent is the key to unlocking a company’s success. That’s why our comprehensive Talent Acquisition Services are designed to help businesses truly shine. With a global reach, we scour the world to identify the brightest tech minds, employing our expertise in recruiting and onboarding to ensure that your company’s technical talent not only stands out but also shines like a polished diamond. Partner with us to unearth the true gems of the industry and build a formidable team that propels your organization towards unparalleled achievements.",
+    paragraph:"At our core, we understand that acquiring exceptional technical talent is the key to unlocking a company’s success. That’s why our comprehensive Talent Acquisition Services are designed to help businesses truly shine. With a global reach, we scour the world to identify the brightest tech minds, employing our expertise in recruiting and onboarding to ensure that your company’s technical talent not only stands out but also shines like a polished diamond. Partner with us to unearth the true gems of the industry and build a formidable team that propels your organization towards unparalleled achievements.",
+    p:"Trust us to be the experts in discovering and delivering the technical talent your company deserves",
   },
 
   {
     path:"AI-and-ML-services",
     title: "AI & Machine Learning",
     heading: "AI And ML Services",
-    paragraph:
-      "Transform your data into a valuable asset with the help of our expert AI and ML services. We leverage the latest technologies in artificial intelligence, data analysis, and machine learning to provide businesses with solutions that drive results. Whether you need help with data optimization, strategy development, or problem-solving, we have the expertise to help.",
+    paragraph:"Transform your data into a valuable asset with the help of our expert AI and ML services. We leverage the latest technologies in artificial intelligence, data analysis, and machine learning to provide businesses with solutions that drive results. Whether you need help with data optimization, strategy development, or problem-solving, we have the expertise to help.",
+    p:"Contact us today to schedule a consultation and discover the power of intelligent data.",
   },
 
   {

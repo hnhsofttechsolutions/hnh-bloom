@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * jQuery.appear
  * https://github.com/bas2k/jquery.appear/

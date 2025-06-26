@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { serviceData } from "../../utils/temp";
 
 const Footer = () => {
   const [demoModal, setDemoModal] = useState(false);
@@ -28,16 +29,13 @@ const Footer = () => {
                     and succeed in a competitive digital world.
                   </p>
                   <div className="social-link footer">
-                    <Link to="#">
+                    <Link to="https://www.facebook.com/hnhtechsolutions">
                       <i className="fa-brands fa-instagram" />
                     </Link>
-                    <Link to="#">
+                    <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                       <i className="fa-brands fa-linkedin-in" />
                     </Link>
-                    <Link to="#">
-                      <i className="fa-brands fa-twitter" />
-                    </Link>
-                    <Link to="#">
+                    <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                       <i className="fa-brands fa-facebook-f" />
                     </Link>
                   </div>
@@ -53,19 +51,19 @@ const Footer = () => {
               {/* Column 2: Quick Link Set 1 */}
               <div className="col-lg-3 col-md-6">
                 <div className="single-footer-wrapper quick-link-wrap">
-                  <h5 className="ft-title">Quick Link</h5>
-                  <ul className="ft-link tmp-link-animation">
-                    <li>
-                      <Link to="/about">Home</Link>
+                  <h5 className="ft-title lg:text-center">Quick Link</h5>
+                  <ul className="ft-link tmp-link-animation  lg:flex flex-col justify-center items-center">
+                    <li className="">
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/service">About</Link>
+                      <Link to="/about">About</Link>
                     </li>
                     <li>
-                      <Link to="/contact">Service</Link>
+                      <Link to="/service">Service</Link>
                     </li>
                     <li>
-                      <Link to="/blog">Portfolio</Link>
+                      <Link to="/project">Portfolio</Link>
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
@@ -79,18 +77,20 @@ const Footer = () => {
                 <div className="single-footer-wrapper quick-link-wrap">
                   <h5 className="ft-title">Services</h5>
                   <ul className="ft-link tmp-link-animation">
-                    <li>
-                      <Link to="/privacy-policy">Web Development</Link>
-                    </li>
-                    <li>
-                      <Link to="/terms">App Development</Link>
-                    </li>
-                    <li>
-                      <Link to="/faq">UI/UX Design</Link>
-                    </li>
-                    <li>
-                      <Link to="/team">Digital Marketing</Link>
-                    </li>
+                    {serviceData?.map((e , i) => (
+                      <li key={i} className="has-dropdown-custom">
+                        <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
+                        <ul className="submenu-custom">
+                          {e?.child?.map((c , id) => (
+                            <li key={id}>
+                              <Link to={`/service?value=${c?.path}`}>
+                                {c?.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -104,7 +104,9 @@ const Footer = () => {
                       <span className="ft-icon">
                         <i className="fa-solid fa-envelope" />
                       </span>
-                      <a href="mailto:info@hnhsofttechsolutions.com">info@hnhsofttechsolutions.com</a>
+                      <a href="mailto:info@hnhsofttechsolutions.com">
+                        info@hnhsofttechsolutions.com
+                      </a>
                     </li>
                     <li>
                       <span className="ft-icon">
@@ -134,13 +136,17 @@ const Footer = () => {
                       <span className="ft-icon">
                         <FaWhatsapp />
                       </span>
-                      <Link to="tel:+447506100310">UK: 44 7506 100310</Link>
+                      <Link target="_blank" to="https://wa.me/+447506100310">
+                        UK: 44 7506 100310
+                      </Link>
                     </li>
                     <li>
                       <span className="ft-icon">
                         <FaWhatsapp />
                       </span>
-                      <Link to="tel:+19403440682">US: +1 940 3440 682</Link>
+                      <Link target="_blank" to="https://wa.me/+19403440682">
+                        US: +1 940 3440 682
+                      </Link>
                     </li>
                     <li>
                       <span className="ft-icon">
@@ -303,7 +309,7 @@ const Footer = () => {
             </button>
             </div> */}
 
-      <div onClick={() => setDemoModal(true)} className="demo-button-wrapper">
+      <div onClick={() => setDemoModal(false)} className="demo-button-wrapper">
         <div className="all-demo show-demo ">
           <div className="demos">
             <div className="theme-wrapper">
@@ -378,7 +384,7 @@ const Footer = () => {
                       <div className="single-demo">
                         <div className="inner">
                           <div className="thumbnail">
-                            <Link to="index.html">
+                            <Link to="/">
                               <img
                                 className="w-100"
                                 src="assets/images/demo/home-1.png"
@@ -394,7 +400,7 @@ const Footer = () => {
                           </div>
                           <div className="inner">
                             <h3 className="title">
-                              <Link to="index.html">Main Demo</Link>
+                              <Link to="/">Main Demo</Link>
                             </h3>
                           </div>
                         </div>

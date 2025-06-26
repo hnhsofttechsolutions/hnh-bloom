@@ -18,7 +18,7 @@ const HomeBanner = () => {
               />
             </div>
           </div>
-          <div className="col-lg-6 order-lg-1">
+          <div className="col-lg-6 order-lg-1 py-10">
             <div className="inner">
               <span className="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
                 Welcome
@@ -27,9 +27,9 @@ const HomeBanner = () => {
                 Empower Your<br />
                 <span className="header-caption">
                   <span className="cd-headline clip is-full-width">
-                    <span className="cd-words-wrapper">
+                    <span className="">
                       <b className="is-visible theme-gradient">Digital Transformation </b>
-                      <b className="is-hidden theme-gradient">with Scalable IT Solutions</b>
+                      <b className="is-visible theme-gradient">with Scalable IT Solutions</b>
                     </span>
                   </span>
                 </span>

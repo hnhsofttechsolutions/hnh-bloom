@@ -26465,7 +26465,9 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
   ================================*/
 @media (min-width: 768px) {
   .single-footer-wrapper.quick-link-wrap {
-    margin-left: 80px;
+    /* margin-left: 80px; */
+    justify-content: center;
+    align-items:center;
   }
 }
 .single-footer-wrapper .social-link {
@@ -27146,3 +27148,112 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
   color: #3d3d3d !important;
 }
 /*# sourceMappingURL=../maps/style.css.map */
+/* Prior to using this loader, please ensure that you have set a background image or background color, as the text is transparent and not designed with a solid color. */
+.loader {
+  --ANIMATION-DELAY-MULTIPLIER: 70ms;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.loader span {
+  padding: 0;
+  margin: 0;
+  letter-spacing: -5rem;
+  animation-delay: 0s;
+  transform: translateY(4rem);
+  animation: hideAndSeek 1s alternate infinite cubic-bezier(0.86, 0, 0.07, 1);
+}
+.loader .l {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 0);
+}
+.loader .o {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 1);
+}
+.loader .a {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 2);
+}
+.loader .d {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 3);
+}
+.loader .ispan {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 4);
+}
+.loader .n {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 5);
+}
+.loader .g {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 6);
+}
+.letter {
+  width: fit-content;
+  height: 3rem;
+}
+.i {
+  margin-inline: 5px;
+}
+@keyframes hideAndSeek {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+.tabs {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tab-header {
+  display: flex;
+  color:black;
+  font:bolder;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-header div {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-header div:hover {
+  background-color: #f0f0f0;
+}
+
+.tab-header .active {
+  border-bottom: 3px solid rgb(243, 0, 73);
+  font-weight: bold;
+  color: rgb(243, 0, 73);
+}
+
+.tab-content {
+  padding: 20px;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+.logo-images img{
+  height: 150px;
+  width: 250px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+.loader {
+  /* Make sure it's visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

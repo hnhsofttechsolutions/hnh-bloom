@@ -20,15 +20,22 @@ const Header = () => {
                 <div className="logo">
                   <Link to="/">
                     <img
+                      onClick={() => window.scrollTo({
+                        top:0,
+                        behavior:"smooth"
+                      })}
                       className="logo-dark"
                       src="assets/images/logo/logo-white.png"
-                      alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                      alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                     />
                   </Link>
                 </div>
                 <nav className="tmp-mainmenu-nav d-none d-xl-block">
                   <ul className="tmp-mainmenu">
-                    <li>
+                    <li onClick={() => window.scrollTo({
+                      top:0,
+                      behavior:"smooth"
+                    })}>
                       <Link to="/">Home</Link>
                     </li>
                     <li>
@@ -40,10 +47,10 @@ const Header = () => {
                         <i className="fa-regular fa-chevron-down" />
                       </Link>
                       <ul className="submenu">
-                        {serviceData?.map(e => ( <li className="has-dropdown-custom">
+                        {serviceData?.map((e , i) => ( <li key={i} className="has-dropdown-custom">
                           <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
                           <ul className="submenu-custom">
-                             {e?.child?.map(c=> <li>
+                             {e?.child?.map((c , id)=> <li key={id}>
                                 <Link to={`/service?value=${c?.path}`}>
                                  {c?.title}
                                 </Link>
@@ -107,32 +114,31 @@ const Header = () => {
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <Link to="#">
+                      <Link to="/blog">
                         Blog
-                        <i className="fa-regular fa-chevron-down" />
+                        {/* <i className="fa-regular fa-chevron-down" /> */}
                       </Link>
-                      <ul className="submenu">
+                      {/* <ul className="submenu">
                         <li>
                           <Link to="/blog">Blog Classic</Link>
                         </li>
                         <li>
                           <Link to="/blog-detail">Blog Details</Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li className="has-dropdown">
-                      <Link to="#">
+                      <Link to="/project">
                         Project
-                        <i className="fa-regular fa-chevron-down" />
                       </Link>
-                      <ul className="submenu">
+                      {/* <ul className="submenu">
                         <li>
                           <Link to="/project">Project</Link>
                         </li>
                         <li>
                           <Link to="/project-detail">Project Details</Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
@@ -142,16 +148,13 @@ const Header = () => {
                 <div className="tmp-header-right">
                   <div className="social-share-wrapper d-none d-md-block">
                     <div className="social-link">
-                      <Link to="#">
+                      <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                         <i className="fa-brands fa-instagram" />
                       </Link>
-                      <Link to="#">
+                      <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                         <i className="fa-brands fa-linkedin-in" />
                       </Link>
-                      <Link to="#">
-                        <i className="fa-brands fa-twitter" />
-                      </Link>
-                      <Link to="#">
+                      <Link to="https://www.facebook.com/hnhtechsolutions">
                         <i className="fa-brands fa-facebook-f" />
                       </Link>
                     </div>
@@ -199,12 +202,12 @@ const Header = () => {
                 {/* <img
               className="logo-dark"
               src="assets/images/logo/logo-white.png"
-              alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+              alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
             />
             <img
               className="logo-white"
               src="assets/images/logo/logo-white.png"
-              alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+              alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
             /> */}
               </Link>
               <div
@@ -220,9 +223,9 @@ const Header = () => {
             </div>
             <div className="content-wrapper">
               <div className="image-area-feature">
-                <Link to="index.html">
+                <Link to="">
                   <img
-                    src="assets/images/banner/home-hero.jpeg"
+                    src="assets/images/banner/HnH Soft Tech-whit.png"
                     alt="personal-logo"
                   />
                 </Link>
@@ -242,7 +245,7 @@ const Header = () => {
                   <div className="information tmp-link-animation">
                     <span>Call Now</span>
                     <Link to="#" className="number">
-                      +1 (555) 123-4567
+                      +1 (972) 777-4163
                     </Link>
                   </div>
                 </div>
@@ -253,7 +256,7 @@ const Header = () => {
                   <div className="information tmp-link-animation">
                     <span>Mail Us</span>
                     <Link to="#" className="number">
-                      contact@example.com
+                      info@hnhsofttechsolutions.com
                     </Link>
                   </div>
                 </div>
@@ -263,7 +266,7 @@ const Header = () => {
                   <i className="fa-solid fa-location-crosshairs" />
                   <div className="information tmp-link-animation">
                     <span>My Address</span>
-                    <span className="number">New York, NY 10001</span>
+                    <span className="number">3900 West northwest highway Apt 1172 Dallas TX 75220</span>
                   </div>
                 </div>
                 {/* single contact information end */}
@@ -272,16 +275,13 @@ const Header = () => {
               <div className="social-wrapper mt--20">
                 <span className="subtitle">find with me</span>
                 <div className="social-link">
-                  <Link to="#">
+                  <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                     <i className="fa-brands fa-instagram" />
                   </Link>
-                  <Link to="#">
+                  <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                     <i className="fa-brands fa-linkedin-in" />
                   </Link>
-                  <Link to="#">
-                    <i className="fa-brands fa-twitter" />
-                  </Link>
-                  <Link to="#">
+                  <Link to="https://www.facebook.com/hnhtechsolutions">
                     <i className="fa-brands fa-facebook-f" />
                   </Link>
                 </div>
@@ -296,7 +296,7 @@ const Header = () => {
         />
       </div>
 
-      {/* mobile responsive */}
+      {/* mobile responsive */}                                                                          
       <div className="d-block d-xl-none ">
         <div
           className={`tmp-popup-mobile-menu ${mobileSideBar ? "active" : ""}`}
@@ -307,13 +307,13 @@ const Header = () => {
                 <Link to="/" className="logo-area">
                   <img
                     className="logo-dark"
-                    src="assets/images/logo/white-logo-reeni.png"
-                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                    src="assets/images/logo/logo-white.png"
+                    alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                   />
                   <img
                     className="logo-white"
                     src="assets/images/logo/logo-white.png"
-                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"
+                    alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                   />
                 </Link>
               </div>
@@ -333,6 +333,10 @@ const Header = () => {
                 <Link
                   onClick={() => {
                     setMobileSideBar(false);
+                    window.scrollTo({
+                      top:0,
+                      behavior:"smooth"
+                    })
                   }}
                   to="/"
                 >
@@ -462,16 +466,13 @@ const Header = () => {
             <div className="social-wrapper mt--40">
               <span className="subtitle">find with me</span>
               <div className="social-link">
-                <Link to="#">
+                <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                   <i className="fa-brands fa-instagram" />
                 </Link>
-                <Link to="#">
+                <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
                   <i className="fa-brands fa-linkedin-in" />
                 </Link>
-                <Link to="#">
-                  <i className="fa-brands fa-twitter" />
-                </Link>
-                <Link to="#">
+                <Link to="https://www.facebook.com/hnhtechsolutions">
                   <i className="fa-brands fa-facebook-f" />
                 </Link>
               </div>

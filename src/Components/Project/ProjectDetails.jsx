@@ -4,7 +4,18 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ProjectDetailsTabs from "./ProjectDetailsTabs";
-const ProjectDetails = () => {
+import { useParams } from "react-router-dom";
+const ProjectDetails = ({data}) => {
+  
+  const {id} = useParams();
+   const project = data?.projects?.data?.find(
+    (item) => String(item.id) === id 
+  );
+   console.log("🚀 ~ ProjectDetails ~ project:", project)
+
+  
+  
+  
   return (
     <>
       <div className="project-details-area-wrapper tmp-section-gap">
@@ -13,7 +24,7 @@ const ProjectDetails = () => {
             <div className="col-lg-12">
               <div className="project-details-thumnail-wrap">
                 <img
-                  src="assets/images/portfolio/portfolio-one.jpg"
+                  src={`https://api.hnhtechsolutions.com${project?.images[0]}`}
                   alt="thumbnail"
                 />
               </div>
@@ -33,17 +44,16 @@ const ProjectDetails = () => {
                     spaceBetween={30} // Optional: gap between slides
                     className="swiper project-details-swiper"
                   >
-                    {[
+                    {/* {[
                       "assets/images/projects-details/project-detials-swiper-img-1.jpg",
                       "assets/images/projects-details/project-detials-swiper-img-2.png",
                       "assets/images/projects-details/project-detials-swiper-img-1.jpg",
-                    ].map((imgSrc, index) => (
-                      <SwiperSlide key={index}>
-                        <div className="project-details-img">
-                          <img src={imgSrc} alt="swiper-img" />
+                    ].map((imgSrc, index) => ( */}
+                     {project?.images?.map((img , indx) => <SwiperSlide >
+                        <div key={indx} className="project-details-img">
+                          <img src={`https://api.hnhtechsolutions.com${img}`} alt="swiper-img" />
                         </div>
-                      </SwiperSlide>
-                    ))}
+                      </SwiperSlide>)}
                   </Swiper>
 
                   <div className="project-details-swiper-btn">
@@ -71,7 +81,7 @@ const ProjectDetails = () => {
                 </div>
                 <div className="body">
                   <div className="project-details-info">
-                    Client: <span>ShopEase Ltd.</span>
+                    Client: <span>{project.client.firstName}{project.client.secondtName}</span>
                   </div>
                   <div className="project-details-info">
                     Role: <span>Full Stack Developer</span>

@@ -11,7 +11,7 @@ import Contact from "../pages/Contact";
 export const RouterList = [
   {
     path: "/",
-    element: <Home />,
+    element: <Home/>,
   },
    {
     path: "/about",
@@ -40,7 +40,7 @@ export const RouterList = [
     element: <Project />,
   },
    {
-    path: "/project-detail",
+    path: "/project-detail/:id",
     element: <ProjectDetail />,
   },
   {

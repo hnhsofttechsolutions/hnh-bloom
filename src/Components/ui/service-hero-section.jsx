@@ -4,7 +4,7 @@ const ServiceHeroSection = ({ serviceData }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container py-24">
         <div className="banner-one-main-wrapper">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2 ">
@@ -106,7 +106,7 @@ const ServiceHeroSection = ({ serviceData }) => {
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
                   <span className="header-caption">
                     <span className="cd-headline clip is-full-width">
-                      <span className="cd-words-wrapper">
+                      <span className="">
                         <b className="is-visible theme-gradient !text-6xl">
                           {serviceData?.heading?.split(" ")?.length > 5 ? (
                             <>
@@ -132,6 +132,7 @@ const ServiceHeroSection = ({ serviceData }) => {
                 <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
                   {serviceData?.paragraph}
                 </p>
+               <p className="mt-10">{serviceData?.p}</p>
               </div>
             </div>
           </div>

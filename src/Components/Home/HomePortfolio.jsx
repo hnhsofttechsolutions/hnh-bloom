@@ -1,33 +1,47 @@
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const portfolioData = [
-  {
-    img: 'assets/images/portfolio/portfolio-img-10.jpg',
-    title: 'Digital Transformation Advisors',
-    subtitle: 'Web Design',
-    link: '/project-detail',
-  },
-  {
-    img: 'assets/images/portfolio/portfolio-img-6.jpg',
-    title: 'My work is driven by the belief that thoughtful.',
-    subtitle: 'App Development',
-    link: '/project-detail',
-  },
-  {
-    img: 'assets/images/portfolio/portfolio-img-9.jpg',
-    title: 'In this portfolio, you’ll find a curated selection',
-    subtitle: 'Web Design',
-    link: '/project-detail',
-  },
-  {
-    img: 'assets/images/portfolio/portfolio-img-8.jpg',
-    title: 'I’ve had the privilege of working with various',
-    subtitle: 'App Development',
-    link: '/project-detail',
-  },
-];
+// eslint-disable-next-line no-unused-vars
+// const portfolioData = [
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-10.jpg',
+//     title: 'Digital Transformation Advisors',
+//     subtitle: 'Web Design',
+//     link: '/project-detail',
+//   },
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-6.jpg',
+//     title: 'My work is driven by the belief that thoughtful.',
+//     subtitle: 'App Development',
+//     link: '/project-detail',
+//   },
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-9.jpg',
+//     title: 'In this portfolio, you’ll find a curated selection',
+//     subtitle: 'Web Design',
+//     link: '/project-detail',
+//   },
+//   {
+//     img: 'assets/images/portfolio/portfolio-img-8.jpg',
+//     title: 'I’ve had the privilege of working with various',
+//     subtitle: 'App Development',
+//     link: '/project-detail',
+//   },
+// ];
+// var app = 28;
+const HomePortfolio = ({ data }) => {
+  console.log("🚀 ~ HomePortfolio ~ data:", data)
+  
+  const [tabCurrent, setTabCurrent] = useState("App Development");
 
-const HomePortfolio = () => {
+    const filtered = data?.projects?.data?.filter((items)=> items?.categories[0]?.name === tabCurrent)
+    console.log("🚀 ~ filtered ~ filtered:", filtered)
+ 
+  
+  
+  const location = useLocation();
+  
+
   return (
     <>
       {/* Tpm Latest Portfolio Area Start */}
@@ -42,23 +56,59 @@ const HomePortfolio = () => {
               <br /> Exceptional
             </h2>
             <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-              Each project reflects our commitment to innovation, precision, and client success. Browse through our latest work to see how we help businesses improve performance, efficiency, and digital presence.
+              Each project reflects our commitment to innovation, precision, and
+              client success. Browse through our latest work to see how we help
+              businesses improve performance, efficiency, and digital presence.
             </p>
           </div>
+          {location.pathname === "/project" ? (
+            <div className="tabs mb-4">
+              <div className="tab-header" id="tabButtons">
+                 <div
+                  className={
+                    tabCurrent === "App Development" ? "active" : undefined
+                  }
+                  onClick={() => setTabCurrent("App Development")}
+                >
+                  Mobile Applications
+                </div>
+                <div
+                  className={tabCurrent === "Web Development" ? "active" : undefined}
+                  onClick={() => setTabCurrent("Web Development")}
+                >
+                  Web APPlications
+                </div>
+                {/* <div
+                  className={
+                    tabCurrent === "Logos" ? "active" : undefined
+                  }
+                  onClick={() => setTabCurrent("Logos")}
+                >
+                  Logos
+                </div> */}
+              </div>
+            </div>
+          ) : null}
 
           <div className="row">
-            {portfolioData.map((item, index) => (
+            {location.pathname === "/project" ? filtered?.map((item, index) => (
               <div className="col-lg-6 col-sm-6" key={index}>
                 <div
-                  className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}
+                  className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${
+                    index + 1
+                  }`}
                 >
                   <div className="portfoli-card-img">
                     <div className="img-box v2">
                       <Link
                         className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                        to={item.link}
+                        to={`/project-detail/${item?.id}`}
                       >
-                        <img className="w-100" src={item.img} alt="Thumbnail" />
+                        <img
+                          className="w-100"
+                          src={`https://api.hnhtechsolutions.com${item.images[0]}`}
+                          alt="Thumbnail"
+                        />
                       </Link>
                     </div>
                   </div>
@@ -69,9 +119,14 @@ const HomePortfolio = () => {
                           {item.title}
                         </Link>
                       </h3>
-                      <p className="portfoli-card-para">{item.subtitle}</p>
+                      <p className="portfoli-card-para">
+                        {item.categories[0]?.name}
+                      </p>
                     </div>
-                    <Link to={item.link} className="tmp-arrow-icon-btn">
+                    <Link
+                      to={item?.ProjectDemoLink[0]?.link}
+                      className="tmp-arrow-icon-btn"
+                    >
                       <div className="btn-inner">
                         <i className="tmp-icon fa-solid fa-arrow-up-right" />
                         <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />
@@ -80,7 +135,53 @@ const HomePortfolio = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            )): 
+            data?.projects?.data?.map((item, index) => (
+              <div className="col-lg-6 col-sm-6" key={index}>
+                <div
+                  className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${
+                    index + 1
+                  }`}
+                >
+                  <div className="portfoli-card-img">
+                    <div className="img-box v2">
+                      <Link
+                        className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
+                        to={`/project-detail/${item?.id}`}
+                      >
+                        <img
+                          className="w-100"
+                          src={`https://api.hnhtechsolutions.com${item.images[0]}`}
+                          alt="Thumbnail"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="portfolio-card-content-wrap">
+                    <div className="content-left">
+                      <h3 className="portfolio-card-title">
+                        <Link className="link" to={item.link}>
+                          {item.title}
+                        </Link>
+                      </h3>
+                      <p className="portfoli-card-para">
+                        {item.categories[0]?.name}
+                      </p>
+                    </div>
+                    <Link
+                      to={item?.ProjectDemoLink[0]?.link}
+                      className="tmp-arrow-icon-btn"
+                    >
+                      <div className="btn-inner">
+                        <i className="tmp-icon fa-solid fa-arrow-up-right" />
+                        <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))
+            }
           </div>
         </div>
       </div>
