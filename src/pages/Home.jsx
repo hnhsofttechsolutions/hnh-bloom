@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import HomeBanner from "../Components/Home/HomeBanner";
+// eslint-disable-next-line no-unused-vars
 import HomeBlog from "../Components/Home/HomeBlog";
 import HomeCounter from "../Components/Home/HomeCounter";
 import HomeExperience from "../Components/Home/HomeExperience";

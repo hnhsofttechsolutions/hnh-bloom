@@ -198,7 +198,7 @@ const Header = () => {
           <div className="inner">
             <div className="top-area">
               <Link to="/" className="logo">
-                <h1 className="font-bold text-3xl"> HNH SOFT TECH SOLUTIONS</h1>
+                <h1 className="font-bold text-3xl">HNH SOFT TECH SOLUTIONS</h1>
                 {/* <img
               className="logo-dark"
               src="assets/images/logo/logo-white.png"

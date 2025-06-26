@@ -11,6 +11,7 @@
  **/
 
 (function ($) {
+    // eslint-disable-next-line strict
     'use strict';
 
     var form = $('#contact-form');
@@ -44,4 +45,5 @@
         });
     });
 
+// eslint-disable-next-line no-undef
 })(jQuery);

@@ -1,13 +1,25 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { serviceData } from "../../utils/temp";
 import React from "react";
+import { Link } from "react-router-dom";
+// import HomeGetInTouch from "../Home/HomeGetInTouch";
+console.log(serviceData)
+const ServiceHeroSection = ({ Data }) => {
+  console.log("🚀 ~ ServiceHeroSection ~ Data:", Data)
 
-const ServiceHeroSection = ({ serviceData }) => {
-
+  
   return (
     <>
-      <div className="container py-24">
+      <div className="w-full h-10 lg:mt-40 z-50 absolute flex justify-between items-center px-8">
+        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id-1 : serviceData?.[Data?.id-1]?.path}`}><div className="bg-[#ff014f] hover:bg-[#c44068] duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
+        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id+1 : serviceData?.[Data?.id+1]?.path}`}><div className="bg-[#ff014f] hover:bg-[#c44068] duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
+      </div>
+      <div className="container py-20 px-10 relative">
         <div className="banner-one-main-wrapper">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2 ">
+              {/* <HomeGetInTouch/> */}
+
               <div className="contact-inner">
                 <div className="contact-form">
                   <div id="form-messages" className="error" />
@@ -108,9 +120,9 @@ const ServiceHeroSection = ({ serviceData }) => {
                     <span className="cd-headline clip is-full-width">
                       <span className="">
                         <b className="is-visible theme-gradient !text-6xl">
-                          {serviceData?.heading?.split(" ")?.length > 5 ? (
+                          {Data?.heading?.split(" ")?.length > 5 ? (
                             <>
-                              {serviceData?.heading?.split(" ")?.map((word, index) =>
+                              {Data?.heading?.split(" ")?.map((word, index) =>
                                 index === 5 ? (
                                   <>
                                     <br />
@@ -122,7 +134,7 @@ const ServiceHeroSection = ({ serviceData }) => {
                               )}
                             </>
                           ) : (
-                            serviceData?.heading
+                            Data?.heading
                           )}
                         </b>
                       </span>
@@ -130,9 +142,9 @@ const ServiceHeroSection = ({ serviceData }) => {
                   </span>
                 </h1>
                 <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  {serviceData?.paragraph}
+                  {Data?.paragraph}
                 </p>
-               <p className="mt-10">{serviceData?.p}</p>
+               <p className="mt-10">{Data?.p}</p>
               </div>
             </div>
           </div>

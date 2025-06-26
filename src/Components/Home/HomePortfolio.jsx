@@ -160,7 +160,7 @@ const HomePortfolio = ({ data }) => {
                   <div className="portfolio-card-content-wrap">
                     <div className="content-left">
                       <h3 className="portfolio-card-title">
-                        <Link className="link" to={item.link}>
+                        <Link className="link" to={`/project-detail/${item?.id}`}>
                           {item.title}
                         </Link>
                       </h3>
