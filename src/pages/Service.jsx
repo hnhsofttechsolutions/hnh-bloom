@@ -61,7 +61,7 @@ const Service = () => {
       <WhyChooseUs />
       <ServiceCards />
       <OurProcess />
-      <AboutOurPricing />
+      {/* <AboutOurPricing /> */}
     </>
   );
 
