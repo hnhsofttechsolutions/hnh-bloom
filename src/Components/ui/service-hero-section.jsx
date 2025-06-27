@@ -120,10 +120,10 @@ const ServiceHeroSection = ({ Data }) => {
                     <span className="cd-headline clip is-full-width">
                       <span className="">
                         <b className="is-visible theme-gradient !text-6xl">
-                          {Data?.heading?.split(" ")?.length > 5 ? (
+                          {Data?.heading?.split(" ")?.length > 4 ? (
                             <>
                               {Data?.heading?.split(" ")?.map((word, index) =>
-                                index === 5 ? (
+                                index === 4 ? (
                                   <>
                                     <br />
                                     {word}{" "}

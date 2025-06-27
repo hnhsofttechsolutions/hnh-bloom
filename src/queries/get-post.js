@@ -121,3 +121,10 @@ export const CREATE_CONTACT_MUTATION = gql`
     }
   }
 `;
+export const PROJECT_CATEGORIES = gql`
+query Projects {
+  categories {
+    name
+  }
+}
+`

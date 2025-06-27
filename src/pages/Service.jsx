@@ -1,5 +1,5 @@
 import React from "react";
-import AboutOurPricing from "../Components/About/AboutOurPricing";
+// import AboutOurPricing from "../Components/About/AboutOurPricing";
 import Banner from "../Components/Banner";
 import ServiceHero from "../Components/Service/ServiceHero";
 import WhyChooseUs from "../Components/Service/WhyChooseUs";

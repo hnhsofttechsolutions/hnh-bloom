@@ -81,7 +81,7 @@ const ProjectDetails = ({data}) => {
                 </div>
                 <div className="body">
                   <div className="project-details-info">
-                    Client: <span>{project.client.firstName}{project.client.secondtName}</span>
+                    Client: <span>{project?.client?.firstName}{project?.client?.secondtName}</span>
                   </div>
                   <div className="project-details-info">
                     Role: <span>Full Stack Developer</span>
