@@ -12,7 +12,7 @@ const ContactInfo = () => {
             <i className="fa-solid fa-location-dot" />
           </div>
           <h3 className="title">Address</h3>
-          <p className="para">New York, NY 10001</p>
+          <p className="para">3900 West northwest highway Apt 1172 Dallas TX 75220</p>
           {/* <p className="para">house of street</p> */}
         </div>
       </div>
@@ -23,7 +23,7 @@ const ContactInfo = () => {
           </div>
           <h3 className="title">E-mail</h3>
           <a href="mailto:themespark11@gmail.com">
-            <p className="para">contact@example.com</p>
+            <p className="para">info@hnhsofttechsolutions.com</p>
           </a>
           {/* <a href="mailto:themespark11@gmail.com">
             <p className="para">themespark11@gmail.com</p>
@@ -36,7 +36,7 @@ const ContactInfo = () => {
             <i className="fa-solid fa-phone" />
           </div>
           <h3 className="title">Call Me</h3>
-          <p className="para">+1 (555) 123-4567</p>
+          <p className="para">+1 972 777-4163</p>
           {/* <p className="para">+1234 - 000</p> */}
         </div>
       </div>
