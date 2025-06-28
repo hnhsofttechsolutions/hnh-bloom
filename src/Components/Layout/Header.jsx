@@ -307,12 +307,12 @@ const Header = () => {
                 <Link to="/" className="logo-area">
                   <img
                     className="logo-dark"
-                    src="assets/images/logo/logo-white.png"
+                    src="/assets/images/logo/logo-white.png"
                     alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                   />
                   <img
                     className="logo-white"
-                    src="assets/images/logo/logo-white.png"
+                    src="/assets/images/logo/logo-white.png"
                     alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                   />
                 </Link>
@@ -355,102 +355,38 @@ const Header = () => {
               </li>
               <li className="has-dropdown">
                 <Link
-                  onClick={() => {
-                    setMobileSideBar(false);
-                  }}
+                  // onClick={() => {
+                  //   setMobileSideBar(false);
+                  // }}
                   to="#"
                 >
-                  Services
-                  <i className="fa-regular fa-chevron-down" />
+                  <select name="" id="">
+                    <option value="">services</option>
+                    <option value="">mobile</option>
+                    <option value="">mobile</option>
+                  </select>
+                  {/* <i className="fa-regular fa-chevron-down" /> */}
                 </Link>
-                <ul className="submenu">
-                  <li>
-                    <Link
-                      onClick={() => {
-                        setMobileSideBar(false);
-                      }}
-                      to="/service"
-                    >
-                      Service
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      onClick={() => {
-                        setMobileSideBar(false);
-                      }}
-                      to="/service-detail"
-                    >
-                      Service Details
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li className="has-dropdown">
                 <Link
                   onClick={() => {
                     setMobileSideBar(false);
                   }}
-                  to="#"
+                  to="/blog"
                 >
                   Blog
-                  <i className="fa-regular fa-chevron-down" />
                 </Link>
-                <ul className="submenu">
-                  <li>
-                    <Link
-                      onClick={() => {
-                        setMobileSideBar(false);
-                      }}
-                      to="/blog"
-                    >
-                      Blog Classic
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      onClick={() => {
-                        setMobileSideBar(false);
-                      }}
-                      to="/blog-detail"
-                    >
-                      Blog Details
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li className="has-dropdown">
                 <Link
                   onClick={() => {
                     setMobileSideBar(false);
                   }}
-                  to="#"
+                  to="/project"
                 >
                   Project
-                  <i className="fa-regular fa-chevron-down" />
                 </Link>
-                <ul className="submenu">
-                  <li>
-                    <Link
-                      onClick={() => {
-                        setMobileSideBar(false);
-                      }}
-                      to="/project"
-                    >
-                      Project
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      onClick={() => {
-                        setMobileSideBar(false);
-                      }}
-                      to="/project-detail"
-                    >
-                      Project Details
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li>
                 <Link

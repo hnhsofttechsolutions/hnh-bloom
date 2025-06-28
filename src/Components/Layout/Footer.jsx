@@ -150,9 +150,9 @@ const Footer = () => {
                     </li>
                     <li>
                       <span className="ft-icon">
-                        <i className="fa-solid fa-phone" />
+                        <FaWhatsapp />
                       </span>
-                      <Link to="tel:+4915216652405">DE: +49 152 1665 2405</Link>
+                      <Link target="_blank" to="https://wa.me/+4915216652405">DE: +49 152 1665 2405</Link>
                     </li>
                     <li>
                       <span className="ft-icon">

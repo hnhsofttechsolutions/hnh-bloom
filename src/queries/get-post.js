@@ -101,12 +101,18 @@ export const GETCATGORY = gql`
 `;
 
 export const GETALLPROJECT = gql`
-  query AllProjects {
-    allProjects {
+query ProjectDemoLink {
+  allProjects {
+    id
+    title
+    images
+    categories {
       id
+      name
     }
   }
-`;
+}
+`
 export const CREATE_CONTACT_MUTATION = gql`
   mutation CreateContact(
     $firstName: String!

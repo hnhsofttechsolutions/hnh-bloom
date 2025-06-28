@@ -8,15 +8,19 @@ import { Link, useParams } from "react-router-dom";
 import { GETBYID } from "../../queries/get-post";
 import { useQuery } from "@apollo/client";
 const ProjectDetails = ({ data }) => {
-  
   const { id } = useParams();
-  // eslint-disable-next-line no-unused-vars
-  const { data: project, loading } = useQuery(GETBYID, {
-  variables: { projectId: Number(id) },
-});
-  console.log("🚀 ~ project:", project)
-  // const project = data?.projects?.data?.find((item) => String(item.id) === id);
-  
+  const { data: project } = useQuery(GETBYID, {
+    variables: { projectId: Number(id) },
+  });
+
+  const imageArray =
+    project?.projectById?.images?.flatMap((imgStr) =>
+      imgStr?.includes(",") ? imgStr.split(",") : [imgStr]
+    ) || [];
+
+  const videoArray = project?.projectById?.videos || [];
+  const mergeImageAndVideo = [...imageArray, ...videoArray];
+
   return (
     <>
       <div className="project-details-area-wrapper tmp-section-gap">
@@ -45,19 +49,23 @@ const ProjectDetails = ({ data }) => {
                     spaceBetween={30} // Optional: gap between slides
                     className="swiper project-details-swiper"
                   >
-                    {/* {[
-                      "assets/images/projects-details/project-detials-swiper-img-1.jpg",
-                      "assets/images/projects-details/project-detials-swiper-img-2.png",
-                      "assets/images/projects-details/project-detials-swiper-img-1.jpg",
-                    ].map((imgSrc, index) => ( */}
-                    {project?.projectById?.images?.map((img, indx) => (
-                      <SwiperSlide>
-                        {/* project-details-img */}
-                        <div key={indx} className="">
-                          <img
-                            src={`https://api.hnhtechsolutions.com${img}`}
-                            alt="swiper-img"
-                          />
+                    
+                    {mergeImageAndVideo?.map((media, indx) => (
+                      <SwiperSlide key={indx}>
+                        <div>
+                          {media.trim().endsWith(".mp4") ? (
+                            <video
+                              src={`https://api.hnhtechsolutions.com${media.trim()}`}
+                              controls
+                              className="w-full h-96"
+                            />
+                          ) : (
+                            <img
+                              src={`https://api.hnhtechsolutions.com${media.trim()}`}
+                              alt={`project-media-${indx}`}
+                              className="w-full h-96"
+                            />
+                          )}
                         </div>
                       </SwiperSlide>
                     ))}
@@ -87,12 +95,12 @@ const ProjectDetails = ({ data }) => {
                   <h3 className="title">Project Details</h3>
                 </div>
                 <div className="body">
-                  {project?.projectById?.ProjectDetail?.map((item , indx) => <div key={indx} className="project-details-info">
-                    {item.title}
-                    <span>
-                      {item.value}
-                    </span>
-                  </div>)}
+                  {project?.projectById?.ProjectDetail?.map((item, indx) => (
+                    <div key={indx} className="project-details-info">
+                      {item.title}
+                      <span>{item.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="signle-side-bar project-details-area tmponhover">
@@ -100,18 +108,11 @@ const ProjectDetails = ({ data }) => {
                   <h3 className="title">Project Stats</h3>
                 </div>
                 <div className="body">
-                  {project?.projectById?.ProjectStat?.map((item , indx) => <div key={indx} className="project-details-info">
-                    {item.title}: <span>{item.value}</span>
-                  </div>)}
-                  {/* <div className="project-details-info">
-                    Products Listed: <span>5k+</span>
-                  </div>
-                  <div className="project-details-info">
-                    Monthly Visitors: <span>10k+</span>
-                  </div>
-                  <div className="project-details-info">
-                    User Rating: <span>4.8+</span>
-                  </div> */}
+                  {project?.projectById?.ProjectStat?.map((item, indx) => (
+                    <div key={indx} className="project-details-info">
+                      {item.title}: <span>{item.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="signle-side-bar project-details-area tmponhover">
@@ -148,11 +149,6 @@ const ProjectDetails = ({ data }) => {
                       </div>
                     );
                   })}
-
-                  {/* <div className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition">
-                    <i className="fab fa-apple text-[#e50914] text-3xl"></i>
-                    <span>App Store</span>
-                  </div> */}
                 </div>
               </div>
             </div>
