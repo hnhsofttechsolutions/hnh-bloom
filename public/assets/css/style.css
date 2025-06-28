@@ -25815,6 +25815,7 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
 .project-details-swiper-wrapper .project-details-swiper .project-details-img img {
   border-radius: 20px;
   width: 100%;
+  height:40%;
   object-fit: cover;
 }
 .project-details-swiper-wrapper .project-details-swiper-btn {

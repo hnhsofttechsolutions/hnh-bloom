@@ -7,7 +7,8 @@ import {
   FaLightbulb,
 } from "react-icons/fa";
 
-const ProjectDetailsTabs = () => {
+const ProjectDetailsTabs = ({ project }) => {
+  console.log("🚀 ~ ProjectDetailsTabs ~ project:", project);
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
@@ -37,11 +38,15 @@ const ProjectDetailsTabs = () => {
       {activeTab === "Overview" && (
         <div>
           <h2 className="text-4xl font-bold text-white mb-3">
-            Project Overview
+            {project?.projectById?.ProjectDescription[0]?.heading ||
+              "Project Overview"}
           </h2>
           <p className="text-gray-300 mb-6">
-            A full-featured e-commerce platform with advanced filtering and
-            payment integration.
+            {/* A full-featured e-commerce platform with advanced filtering and
+            payment integration. */}
+            {project?.projectById?.ProjectDescription?.map((item, index) => (
+              <p key={index}>{item.description}</p>
+            ))}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -51,7 +56,8 @@ const ProjectDetailsTabs = () => {
                 <h3 className="font-semibold text-white">Target Audience</h3>
               </div>
               <p className="text-gray-300">
-                Retailers and entrepreneurs looking for an online presence.
+                {project?.projectById?.targetAudience}
+                {/* Retailers and entrepreneurs looking for an online presence. */}
               </p>
             </div>
 
@@ -61,10 +67,9 @@ const ProjectDetailsTabs = () => {
                 <h3 className="font-semibold text-white">Key Features</h3>
               </div>
               <ul className="list-disc list-inside text-gray-300 space-y-1">
-                <li>Advanced filtering system</li>
-                <li>Secure payment gateway integration</li>
-                <li>Real-time inventory tracking</li>
-                <li>Mobile-responsive design</li>
+                {project?.projectById?.keyFeatures?.map((item, indx) => (
+                  <li key={indx}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -77,12 +82,12 @@ const ProjectDetailsTabs = () => {
             Technologies Used
           </h2>
           <div className="flex flex-wrap gap-4">
-            {["React.js", "Node.js", "MongoDB"].map((tech, index) => (
+            {project?.projectById?.technologies?.map((item, index) => (
               <div
                 key={index}
                 className="bg-gradient-to-r from-[#ff014f] to-[#ff014f] text-white px-5 py-2 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-default"
               >
-                {tech}
+                {item.name}
               </div>
             ))}
           </div>
@@ -94,22 +99,13 @@ const ProjectDetailsTabs = () => {
           <h2 className="text-4xl font-semibold text-white my-5">
             Project Timeline
           </h2>
-          <div className="w-full border p-4 rounded-3xl">
-            <h1 className="text-[20px] text-[#ff014f]">Planning</h1>
-            <h4>1 week</h4>
-            <p>Requirement gathering and UI/UX planning.</p>
-          </div>
-          <div className="w-full border p-4 rounded-3xl">
-            <h1 className="text-[20px] text-[#ff014f]">Development</h1>
-            <h4>2 months</h4>
-            <p>Frontend and backend implementation.</p>
-          </div>
-          <div className="w-full border p-4 rounded-3xl">
-            <h1 className="text-[20px] text-[#ff014f]">Testing & Deployment</h1>
-            <h4>2 weeks</h4>
-            <p>QA testing and production deployment.</p>
-          </div>
-         
+          {project?.projectById?.ProjectTimeline?.map((item, idx) => (
+            <div key={idx} className="w-full border p-4 rounded-3xl">
+              <h1 className="text-[20px] text-[#ff014f]">{item.duration}</h1>
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>

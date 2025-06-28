@@ -25,7 +25,7 @@ const Header = () => {
                         behavior:"smooth"
                       })}
                       className="logo-dark"
-                      src="assets/images/logo/logo-white.png"
+                      src="/assets/images/logo/logo-white.png"
                       alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                     />
                   </Link>

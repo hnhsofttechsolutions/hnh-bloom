@@ -12,8 +12,10 @@ import HomeService from "../Components/Home/HomeService";
 import HomeSkills from "../Components/Home/HomeSkills";
 import HomeSupportedCompany from "../Components/Home/HomeSupportedCompany";
 import HomeTestimonial from "../Components/Home/HomeTestimonial";
-import GETDATA from "../queries/get-post";
+// eslint-disable-next-line no-unused-vars
+import GETBYID from "../queries/get-post";
 import Loading from "../Components/loading/Loading";
+import GETDATA from "../queries/get-post";
 
 const Home = () => {
   const { data , loading } = useQuery(GETDATA, {

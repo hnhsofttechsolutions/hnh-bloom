@@ -4,17 +4,18 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ProjectDetailsTabs from "./ProjectDetailsTabs";
-import { useParams } from "react-router-dom";
-const ProjectDetails = ({data}) => {
+import { Link, useParams } from "react-router-dom";
+import { GETBYID } from "../../queries/get-post";
+import { useQuery } from "@apollo/client";
+const ProjectDetails = ({ data }) => {
   
-  const {id} = useParams();
-   const project = data?.projects?.data?.find(
-    (item) => String(item.id) === id 
-  );
-   console.log("🚀 ~ ProjectDetails ~ project:", project)
-
-  
-  
+  const { id } = useParams();
+  // eslint-disable-next-line no-unused-vars
+  const { data: project, loading } = useQuery(GETBYID, {
+  variables: { projectId: Number(id) },
+});
+  console.log("🚀 ~ project:", project)
+  // const project = data?.projects?.data?.find((item) => String(item.id) === id);
   
   return (
     <>
@@ -24,14 +25,14 @@ const ProjectDetails = ({data}) => {
             <div className="col-lg-12">
               <div className="project-details-thumnail-wrap">
                 <img
-                  src={`https://api.hnhtechsolutions.com${project?.images[0]}`}
+                  src={`https://api.hnhtechsolutions.com${project?.projectById?.images[0]}`}
                   alt="thumbnail"
                 />
               </div>
             </div>
             <div className="col-lg-8">
               <div className="project-details-content-wrap">
-                <ProjectDetailsTabs />
+                <ProjectDetailsTabs project={project} />
                 <div className="project-details-swiper-wrapper">
                   <Swiper
                     modules={[Navigation]}
@@ -49,11 +50,17 @@ const ProjectDetails = ({data}) => {
                       "assets/images/projects-details/project-detials-swiper-img-2.png",
                       "assets/images/projects-details/project-detials-swiper-img-1.jpg",
                     ].map((imgSrc, index) => ( */}
-                     {project?.images?.map((img , indx) => <SwiperSlide >
-                        <div key={indx} className="project-details-img">
-                          <img src={`https://api.hnhtechsolutions.com${img}`} alt="swiper-img" />
+                    {project?.projectById?.images?.map((img, indx) => (
+                      <SwiperSlide>
+                        {/* project-details-img */}
+                        <div key={indx} className="">
+                          <img
+                            src={`https://api.hnhtechsolutions.com${img}`}
+                            alt="swiper-img"
+                          />
                         </div>
-                      </SwiperSlide>)}
+                      </SwiperSlide>
+                    ))}
                   </Swiper>
 
                   <div className="project-details-swiper-btn">
@@ -80,18 +87,12 @@ const ProjectDetails = ({data}) => {
                   <h3 className="title">Project Details</h3>
                 </div>
                 <div className="body">
-                  <div className="project-details-info">
-                    Client: <span>{project?.client?.firstName}{project?.client?.secondtName}</span>
-                  </div>
-                  <div className="project-details-info">
-                    Role: <span>Full Stack Developer</span>
-                  </div>
-                  <div className="project-details-info">
-                    Duration: <span>3 months</span>
-                  </div>
-                  {/* <div className="project-details-info">
-              Tags: <span>Host Web Design</span>
-            </div> */}
+                  {project?.projectById?.ProjectDetail?.map((item , indx) => <div key={indx} className="project-details-info">
+                    {item.title}
+                    <span>
+                      {item.value}
+                    </span>
+                  </div>)}
                 </div>
               </div>
               <div className="signle-side-bar project-details-area tmponhover">
@@ -99,10 +100,10 @@ const ProjectDetails = ({data}) => {
                   <h3 className="title">Project Stats</h3>
                 </div>
                 <div className="body">
-                  <div className="project-details-info">
-                    Uptime: <span>99.9%</span>
-                  </div>
-                  <div className="project-details-info">
+                  {project?.projectById?.ProjectStat?.map((item , indx) => <div key={indx} className="project-details-info">
+                    {item.title}: <span>{item.value}</span>
+                  </div>)}
+                  {/* <div className="project-details-info">
                     Products Listed: <span>5k+</span>
                   </div>
                   <div className="project-details-info">
@@ -110,7 +111,7 @@ const ProjectDetails = ({data}) => {
                   </div>
                   <div className="project-details-info">
                     User Rating: <span>4.8+</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="signle-side-bar project-details-area tmponhover">
@@ -118,15 +119,40 @@ const ProjectDetails = ({data}) => {
                   <h3 className="title">Links</h3>
                 </div>
                 <div className="body space-y-3">
-                  <div className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition">
-                    <i className="fab fa-github text-[#e50914] text-3xl"></i>
-                    <span>Github Repo</span>
-                  </div>
+                  {project?.projectById?.ProjectDemoLink.map((item, indx) => {
+                    // Determine icon class based on the link
+                    let iconClass = "";
 
-                  <div className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition">
+                    if (item?.link.includes("github.com")) {
+                      iconClass = "fab fa-github";
+                    } else if (item?.link.includes("linkedin.com")) {
+                      iconClass = "fab fa-linkedin";
+                    } else if (item?.link.includes("facebook.com")) {
+                      iconClass = "fab fa-facebook";
+                    } else if (item?.link.includes("twitter.com")) {
+                      iconClass = "fab fa-twitter";
+                    } else {
+                      iconClass = "fas fa-link"; // default icon
+                    }
+                    return (
+                      <div
+                        key={indx}
+                        className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition"
+                      >
+                        <i
+                          className={`${iconClass} text-[#e50914] text-3xl`}
+                        ></i>
+                        <Link to={item?.link}>
+                          <span>{item?.title}</span>
+                        </Link>
+                      </div>
+                    );
+                  })}
+
+                  {/* <div className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition">
                     <i className="fab fa-apple text-[#e50914] text-3xl"></i>
                     <span>App Store</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

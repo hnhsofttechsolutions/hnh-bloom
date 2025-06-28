@@ -14,30 +14,31 @@ const GETDATA = gql`
           name
           id
         }
-           ProjectDemoLink {
-        link
-        title
-      }
-        client {
-        firstName
-        lastName
-      }
-      ProjectDescription {
-        description
-        heading
-        project {
-          technologies {
-            name
-          }
+        ProjectDemoLink {
+          link
           title
         }
-      }
+        client {
+          firstName
+          lastName
+        }
+        ProjectDescription {
+          description
+          heading
+          project {
+            technologies {
+              name
+            }
+            title
+          }
+        }
       }
     }
   }
 `;
 
 export default GETDATA;
+
 
 export const GETBYID = gql`
   query Client($projectId: Int!) {
@@ -71,6 +72,21 @@ export const GETBYID = gql`
         images
         list
       }
+      targetAudience
+      keyFeatures
+      ProjectTimeline {
+        duration
+        title
+        description
+      }
+      ProjectDetail {
+        title
+        value
+      }
+      ProjectStat {
+        title
+        value
+      }
     }
   }
 `;
@@ -85,12 +101,12 @@ export const GETCATGORY = gql`
 `;
 
 export const GETALLPROJECT = gql`
-query AllProjects {
-  allProjects {
-    id
+  query AllProjects {
+    allProjects {
+      id
+    }
   }
-}
-`
+`;
 export const CREATE_CONTACT_MUTATION = gql`
   mutation CreateContact(
     $firstName: String!
@@ -122,9 +138,60 @@ export const CREATE_CONTACT_MUTATION = gql`
   }
 `;
 export const PROJECT_CATEGORIES = gql`
-query Projects {
-  categories {
-    name
+  query Projects {
+    categories {
+      name
+    }
   }
-}
-`
+`;
+// export const GETBYID: DocumentNode = gql`
+//    query ProjectDemoLink($projectId: Int!) {
+//     projectById(projectId: $projectId) {
+//       client {
+//         country
+//         firstName
+//         lastName
+//       }
+//       description
+//       title
+//       videos
+//       images
+//       id
+//       categories {
+//         id
+//         name
+//       }
+//       ProjectDemoLink {
+//         id
+//         link
+//         title
+//       }
+//       technologies {
+//         id
+//         name
+//       }
+//       ProjectDescription {
+//         id
+//         heading
+//         description
+//         images
+//         list
+//       }
+//       targetAudience
+//       keyFeatures
+//       ProjectTimeline {
+//         duration
+//         title
+//         description
+//       }
+//       ProjectDetail {
+//         title
+//         value
+//       }
+//       ProjectStat {
+//         title
+//         value
+//       }
+//     }
+//   }
+//   `;
