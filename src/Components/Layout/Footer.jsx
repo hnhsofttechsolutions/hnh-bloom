@@ -313,7 +313,7 @@ const Footer = () => {
         <div className="all-demo show-demo ">
           <div className="demos">
             <div className="theme-wrapper">
-              <div>HnH Soft Tech Solution</div>
+              <div>HnH Soft Tech Solutions</div>
             </div>
           </div>
         </div>

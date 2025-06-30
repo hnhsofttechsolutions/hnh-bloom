@@ -4,10 +4,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { serviceData } from "../../utils/temp";
+import React from "react";
+import { FaChevronDown } from "react-icons/fa";
 
 const Header = () => {
   const [sidebar, setSideBar] = useState(false);
   const [mobileSideBar, setMobileSideBar] = useState(false);
+  const [service, setService] = useState("close");
+  
+
 
   return (
     <>
@@ -20,10 +25,12 @@ const Header = () => {
                 <div className="logo">
                   <Link to="/">
                     <img
-                      onClick={() => window.scrollTo({
-                        top:0,
-                        behavior:"smooth"
-                      })}
+                      onClick={() =>
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        })
+                      }
                       className="logo-dark"
                       src="/assets/images/logo/logo-white.png"
                       alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
@@ -32,10 +39,14 @@ const Header = () => {
                 </div>
                 <nav className="tmp-mainmenu-nav d-none d-xl-block">
                   <ul className="tmp-mainmenu">
-                    <li onClick={() => window.scrollTo({
-                      top:0,
-                      behavior:"smooth"
-                    })}>
+                    <li
+                      onClick={() =>
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        })
+                      }
+                    >
                       <Link to="/">Home</Link>
                     </li>
                     <li>
@@ -47,70 +58,22 @@ const Header = () => {
                         <i className="fa-regular fa-chevron-down" />
                       </Link>
                       <ul className="submenu">
-                        {serviceData?.map((e , i) => ( <li key={i} className="has-dropdown-custom">
-                          <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
-                          <ul className="submenu-custom">
-                             {e?.child?.map((c , id)=> <li key={id}>
-                                <Link to={`/service?value=${c?.path}`}>
-                                 {c?.title}
-                                </Link>
-                              </li>)}
-                            </ul>
-                        </li>
-                          )
-                        )}
-
-                         {/* <li className="has-dropdown-custom">
-                          <Link to="/service">Enterprise Web Development</Link>
-                          <ul className="submenu-custom">
-                              <li>
-                                <Link to="/service">
-                                 Angular Development Company
-                                </Link>
-                              </li>
-                            </ul>
-                        </li>
-                        <li className="has-dropdown-custom">
-                          <Link to="/service">Mobile App Development</Link>
+                        {serviceData?.map((e, i) => (
+                          <li key={i} className="has-dropdown-custom">
+                            <Link to={`/service?value=${e?.path}`}>
+                              {e?.title}
+                            </Link>
                             <ul className="submenu-custom">
-                              <li>
-                                <Link to="/service">
-                                  Android App Development Services
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/service">
-                                  Flutter App Development Services
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/service">
-                                  IOS App Development Services
-                                </Link>
-                              </li>
+                              {e?.child?.map((c, id) => (
+                                <li key={id}>
+                                  <Link to={`/service?value=${c?.path}`}>
+                                    {c?.title}
+                                  </Link>
+                                </li>
+                              ))}
                             </ul>
-                        </li>
-                        <li>
-                          <Link to="/service">Metaverse Development</Link>
-                        </li>
-                        <li>
-                          <Link to="/service">QA & Testing</Link>
-                        </li>
-                        <li>
-                          <Link to="/service">Business Intelligence</Link>
-                        </li>
-                        <li>
-                          <Link to="/service">Talent Acquisition</Link>
-                        </li>
-                        <li>
-                          <Link to="/service">AI & Machine Learning</Link>
-                        </li>
-                        <li>
-                          <Link to="/service">All Services</Link>
-                        </li>
-                        <li>
-                          <Link to="/service">Service</Link>
-                        </li>  */}
+                          </li>
+                        ))}
                       </ul>
                     </li>
                     <li className="has-dropdown">
@@ -128,9 +91,7 @@ const Header = () => {
                       </ul> */}
                     </li>
                     <li className="has-dropdown">
-                      <Link to="/project">
-                        Project
-                      </Link>
+                      <Link to="/project">Project</Link>
                       {/* <ul className="submenu">
                         <li>
                           <Link to="/project">Project</Link>
@@ -266,7 +227,9 @@ const Header = () => {
                   <i className="fa-solid fa-location-crosshairs" />
                   <div className="information tmp-link-animation">
                     <span>My Address</span>
-                    <span className="number">3900 West northwest highway Apt 1172 Dallas TX 75220</span>
+                    <span className="number">
+                      3900 West northwest highway Apt 1172 Dallas TX 75220
+                    </span>
                   </div>
                 </div>
                 {/* single contact information end */}
@@ -296,7 +259,7 @@ const Header = () => {
         />
       </div>
 
-      {/* mobile responsive */}                                                                          
+      {/* mobile responsive */}
       <div className="d-block d-xl-none ">
         <div
           className={`tmp-popup-mobile-menu ${mobileSideBar ? "active" : ""}`}
@@ -334,9 +297,9 @@ const Header = () => {
                   onClick={() => {
                     setMobileSideBar(false);
                     window.scrollTo({
-                      top:0,
-                      behavior:"smooth"
-                    })
+                      top: 0,
+                      behavior: "smooth",
+                    });
                   }}
                   to="/"
                 >
@@ -353,20 +316,29 @@ const Header = () => {
                   About
                 </Link>
               </li>
-              <li className="has-dropdown">
-                <Link
-                  // onClick={() => {
-                  //   setMobileSideBar(false);
-                  // }}
-                  to="#"
+              <li className="has-dropdown relative">
+                <button
+                  onClick={() =>
+                    setService((prev) => (prev === "open" ? "close" : "open"))
+                  }
+                  className="text-left w-full bg-transparent border-none outline-none p-0 m-0"
                 >
-                  <select name="" id="">
-                    <option value="">services</option>
-                    <option value="">mobile</option>
-                    <option value="">mobile</option>
-                  </select>
-                  {/* <i className="fa-regular fa-chevron-down" /> */}
-                </Link>
+                  <Link className="!flex items-center gap-1">Service <FaChevronDown/></Link> 
+                </button>
+
+                {service === "open" && (
+                 <ul className="z-50 absolute bg-black p-4 rounded-xl">
+                        {serviceData?.map((e, i) => (
+                          <li key={i}
+                          onClick={() => { setMobileSideBar(false); setService("close"); }}
+                           className="">
+                            <Link to={`/service?value=${e?.path}`}>
+                              {e?.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                )}
               </li>
               <li className="has-dropdown">
                 <Link

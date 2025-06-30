@@ -17,7 +17,41 @@ const ServiceHeroSection = ({ Data }) => {
       <div className="container py-20 px-10 relative">
         <div className="banner-one-main-wrapper">
           <div className="row align-items-center">
-            <div className="col-lg-6 order-lg-2 ">
+             <div className="col-lg-6 order-lg-1">
+              <div className="inner">
+                <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
+                  <span className="header-caption">
+                    <span className="cd-headline clip is-full-width">
+                      <span className="">
+                        <b className="is-visible theme-gradient !text-6xl">
+                          {Data?.heading?.split(" ")?.length > 4 ? (
+                            <>
+                              {Data?.heading?.split(" ")?.map((word, index) =>
+                                index === 4 ? (
+                                  <>
+                                    <br />
+                                    {word}{" "}
+                                  </>
+                                ) : (
+                                  <>{word} </>
+                                )
+                              )}
+                            </>
+                          ) : (
+                            Data?.heading
+                          )}
+                        </b>
+                      </span>
+                    </span>
+                  </span>
+                </h1>
+                <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
+                  {Data?.paragraph}
+                </p>
+               <p className="mt-10">{Data?.p}</p>
+              </div>
+            </div>
+            <div className="col-lg-6 order-lg-2">
               {/* <HomeGetInTouch/> */}
 
               <div className="contact-inner">
@@ -111,40 +145,6 @@ const ServiceHeroSection = ({ Data }) => {
                     </div>
                   </form>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-6 order-lg-1">
-              <div className="inner">
-                <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
-                  <span className="header-caption">
-                    <span className="cd-headline clip is-full-width">
-                      <span className="">
-                        <b className="is-visible theme-gradient !text-6xl">
-                          {Data?.heading?.split(" ")?.length > 4 ? (
-                            <>
-                              {Data?.heading?.split(" ")?.map((word, index) =>
-                                index === 4 ? (
-                                  <>
-                                    <br />
-                                    {word}{" "}
-                                  </>
-                                ) : (
-                                  <>{word} </>
-                                )
-                              )}
-                            </>
-                          ) : (
-                            Data?.heading
-                          )}
-                        </b>
-                      </span>
-                    </span>
-                  </span>
-                </h1>
-                <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  {Data?.paragraph}
-                </p>
-               <p className="mt-10">{Data?.p}</p>
               </div>
             </div>
           </div>
