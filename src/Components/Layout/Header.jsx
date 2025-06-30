@@ -11,8 +11,6 @@ const Header = () => {
   const [sidebar, setSideBar] = useState(false);
   const [mobileSideBar, setMobileSideBar] = useState(false);
   const [service, setService] = useState("close");
-  
-
 
   return (
     <>
@@ -323,21 +321,25 @@ const Header = () => {
                   }
                   className="text-left w-full bg-transparent border-none outline-none p-0 m-0"
                 >
-                  <Link className="!flex items-center gap-1">Service <FaChevronDown/></Link> 
+                  <Link className="!flex items-center gap-1">
+                    Service <FaChevronDown />
+                  </Link>
                 </button>
-
                 {service === "open" && (
-                 <ul className="z-50 absolute bg-black p-4 rounded-xl">
-                        {serviceData?.map((e, i) => (
-                          <li key={i}
-                          onClick={() => { setMobileSideBar(false); setService("close"); }}
-                           className="">
-                            <Link to={`/service?value=${e?.path}`}>
-                              {e?.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                  <ul className="z-50 absolute bg-black p-4 rounded-xl">
+                    {serviceData?.map((e, i) => (
+                      <li
+                        key={i}
+                        onClick={() => {
+                          setMobileSideBar(false);
+                          setService("close");
+                        }}
+                        className=""
+                      >
+                        <Link to={`/service?value=${e?.path}`}>{e?.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </li>
               <li className="has-dropdown">

@@ -14,25 +14,25 @@ const ProjectDetailsTabs = ({ project }) => {
   return (
     <div className="mt-6 my-10 py-10 bg-[#141414] px-5 rounded-3xl ">
       {/* Tabs */}
-      <div className="flex space-x-3 mb-6">
-        {["Overview", "Technologies", "Timeline"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`flex items-center gap-2 p-4 rounded-2xl font-bold text-3xl border transition-all
-              ${
-                activeTab === tab
-                  ? "bg-[#ff014f] text-white border-[#ff014f]"
-                  : "bg-[#1a1a1a] text-gray-300 border-gray-600 hover:bg-[#2c2c2c]"
-              }`}
-          >
-            {tab === "Overview" && <FaClipboardList />}
-            {tab === "Technologies" && <FaCogs />}
-            {tab === "Timeline" && <FaCalendarAlt />}
-            {tab}
-          </button>
-        ))}
-      </div>
+      <div className="flex overflow-x-auto scrollbar-hide space-x-3 mb-6">
+  {["Overview", "Technologies", "Timeline"].map((tab) => (
+    <button
+      key={tab}
+      onClick={() => setActiveTab(tab)}
+      className={`flex items-center gap-2 p-4 rounded-2xl font-bold text-3xl border transition-all
+        ${
+          activeTab === tab
+            ? "bg-[#ff014f] text-white border-[#ff014f]"
+            : "bg-[#1a1a1a] text-gray-300 border-gray-600 hover:bg-[#2c2c2c]"
+        }`}
+    >
+      {tab === "Overview" && <FaClipboardList />}
+      {tab === "Technologies" && <FaCogs />}
+      {tab === "Timeline" && <FaCalendarAlt />}
+      {tab}
+    </button>
+  ))}
+</div>
 
       {/* Tab Content */}
       {activeTab === "Overview" && (
