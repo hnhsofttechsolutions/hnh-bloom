@@ -77,27 +77,10 @@ const Header = () => {
                     <li className="has-dropdown">
                       <Link to="/blog">
                         Blog
-                        {/* <i className="fa-regular fa-chevron-down" /> */}
                       </Link>
-                      {/* <ul className="submenu">
-                        <li>
-                          <Link to="/blog">Blog Classic</Link>
-                        </li>
-                        <li>
-                          <Link to="/blog-detail">Blog Details</Link>
-                        </li>
-                      </ul> */}
                     </li>
                     <li className="has-dropdown">
                       <Link to="/project">Project</Link>
-                      {/* <ul className="submenu">
-                        <li>
-                          <Link to="/project">Project</Link>
-                        </li>
-                        <li>
-                          <Link to="/project-detail">Project Details</Link>
-                        </li>
-                      </ul> */}
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
@@ -158,16 +141,6 @@ const Header = () => {
             <div className="top-area">
               <Link to="/" className="logo">
                 <h1 className="font-bold text-3xl">HNH SOFT TECH SOLUTIONS</h1>
-                {/* <img
-              className="logo-dark"
-              src="assets/images/logo/logo-white.png"
-              alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
-            />
-            <img
-              className="logo-white"
-              src="assets/images/logo/logo-white.png"
-              alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
-            /> */}
               </Link>
               <div
                 onClick={() => {
