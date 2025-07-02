@@ -8,7 +8,7 @@ import Loading from '../Components/loading/Loading';
 
 const Project = () => {
    const { data , loading } = useQuery(GETALLPROJECT);
-    console.log("🚀 ~ Project ~ data:", data)
+    // console.log("🚀 ~ Project ~ data:", data)
     
     
     

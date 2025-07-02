@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const ServiceAboutSection = ({Data}) => {
-    console.log("serviceabout", Data)
+    // console.log("serviceabout", Data)
   return (
     <div className='w-full bg-white flex'>
         {/* <div>

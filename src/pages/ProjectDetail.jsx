@@ -1,4 +1,5 @@
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
 import Banner from '../Components/Banner'
 import ProjectDetails from '../Components/Project/ProjectDetails'
 import { useQuery } from '@apollo/client';

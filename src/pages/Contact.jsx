@@ -8,7 +8,7 @@ const Contact = () => {
     <>
      <Banner heading={"Contact"} text={"Contact"}/>
      
- <div class="contact-area-wrapper tmp-section-gap">
+ <div className="contact-area-wrapper tmp-section-gap">
     <ContactInfo/>
    <div className='container md:mt-20 mt-5'>
      <HomeGetInTouch/>

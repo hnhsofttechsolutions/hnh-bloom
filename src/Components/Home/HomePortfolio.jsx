@@ -7,7 +7,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Loading from "../loading/Loading";
 
 const HomePortfolio = ({ data , filterData }) => {
-  console.log("🚀 ~ HomePortfolio ~ filterData:", filterData)
+  // console.log("🚀 ~ HomePortfolio ~ filterData:", filterData)
   // eslint-disable-next-line no-unused-vars
   const { data: tabs, loading } = useQuery(PROJECT_CATEGORIES, {});
   const [tabCurrent, setTabCurrent] = useState("App Development");

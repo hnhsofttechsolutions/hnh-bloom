@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ContactForm from "../Contact/ContactForm";
 import ServiceAboutSection from "./ServiceAboutSection";
 // import HomeGetInTouch from "../Home/HomeGetInTouch";
-console.log(serviceData)
+// console.log(serviceData)
 const ServiceHeroSection = ({ Data }) => {
 
   
