@@ -12,6 +12,7 @@ const ProjectDetails = ({ data }) => {
   const { data: project } = useQuery(GETBYID, {
     variables: { projectId: Number(id) },
   });
+  console.log("🚀 ~ ProjectDetails ~ project:", project);
 
   const imageArray =
     project?.projectById?.images?.flatMap((imgStr) =>
@@ -28,10 +29,33 @@ const ProjectDetails = ({ data }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="project-details-thumnail-wrap">
-                <img
+                {/* <img
                   src={`https://api.hnhtechsolutions.com${project?.projectById?.images[0]}`}
                   alt="thumbnail"
-                />
+                /> */}
+                {/* <video
+                  src={`https://api.hnhtechsolutions.com${project?.projectById?.videos[0]}` || `https://api.hnhtechsolutions.com${project?.projectById?.images[0]}` }
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="rounded-lg"
+                ></video> */}
+                {project?.projectById?.videos?.[0] ? (
+                  <video
+                    src={`https://api.hnhtechsolutions.com${project.projectById.videos[0]}`}
+                    autoPlay
+                    loop
+                    playsInline
+                    className="rounded-lg w-full h-auto object-cover"
+                  />
+                ) : (
+                  <img
+                    src={`https://api.hnhtechsolutions.com${project?.projectById?.images?.[0]}`}
+                    alt="Project"
+                    className="rounded-lg w-full h-auto object-cover"
+                  />
+                )}
               </div>
             </div>
             <div className="col-lg-8">
@@ -49,14 +73,13 @@ const ProjectDetails = ({ data }) => {
                     spaceBetween={30} // Optional: gap between slides
                     className="swiper project-details-swiper"
                   >
-                    
                     {mergeImageAndVideo?.map((media, indx) => (
                       <SwiperSlide key={indx}>
                         <div>
                           {media.trim().endsWith(".mp4") ? (
                             <video
                               src={`https://api.hnhtechsolutions.com${media.trim()}`}
-                              controls
+                              autoPlay
                               className="w-full h-96"
                             />
                           ) : (

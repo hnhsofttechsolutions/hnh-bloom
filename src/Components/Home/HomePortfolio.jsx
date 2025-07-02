@@ -6,7 +6,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 // eslint-disable-next-line no-unused-vars
 import Loading from "../loading/Loading";
 
-const HomePortfolio = ({ data }) => {
+const HomePortfolio = ({ data , filterData }) => {
+  console.log("🚀 ~ HomePortfolio ~ filterData:", filterData)
   // eslint-disable-next-line no-unused-vars
   const { data: tabs, loading } = useQuery(PROJECT_CATEGORIES, {});
   const [tabCurrent, setTabCurrent] = useState("App Development");
@@ -92,7 +93,7 @@ const HomePortfolio = ({ data }) => {
           </div>
 
           {isProjectPage && (
-            <div className="tabs mb-4">
+            <div className="tabs mb-4 overflow-x-auto">
               <div className="tab-header" id="tabButtons">
                 {tabs?.categories?.map((item, idx) => (
                   <div
@@ -114,12 +115,12 @@ const HomePortfolio = ({ data }) => {
                 next={fetchMoreData}
                 hasMore={hasMore}
                 loader={<h4>Loading...</h4>}
-                className="row w-100"
+                className="row w-100 !overflow-hidden"
               >
                 {visibleData.map(renderCard)}
               </InfiniteScroll>
             ) : (
-              data?.projects?.data?.map(renderCard)
+              filterData?.map(renderCard)
             )}
           </div>
         </div>

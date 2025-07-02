@@ -2,10 +2,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { serviceData } from "../../utils/temp";
 import React from "react";
 import { Link } from "react-router-dom";
+import ContactForm from "../Contact/ContactForm";
+import ServiceAboutSection from "./ServiceAboutSection";
 // import HomeGetInTouch from "../Home/HomeGetInTouch";
 console.log(serviceData)
 const ServiceHeroSection = ({ Data }) => {
-  console.log("🚀 ~ ServiceHeroSection ~ Data:", Data)
 
   
   return (
@@ -17,7 +18,7 @@ const ServiceHeroSection = ({ Data }) => {
       <div className="container py-20 px-10 relative">
         <div className="banner-one-main-wrapper">
           <div className="row align-items-center">
-             <div className="col-lg-6 order-lg-1">
+             <div className="col-lg-5 order-lg-1">
               <div className="inner">
                 <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
                   <span className="header-caption">
@@ -51,9 +52,8 @@ const ServiceHeroSection = ({ Data }) => {
                <p className="mt-10">{Data?.p}</p>
               </div>
             </div>
-            <div className="col-lg-6 order-lg-2">
-              {/* <HomeGetInTouch/> */}
-
+            <ContactForm/>
+            {/* <div className="col-lg-6 order-lg-2">
               <div className="contact-inner">
                 <div className="contact-form">
                   <div id="form-messages" className="error" />
@@ -146,10 +146,11 @@ const ServiceHeroSection = ({ Data }) => {
                   </form>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+      <ServiceAboutSection Data={Data}/>
     </>
   );
 };

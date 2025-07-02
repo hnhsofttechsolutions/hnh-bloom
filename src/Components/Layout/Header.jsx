@@ -75,9 +75,7 @@ const Header = () => {
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <Link to="/blog">
-                        Blog
-                      </Link>
+                      <Link to="/blog">Blog</Link>
                     </li>
                     <li className="has-dropdown">
                       <Link to="/project">Project</Link>
@@ -187,7 +185,10 @@ const Header = () => {
                   <i className="fa-solid fa-envelope" />
                   <div className="information tmp-link-animation">
                     <span>Mail Us</span>
-                    <Link to="#" className="number">
+                    <Link
+                      to="mailto:info@hnhsofttechsolutions.com"
+                      className="number"
+                    >
                       info@hnhsofttechsolutions.com
                     </Link>
                   </div>
@@ -199,7 +200,15 @@ const Header = () => {
                   <div className="information tmp-link-animation">
                     <span>My Address</span>
                     <span className="number">
-                      3900 West northwest highway Apt 1172 Dallas TX 75220
+                      <a
+                        href="https://www.google.com/maps?q=3900+West+Northwest+Highway+Apt+1172+Dallas+TX+75220"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=""
+                      >
+                        3900 West Northwest Highway Apt 1172, Dallas, TX 75220
+                      </a>
+                      {/* 3900 West northwest highway Apt 1172 Dallas TX 75220 */}
                     </span>
                   </div>
                 </div>

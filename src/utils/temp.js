@@ -5,6 +5,11 @@ export const serviceData = [
     title: ".Net Development Services",
     heading: ".NET Development Services",
     paragraph:"Welcome to Invision Solutions where our unmatched .NET development services are at the forefront of empowering businesses with tailored, and cutting-edge solutions. With a blend of technical prowess and innovative strategies, our experienced team of .NET developers is dedicated to delivering exceptional .NET development services that meet the evolving demands of the digital era.",
+    about:{
+      abouthead:"Why Choose ASP.NET For Your Development Needs?",
+      aboutparagraph:"ASP.NET development services offer a variety of benefits for businesses seeking reliable, scalable, and high-performance advanced technologies. Our proficiency in ASP.NET enables us to build applications, websites, desktop applications, and other advanced applications that are not only efficient but also secure and user-friendly. Thus, by choosing our ASP.NET development services, you’re investing in the future that is trusted by enterprises around the world.",
+      aboutimg:"/assets/images/services-section/aboutimg.webp"
+    }
   },
 
   {

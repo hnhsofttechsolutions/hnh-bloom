@@ -18,7 +18,7 @@ const ProjectDetail = () => {
 
   return (
    <>
-     <Banner heading={"Project"} text={"Details"}/>
+     {/* <Banner heading={"Project"} text={"Details"}/> */}
      <ProjectDetails data={data}/>
    </>
   )

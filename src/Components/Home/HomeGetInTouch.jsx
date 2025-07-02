@@ -1,62 +1,65 @@
-import { useMutation } from "@apollo/client";
-import { useState } from "react";
-import toast from "react-hot-toast";
+// import { useMutation } from "@apollo/client";
+// import { useState } from "react";
+// import toast from "react-hot-toast";
+// eslint-disable-next-line no-unused-vars
 import { CREATE_CONTACT_MUTATION } from "../../queries/get-post";
+// eslint-disable-next-line no-unused-vars
 import Loading from "../loading/Loading";
+import ContactForm from "../Contact/ContactForm";
 
 
 const HomeGetInTouch = () => {
   // eslint-disable-next-line no-unused-vars
-  const [createContact, { loading, error }] = useMutation(CREATE_CONTACT_MUTATION);
+//   const [createContact, { loading, error }] = useMutation(CREATE_CONTACT_MUTATION);
   
-   const [contactData, setContactData] = useState({
-    name: "",
-    lname: "",
-    phone: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  if(loading){
-    return <div><Loading/></div>
-  }
+//    const [contactData, setContactData] = useState({
+//     name: "",
+//     lname: "",
+//     phone: "",
+//     email: "",
+//     subject: "",
+//     message: "",
+//   });
+//   if(loading){
+//     return <div><Loading/></div>
+//   }
   
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContactData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setContactData((prev) => ({
+//       ...prev,
+//       [name]: value,
+//     }));
+//   };
 
-  const submitData = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await createContact({
-      variables: {
-        firstName: contactData.name,
-        lastName: contactData.lname,
-        subject: contactData.subject,
-        email: contactData.email,
-        phone: contactData.phone,
-        comment: contactData.message,
-        companyName: "HNH Soft Tech Solutions",
-      },
-    });
-    console.log("🚀 ~ submitData ~ response:", response)
-    toast.success("Message received! I’ll contact you shortly.")
-    setContactData({
-      name: "",
-      lname: "",
-      phone: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  } catch (err) {
-    console.error("Error submitting form:", err);
-  }
-};
+//   const submitData = async (e) => {
+//   e.preventDefault();
+//   try {
+//     const response = await createContact({
+//       variables: {
+//         firstName: contactData.name,
+//         lastName: contactData.lname,
+//         subject: contactData.subject,
+//         email: contactData.email,
+//         phone: contactData.phone,
+//         comment: contactData.message,
+//         companyName: "HNH Soft Tech Solutions",
+//       },
+//     });
+//     console.log("🚀 ~ submitData ~ response:", response)
+//     toast.success("Message received! I’ll contact you shortly.")
+//     setContactData({
+//       name: "",
+//       lname: "",
+//       phone: "",
+//       email: "",
+//       subject: "",
+//       message: "",
+//     });
+//   } catch (err) {
+//     console.error("Error submitting form:", err);
+//   }
+// };
 
 
   return (
@@ -78,7 +81,8 @@ const HomeGetInTouch = () => {
                     </p>
                   </div>
                 </div>
-                <div className="col-lg-7">
+                <ContactForm/>
+                {/* <div className="col-lg-7">
                   <div className="contact-inner">
                     <div className="contact-form">
                       <div id="form-messages" className="error" />
@@ -192,7 +196,7 @@ const HomeGetInTouch = () => {
                       </form>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

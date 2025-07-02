@@ -8,7 +8,7 @@ const HomeSupportedCompany = () => {
     "assets/images/our-supported-company/company-logo-13.png",
     "assets/images/our-supported-company/company-logo-22.png",
     "assets/images/our-supported-company/company-logo-18.png",
-    "assets/images/our-supported-company/company-logo-14.png",
+    "assets/images/our-supported-company/company-logo-8.png",
     "assets/images/our-supported-company/company-logo-26.png",
     "assets/images/our-supported-company/company-logo-20.png"
   ];
