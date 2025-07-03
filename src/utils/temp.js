@@ -1,12 +1,19 @@
 export const serviceData = [
-  {
+  {  
+    id:0,
     path:'dot-net-developer',
     title: ".Net Development Services",
     heading: ".NET Development Services",
     paragraph:"Welcome to Invision Solutions where our unmatched .NET development services are at the forefront of empowering businesses with tailored, and cutting-edge solutions. With a blend of technical prowess and innovative strategies, our experienced team of .NET developers is dedicated to delivering exceptional .NET development services that meet the evolving demands of the digital era.",
+    about:{
+      abouthead:"Why Choose ASP.NET For Your Development Needs?",
+      aboutparagraph:"ASP.NET development services offer a variety of benefits for businesses seeking reliable, scalable, and high-performance advanced technologies. Our proficiency in ASP.NET enables us to build applications, websites, desktop applications, and other advanced applications that are not only efficient but also secure and user-friendly. Thus, by choosing our ASP.NET development services, you’re investing in the future that is trusted by enterprises around the world.",
+      aboutimg:"/assets/images/services-section/aboutimg.webp"
+    }
   },
 
   {
+    id:1,
     path:'enterprise-web-development',
     title: "Enterprise Web Development",
     heading: "Web Development Service",
@@ -14,6 +21,7 @@ export const serviceData = [
     p:'Building the future, tailored to your needs – Our custom developed solutions pave the way for innovative and efficient businesses.',
     child:[
         {
+         id:0,
          path:"angular-development-company",
          title:"Angular Development Company",   
          heading:"Angular Development Company",
@@ -23,6 +31,7 @@ export const serviceData = [
   },
 
   {
+    id:2,
     path:"mobile-app-development-services",
     title: " Mobile App Development Services",
     heading: "Mobile App Development Services",
@@ -30,6 +39,7 @@ export const serviceData = [
     p:"With a focus on innovation, creativity, and effectiveness, we bring the future of mobile apps to fruition",
     child: [
       {
+        id:0,
         path:"android-development-service",
         title: "Android Development Service",
         heading: "Android Development Service",
@@ -37,12 +47,14 @@ export const serviceData = [
       },
 
       {
+        id:1,
         path:"flutter-app-development-service",
         title: "Flutter App Development Service",
         heading: "Leading Flutter App Development Service Company in Canada",
         paragraph:"Invision Solutions is a leading flutter app development company in Toronto, Canada. We specialize in delivering top-notch Flutter app development services. Our experienced Flutter app developers leverage Flutter’s robust framework to create cross-platform apps that look appealing and have hassle-free functioning, the goal is to create a solution that can offer a seamless user experience across all devices.",
       },
       {
+        id:2,
         path:"iOS-app-development-company",
         title: "iOS App Development Company",
         heading: "iOS App Development Company",
@@ -52,6 +64,7 @@ export const serviceData = [
   },
 
   {
+    id:3,
     path:"metaverse-development-company",
     title: "Metaverse Development",
     heading: "Metaverse Development Company",
@@ -59,6 +72,7 @@ export const serviceData = [
     p:"Let us be your guide as we craft a metaverse filled with endless possibility and beauty. A place where dreams come to life, where reality is redefined",
   },
   {
+    id:4,
     path:"quality-assurancet-testing-services",
     title: "QA & Testing",
     heading: "Quality Assurance Testing Services",
@@ -66,6 +80,7 @@ export const serviceData = [
     p:"Elevate your software to new heights with Quality-Driven Testing and QA.",
   },
   {
+    id:5,
     path:"business-intelligence-services",
     title: "Business Intelligence",
     heading: "Business Intelligence Services",
@@ -73,6 +88,7 @@ export const serviceData = [
     p:"Partner with us to leverage the power of data and stay ahead in today’s ever-evolving market.",
   },
   {
+    id:6,
     path:"talent-acquisition-services",
     title: "Talent Acquisition Services",
     heading: "Talent Acquisition",
@@ -81,6 +97,7 @@ export const serviceData = [
   },
 
   {
+    id:7,
     path:"AI-and-ML-services",
     title: "AI & Machine Learning",
     heading: "AI And ML Services",
@@ -89,6 +106,7 @@ export const serviceData = [
   },
 
   {
+    id:8,
     path:"Services",
     title: "All Services",
     heading: "Driving digital innovation for a better tomorrow",

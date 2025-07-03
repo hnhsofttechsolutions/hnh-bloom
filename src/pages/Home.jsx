@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import HomeBanner from "../Components/Home/HomeBanner";
+// eslint-disable-next-line no-unused-vars
 import HomeBlog from "../Components/Home/HomeBlog";
 import HomeCounter from "../Components/Home/HomeCounter";
 import HomeExperience from "../Components/Home/HomeExperience";
@@ -11,13 +12,29 @@ import HomeService from "../Components/Home/HomeService";
 import HomeSkills from "../Components/Home/HomeSkills";
 import HomeSupportedCompany from "../Components/Home/HomeSupportedCompany";
 import HomeTestimonial from "../Components/Home/HomeTestimonial";
-import GETDATA from "../queries/get-post";
+// eslint-disable-next-line no-unused-vars
+import GETBYID, { GETALLPROJECT } from "../queries/get-post";
 import Loading from "../Components/loading/Loading";
+import GETDATA from "../queries/get-post";
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
+  const filterProject = [
+    "Competence",
+    "Family Handbook",
+    "PremiumID",
+    "Celine Victor"
+  ]
   const { data , loading } = useQuery(GETDATA, {
     variables: { skip: 0, limit: 4, categoryId:undefined },
   });
+  const { data:pro  } = useQuery(GETALLPROJECT);
+  // console.log("🚀 ~ Home ~ pro:", pro)
+
+  // eslint-disable-next-line no-unused-vars
+const filterData = pro?.allProjects?.filter((item) =>
+  filterProject?.includes(item?.title)
+);
 
   if (loading) return <div><Loading/></div>;
 
@@ -38,7 +55,7 @@ const Home = () => {
       <div className="md:my-20">
         <HomeSupportedCompany />
       </div>
-      <HomePortfolio data={data} />
+      <HomePortfolio data={data} filterData={filterData}/>
       <div className="mt-10">
         <HomeMySkills />
       </div>

@@ -53,26 +53,6 @@ const BlogClassic = () => {
                     
                       </div>
                       <div className="blog-classic-content ">
-                        {/* <div className="blog-classic-tag">
-                          <ul>
-                            {item.tags.map((tag, i) => (
-                              <li key={i}>
-                                <div className="tag-wrap">
-                                  <i
-                                    className={
-                                      i === 0
-                                        ? 'fa-solid fa-tag'
-                                        : i === 1
-                                          ? 'fa-regular fa-comment'
-                                          : 'fa-solid fa-calendar-day'
-                                    }
-                                  />
-                                  <h4 className="tag-title">{tag}</h4>
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
-                        </div> */}
                         <h2 className="title">
                           {item.title}
                         </h2>

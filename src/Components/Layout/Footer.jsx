@@ -19,7 +19,7 @@ const Footer = () => {
                   <Link to="/">
                     <img
                       src="assets/images/logo/logo-white.png"
-                      alt="Reeni - Personal Portfolio HTML Template"
+                      alt="HNH - Personal Portfolio HTML Template"
                       className="mb-4 h-[50px]"
                     />
                   </Link>
@@ -150,9 +150,9 @@ const Footer = () => {
                     </li>
                     <li>
                       <span className="ft-icon">
-                        <i className="fa-solid fa-phone" />
+                        <FaWhatsapp />
                       </span>
-                      <Link to="tel:+4915216652405">DE: +49 152 1665 2405</Link>
+                      <Link target="_blank" to="https://wa.me/+4915216652405">DE: +49 152 1665 2405</Link>
                     </li>
                     <li>
                       <span className="ft-icon">
@@ -313,7 +313,7 @@ const Footer = () => {
         <div className="all-demo show-demo ">
           <div className="demos">
             <div className="theme-wrapper">
-              <div>HnH Soft Tech Solution</div>
+              <div>HnH Soft Tech Solutions</div>
             </div>
           </div>
         </div>
@@ -332,7 +332,7 @@ const Footer = () => {
               </button>
             </div>
             <div className="demo-top text-center">
-              <h4 className="title">Reeni</h4>
+              <h4 className="title">HNH</h4>
               <p className="subtitle">
                 A personal portfolio website is your digital resume—a place to
                 showcase your work, skills, and achievements.

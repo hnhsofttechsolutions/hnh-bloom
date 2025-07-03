@@ -29,12 +29,12 @@ const HomeMySkills = () => {
             <p className="card-para">
               A showcase of sleek, responsive, and user-friendly interfaces designed for optimal user experience. From web to mobile, each design aligns with brand identity and user goals.
             </p>
-            <a href="#" className="read-more-btn">
+            {/* <a href="#" className="read-more-btn">
               Read More{" "}
               <span className="read-more-icon">
                 <i className="fa-solid fa-angle-right" />
               </span>
-            </a>
+            </a> */}
           </div>
           <button className="service-link modal-popup" />
         </div>
@@ -50,12 +50,12 @@ const HomeMySkills = () => {
             <p className="card-para">
               Explore a curated portfolio featuring design solutions for responsive websites, SaaS platforms, and custom dashboards — all built for performance and scalability.
             </p>
-            <a href="#" className="read-more-btn">
+            {/* <a href="#" className="read-more-btn">
               Read More{" "}
               <span className="read-more-icon">
                 <i className="fa-solid fa-angle-right" />
               </span>
-            </a>
+            </a> */}
           </div>
           <button className="service-link modal-popup" />
         </div>
@@ -71,12 +71,12 @@ const HomeMySkills = () => {
             <p className="card-para">
               From animated UI elements to full motion graphics, these projects reflect dynamic storytelling and brand communication through movement and interaction.
             </p>
-            <a href="#" className="read-more-btn">
+            {/* <a href="#" className="read-more-btn">
               Read More{" "}
               <span className="read-more-icon">
                 <i className="fa-solid fa-angle-right" />
               </span>
-            </a>
+            </a> */}
           </div>
           <button className="service-link modal-popup" />
         </div>

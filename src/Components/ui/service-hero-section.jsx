@@ -1,13 +1,59 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { serviceData } from "../../utils/temp";
 import React from "react";
+import { Link } from "react-router-dom";
+import ContactForm from "../Contact/ContactForm";
+import ServiceAboutSection from "./ServiceAboutSection";
+// import HomeGetInTouch from "../Home/HomeGetInTouch";
+// console.log(serviceData)
+const ServiceHeroSection = ({ Data }) => {
 
-const ServiceHeroSection = ({ serviceData }) => {
-
+  
   return (
     <>
-      <div className="container py-24">
+      <div className="w-full h-10 lg:mt-40 z-50 absolute flex justify-between items-center px-8">
+        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id-1 : serviceData?.[Data?.id-1]?.path}`}><div className="bg-[#ff014f] hover:bg-[#c44068] duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
+        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id+1 : serviceData?.[Data?.id+1]?.path}`}><div className="bg-[#ff014f] hover:bg-[#c44068] duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
+      </div>
+      <div className="container py-20 px-10 relative">
         <div className="banner-one-main-wrapper">
           <div className="row align-items-center">
-            <div className="col-lg-6 order-lg-2 ">
+             <div className="col-lg-5 order-lg-1">
+              <div className="inner">
+                <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
+                  <span className="header-caption">
+                    <span className="cd-headline clip is-full-width">
+                      <span className="">
+                        <b className="is-visible theme-gradient !text-6xl">
+                          {Data?.heading?.split(" ")?.length > 4 ? (
+                            <>
+                              {Data?.heading?.split(" ")?.map((word, index) =>
+                                index === 4 ? (
+                                  <>
+                                    <br />
+                                    {word}{" "}
+                                  </>
+                                ) : (
+                                  <>{word} </>
+                                )
+                              )}
+                            </>
+                          ) : (
+                            Data?.heading
+                          )}
+                        </b>
+                      </span>
+                    </span>
+                  </span>
+                </h1>
+                <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
+                  {Data?.paragraph}
+                </p>
+               <p className="mt-10">{Data?.p}</p>
+              </div>
+            </div>
+            <ContactForm/>
+            {/* <div className="col-lg-6 order-lg-2">
               <div className="contact-inner">
                 <div className="contact-form">
                   <div id="form-messages" className="error" />
@@ -100,44 +146,11 @@ const ServiceHeroSection = ({ serviceData }) => {
                   </form>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-6 order-lg-1">
-              <div className="inner">
-                <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-2 mt--5">
-                  <span className="header-caption">
-                    <span className="cd-headline clip is-full-width">
-                      <span className="">
-                        <b className="is-visible theme-gradient !text-6xl">
-                          {serviceData?.heading?.split(" ")?.length > 5 ? (
-                            <>
-                              {serviceData?.heading?.split(" ")?.map((word, index) =>
-                                index === 5 ? (
-                                  <>
-                                    <br />
-                                    {word}{" "}
-                                  </>
-                                ) : (
-                                  <>{word} </>
-                                )
-                              )}
-                            </>
-                          ) : (
-                            serviceData?.heading
-                          )}
-                        </b>
-                      </span>
-                    </span>
-                  </span>
-                </h1>
-                <p className="disc tmp-scroll-trigger tmp-fade-in animation-order-3">
-                  {serviceData?.paragraph}
-                </p>
-               <p className="mt-10">{serviceData?.p}</p>
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+      <ServiceAboutSection Data={Data}/>
     </>
   );
 };

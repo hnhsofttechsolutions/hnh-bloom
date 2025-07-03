@@ -1,5 +1,5 @@
 import React from "react";
-import AboutOurPricing from "../Components/About/AboutOurPricing";
+// import AboutOurPricing from "../Components/About/AboutOurPricing";
 import Banner from "../Components/Banner";
 import ServiceHero from "../Components/Service/ServiceHero";
 import WhyChooseUs from "../Components/Service/WhyChooseUs";
@@ -20,38 +20,38 @@ const Service = () => {
   const finalData = isChild ? filterTemp.child.find((child) => child.path === value)  : filterTemp;
 
   const specificLayouts = {
-    "dot-net-developer": <ServiceHeroSection serviceData={finalData} />,
+    "dot-net-developer": <ServiceHeroSection Data={finalData} />,
     "enterprise-web-development": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "angular-development-company": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "mobile-app-development-services": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "android-development-service": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "flutter-app-development-service": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "iOS-app-development-company": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "metaverse-development-company": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "quality-assurancet-testing-services": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "business-intelligence-services": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
     "talent-acquisition-services": (
-      <ServiceHeroSection serviceData={finalData} />
+      <ServiceHeroSection Data={finalData} />
     ),
-    "AI-and-ML-services": <ServiceHeroSection serviceData={finalData} />,
+    "AI-and-ML-services": <ServiceHeroSection Data={finalData} />,
   };
 
   const DefaultLayout = (
@@ -61,7 +61,7 @@ const Service = () => {
       <WhyChooseUs />
       <ServiceCards />
       <OurProcess />
-      <AboutOurPricing />
+      {/* <AboutOurPricing /> */}
     </>
   );
 

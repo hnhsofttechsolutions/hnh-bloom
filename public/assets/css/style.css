@@ -25815,6 +25815,7 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
 .project-details-swiper-wrapper .project-details-swiper .project-details-img img {
   border-radius: 20px;
   width: 100%;
+  height:40%;
   object-fit: cover;
 }
 .project-details-swiper-wrapper .project-details-swiper-btn {
@@ -27204,7 +27205,7 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
   }
 }
 .tabs {
-  max-width: 700px;
+  max-width: 915px;
   margin: 0 auto;
   background: white;
   border-radius: 8px;
@@ -27221,7 +27222,7 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
 .tab-header div {
   flex: 1;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -27256,4 +27257,12 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+/* Tailwind doesn't have native scrollbar-hide in all builds */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

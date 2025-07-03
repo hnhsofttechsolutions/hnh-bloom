@@ -6,22 +6,34 @@ import 'swiper/css/navigation'
 
 const testimonials = [
   {
-    text: `ThemesPark Is Incredibly Talented And Detail-Oriented. They Took The Time To Understand My Brand And Created Something Truly Unique`,
-    name: "Cameron Williamson",
-    role: "Ui/Ux Designer",
-    image: "/assets/images/testimonial/bg-image-1png.png",
+    text: `We've been working with HNH Soft Tech Solutions for over 3 years now, and their commitment to delivering high-quality software solutions is unmatched. Their team is professional, responsive, and always goes the extra mile.`,
+    name: "Emma Johnson",
+    role: "Operations Manager, RetailNet",
+    image: "/assets/images/testimonial/emmajohnson.png",
   },
   {
-    text: `A Personal Portfolio Is A Curated Collection Of An Individual’s Professional Work, Showcasing Their Skills, Experience, And Achievements`,
-    name: "Cameron Williamson",
-    role: "Ui/Ux Designer",
+    text: `HNH Soft Tech Solutions helped us transform our outdated system into a sleek, user-friendly platform. Their experience and deep technical knowledge made a huge difference in our project’s success.`,
+    name: "Michael Roberts",
+    role: "CEO, Medix Health Solutions",
     image: "/assets/images/testimonial/bg-image-2.png",
   },
   {
-    text: `Working with themespark was an absolute pleasure! They understood my vision immediately and brought it to life even better than I’d imagined.`,
-    name: "Cameron Williamson",
-    role: "Ui/Ux Designer",
+    text: `From the first meeting to the final delivery, HNH Soft Tech Solutions proved to be a reliable partner. They understood our needs perfectly and provided innovative solutions that exceeded our expectations.`,
+    name: "Olivia Harris",
+    role: "Marketing Head, LearnPro Online",
+    image: "/assets/images/testimonial/olivia.png",
+  },
+  {
+    text: `Their team is highly skilled and extremely easy to work with. We've trusted them with multiple projects over the years, and they’ve never disappointed us.`,
+    name: "James Bennett",
+    role: "IT Director, BlueWave Logistics",
     image: "/assets/images/testimonial/bg-image-1png.png",
+  },
+  {
+    text: `Thanks to HNH Soft Tech Solutions, we were able to launch our mobile app on time and within budget. They’re true professionals with a solid understanding of the latest technologies.`,
+    name: "Sophia Turner",
+    role: "Product Manager, QuickCart",
+    image: "/assets/images/testimonial/sophia.png",
   },
 
 ]
@@ -64,11 +76,13 @@ const HomeTestimonial = () => {
                 </div>
                 {/* Right: Image */}
                 <div className="flex-1">
+                  <div className='overflow-hidden h-72'>
                   <img
                     src={item.image}
                     alt="testimonial"
-                    className="rounded-md w-full object-cover"
+                    className="rounded-md w-full object-contain"
                   />
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
