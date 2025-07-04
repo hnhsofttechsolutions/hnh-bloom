@@ -8,12 +8,15 @@ import {
 } from "react-icons/fa";
 
 const ProjectDetailsTabs = ({ project }) => {
-  console.log("🚀 ~ ProjectDetailsTabs ~ project:", project);
+  console.log("🚀 ~ ProjectDetailsTabs ~ project:", project)
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
     <div className="mt-6 my-10 py-10 bg-[#141414] px-5 rounded-3xl ">
       {/* Tabs */}
+      <div className="text-4xl font-bold text-white mb-3">
+        <h2> {project?.projectById?.title}</h2>
+      </div>
       <div className="flex overflow-x-auto scrollbar-hide space-x-3 mb-6">
         {["Overview", "Technologies", "Timeline"].map((tab) => (
           <button
@@ -45,7 +48,7 @@ const ProjectDetailsTabs = ({ project }) => {
             {/* A full-featured e-commerce platform with advanced filtering and
             payment integration. */}
             {project?.projectById?.ProjectDescription?.map((item, index) => (
-              <p key={index}>{item.description}</p>
+              <span key={index}>{item.description}</span>
             ))}
           </p>
 
@@ -68,7 +71,7 @@ const ProjectDetailsTabs = ({ project }) => {
               </div>
               <ul className="list-disc list-inside text-gray-300 space-y-1">
                 {project?.projectById?.keyFeatures?.map((item, indx) => (
-                  <li key={indx}>{item}</li>
+                  <li className="" key={indx}>{item}</li>
                 ))}
               </ul>
             </div>

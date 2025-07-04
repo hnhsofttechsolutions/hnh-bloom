@@ -21,7 +21,7 @@ const Header = () => {
             <div className="col-lg-12">
               <div className="header-content">
                 <div className="logo">
-                  <Link to="/">
+                  <a href="/">
                     <img
                       onClick={() =>
                         window.scrollTo({
@@ -33,7 +33,7 @@ const Header = () => {
                       src="/assets/images/logo/logo-white.png"
                       alt="HNH SoftTech Solutions - Personal Portfolio HTML Template for developers and freelancers"
                     />
-                  </Link>
+                  </a>
                 </div>
                 <nav className="tmp-mainmenu-nav d-none d-xl-block">
                   <ul className="tmp-mainmenu">
