@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className="single-footer-wrapper border-right mr--20">
                   <Link to="/">
                     <img
-                      src="assets/images/logo/logo-white.png"
+                      src="/assets/images/logo/logo-white.png"
                       alt="HNH - Personal Portfolio HTML Template"
                       className="mb-4 h-[50px]"
                     />
@@ -112,7 +112,14 @@ const Footer = () => {
                       <span className="ft-icon">
                         <i className="fa-solid fa-location-dot" />
                       </span>
-                      3900 West northwest highway Apt 1172 Dallas TX 75220
+                     <a
+                        href="https://www.google.com/maps?q=3900+West+Northwest+Highway+Apt+1172+Dallas+TX+75220"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=""
+                      >
+                        3900 West Northwest Highway Apt 1172, Dallas, TX 75220
+                      </a>
                     </li>
                     <li>
                       <span className="ft-icon">
