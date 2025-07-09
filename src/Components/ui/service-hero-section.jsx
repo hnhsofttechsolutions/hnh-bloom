@@ -12,8 +12,8 @@ const ServiceHeroSection = ({ Data }) => {
   return (
     <>
       <div className="w-full h-10 lg:mt-40 z-50 absolute flex justify-between items-center px-8">
-        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id-1 : serviceData?.[Data?.id-1]?.path}`}><div className="bg-[#ff014f] hover:bg-[#c44068] duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
-        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id+1 : serviceData?.[Data?.id+1]?.path}`}><div className="bg-[#ff014f] hover:bg-[#c44068] duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
+        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id-1 : serviceData?.[Data?.id-1]?.path}`}><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
+        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id+1 : serviceData?.[Data?.id+1]?.path}`}><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
       </div>
       <div className="container py-20 px-10 relative">
         <div className="banner-one-main-wrapper">

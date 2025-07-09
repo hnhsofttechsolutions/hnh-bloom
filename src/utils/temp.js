@@ -105,12 +105,12 @@ export const serviceData = [
     p:"Contact us today to schedule a consultation and discover the power of intelligent data.",
   },
 
-  {
-    id:8,
-    path:"Services",
-    title: "All Services",
-    heading: "Driving digital innovation for a better tomorrow",
-    paragraph:
-      "In the constantly evolving technology landscape, businesses face the challenge of staying ahead of the curve. Our company is a leader in providing innovative technology solutions to help organizations reach their full potential. Our team of experts craft custom solutions tailored to meet the specific needs of each business, empowering them to succeed and thrive in this fast-paced world.",
-  },
+  // {
+  //   id:8,
+  //   path:"Services",
+  //   title: "All Services",
+  //   heading: "Driving digital innovation for a better tomorrow",
+  //   paragraph:
+  //     "In the constantly evolving technology landscape, businesses face the challenge of staying ahead of the curve. Our company is a leader in providing innovative technology solutions to help organizations reach their full potential. Our team of experts craft custom solutions tailored to meet the specific needs of each business, empowering them to succeed and thrive in this fast-paced world.",
+  // },
 ];

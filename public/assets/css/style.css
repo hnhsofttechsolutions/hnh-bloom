@@ -59,8 +59,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap");
 :root {
-  --color-primary: #FF014F;
-  --color-primary-alt: #ff014dd9;
+  /* --color-primary: #FF014F; */
+  --color-primary: #09527E;
+  /* --color-primary-alt: #ff014dd9; */
+  --color-primary-alt: #09527E;
   --color-primary-2nd: #FF494A;
   --color-primary-3rd: #FDC448;
   --color-primary-4th: #0071ff;
@@ -80,7 +82,7 @@
   --gradient-two: linear-gradient(to right, #ED145B, #4A11EB);
   --gradient-three: linear-gradient(to right, #03041c, #0612b3);
   --text-gradient-one:linear-gradient(to right, #E42032, #4A11EB);
-  --color-heading:#ffffff;
+  --color-heading:#141414;
   --color-body: #9f9f9f;
   --color-dark:#1d1d1d;
   --color-text-1:#DEDEDE;
@@ -91,7 +93,7 @@
   --color-light: #E4E6EA;
   --color-lighter: #CED0D4;
   --color-lightest: #F0F2F5;
-  --color-border: #ffffff14;
+  --color-border: #a0bdd4;
   --color-white: #ffffff;
   --color-white-75: rgba(255, 255, 255, 0.75);
   --color-success: #3EB75E;
@@ -162,7 +164,7 @@ body {
   font-weight: var(--p-regular);
   position: relative;
   overflow-x: hidden;
-  background: var(--color-secondary);
+  background: var(--background-color-5);
 }
 body::before {
   content: "";
@@ -6995,9 +6997,9 @@ p {
 a {
   transition: var(--transition);
 }
-a:hover {
+/* a:hover {
   color: var(--color-primary);
-}
+} */
 
 .bg-color--3 {
   background: var(--background-color-3) !important;
@@ -10972,7 +10974,7 @@ body.sal-disabled [data-sal|=flip] {
   backdrop-filter: blur(9px);
   width: 100%;
   box-shadow: 0px 7px 18px rgba(24, 16, 16, 0.0509803922);
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   z-index: 999;
   margin: auto;
   display: flex;
@@ -11276,7 +11278,7 @@ header.header-full-width.header--sticky.sticky {
   margin-top: 0;
 }
 .tmp-mainmenu-nav .tmp-mainmenu > li.has-dropdown .submenu li a {
-  color: var(--color-heading);
+  color: var(--color-light);
   font-weight: 600;
 }
 .tmp-mainmenu-nav .tmp-mainmenu > li.has-dropdown:hover .submenu {
@@ -11340,7 +11342,7 @@ header.header-full-width.header--sticky.sticky {
   padding-left: 15px;
 }
 .tmp-mainmenu-nav .tmp-mainmenu .has-dropdown .submenu li:hover > a {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
   padding-left: 15px;
 }
 .tmp-mainmenu-nav .tmp-mainmenu .has-dropdown .submenu li:hover::after {
@@ -11679,7 +11681,7 @@ header.header-full-width.header--sticky.sticky {
   width: 320px;
   z-index: 999;
   position: absolute;
-  background-color: var(--color-gray-2);
+  background-color: #edf5ff;
   height: 100%;
   height: 100vh;
   display: flex;
@@ -11782,7 +11784,7 @@ header.header-full-width.header--sticky.sticky {
   position: fixed;
   right: 0;
   top: 0;
-  background: var(--color-gray-2);
+  background: var(--color-primary);
   z-index: 99999;
   height: 100%;
   transform: translate3d(100%, 0, 0);
@@ -11798,7 +11800,7 @@ header.header-full-width.header--sticky.sticky {
 }
 .tmp-sidebar-area .inner .top-area {
   padding: 16px 20px;
-  background: #151515;
+  /* background: #151515; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12241,7 +12243,7 @@ header.header-full-width.header--sticky.sticky {
 
 .tmp-banner-one-area {
   padding-top: 26px;
-  background-image: url("../images/banner/banner-background-one.jpg");
+  /* background-image: url("../images/banner/banner-background-one.jpg"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16075,7 +16077,7 @@ Section Head
   Blog Inner
   =========================*/
 .signle-side-bar {
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   border-radius: 20px;
   margin-bottom: 30px;
   padding: 40px;
@@ -16404,7 +16406,7 @@ Section Head
   }
 }
 .blog-classic-card .blog-classic-content .title {
-  color: var(--color-heading);
+  color: var(--color-light);
   font-family: var(--font-primary);
   font-size: 32px;
   font-weight: 700;
@@ -16515,13 +16517,16 @@ Section Head
   align-items: center;
   justify-content: center;
   border-radius: 500px;
-  background: var(--color-gray-2);
-  color: var(--color-heading);
+  /* background: var(--color-gray-2); */
+  /* color: var(--color-heading); */
   font-family: var(--font-primary);
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
   transition: all 0.4s ease;
+  color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
 }
 @media only screen and (max-width: 479px) {
   .tmp-pagination-button .pagination-btn {
@@ -16529,11 +16534,11 @@ Section Head
     height: 45px;
   }
 }
-.tmp-pagination-button .pagination-btn:hover {
+/* .tmp-pagination-button .pagination-btn:hover {
   color: var(--color-primary);
   background: var(--color-primary);
   color: #fff;
-}
+} */
 .tmp-pagination-button .pagination-btn.active {
   color: var(--color-primary);
   background: var(--color-primary);
@@ -17346,7 +17351,7 @@ section.clients-testimonial-area {
 
 .tmp-banner-one-area {
   padding-top: 26px;
-  background-image: url("../images/banner/banner-background-one.jpg");
+  /* background-image: url("../images/banner/banner-background-one.jpg"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17748,7 +17753,7 @@ section.clients-testimonial-area {
   color: var(--color-primary);
 }
 .banner-one-main-wrapper .inner .disc {
-  color: var(--color-gray);
+  color: var(--color-gray-2);
   font-family: var(--font-secondary);
   font-size: 18px;
   font-weight: 400;
@@ -20176,7 +20181,7 @@ section.clients-testimonial-area {
   ===============================*/
 .price-plan-card {
   border-radius: 20px;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   padding: 25px;
   position: relative;
   overflow: hidden;
@@ -20359,7 +20364,7 @@ section.clients-testimonial-area {
   ===============================*/
 .get-in-touch-wrapper {
   border-radius: 20px;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   padding: 20px 30px;
 }
 @media (min-width: 576px) {
@@ -20479,7 +20484,8 @@ section.clients-testimonial-area {
   border-radius: 20px;
   padding: 50px 0;
   width: 100%;
-  background: #0F0F0F;
+  height: 300px;
+  background: #09527E;
 }
 .contact-info .contact-icon {
   width: 70px;
@@ -20489,7 +20495,7 @@ section.clients-testimonial-area {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
   margin-bottom: 25px;
   font-size: 30px;
 }
@@ -20931,7 +20937,7 @@ body.loaded {
 .year-of-expariance-wrapper {
   position: relative;
   overflow: hidden;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   border-radius: 20px;
   padding: 36px 52px 51px 52px;
 }
@@ -21052,7 +21058,7 @@ body.loaded {
 .counter-card {
   padding: 34px 7px;
   border-radius: 20px;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   height: 100%;
 }
 .counter-card .counter-title {
@@ -21085,7 +21091,8 @@ body.loaded {
   ===============================*/
 .education-experience-card {
   border-radius: 20px;
-  background: var(--color-gray-2);
+  /* background: rgba(255, 255, 255, 0.2); */
+  backdrop-filter: blur(20px);
   padding: 50px 40px;
   transition: all 0.4s ease;
   position: relative;
@@ -21297,9 +21304,9 @@ body.loaded {
   ===============================*/
 .latest-portfolio-card .portfoli-card-img {
   border-radius: 20px;
-  background: var(--color-gray-2);
+  background: #09527E;
   padding: 20px;
-  border: 2px solid var(--color-border);
+  /* border: 2px solid var(--color-border); */
   transition: var(--transition);
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -22231,7 +22238,7 @@ body.loaded {
 /* Service Card v1*/
 .service-card-v1 {
   border-radius: 20px;
-  border: 1px solid rgba(255, 73, 74, 0.16);
+  /* border: 1px solid rgba(255, 73, 74, 0.16); */
   padding: 40px 0 40px 0;
   transition: 0.4s;
 }
@@ -22292,7 +22299,7 @@ body.loaded {
 /* Service Card v2*/
 .service-card-v2 {
   border-radius: 20px;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   padding: 36px 40px 36px 40px;
   margin-bottom: 20px;
   display: block;
@@ -22808,12 +22815,12 @@ body.loaded {
 .our-supported-company-area .row {
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
-  border-left: 2px solid var(--color-border);
-  border-top: 2px solid var(--color-border);
+  /* border-left: 2px solid var(--color-border); */
+  /* border-top: 2px solid var(--color-border); */
 }
 
 .support-company-logo {
-  border-right: 2px solid var(--color-border);
+  /* border-right: 2px solid var(--color-border); */
   padding: 40px 0;
   display: inline-flex;
   align-items: center;
@@ -22821,7 +22828,7 @@ body.loaded {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border-bottom: 2px solid var(--color-border);
+  /* border-bottom: 2px solid var(--color-border); */
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .support-company-logo {
@@ -25212,7 +25219,7 @@ Primary style
   content: "";
   position: absolute;
   inset: 2px;
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
   border-radius: 20px;
 }
 .tmponhover > * {
@@ -26350,7 +26357,7 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
 }
 .footer-style-one-wrapper,
 .footer-style-two-wrapper {
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
 }
 
 .footer-style-one .ft-title,
@@ -26438,12 +26445,12 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
 }
 .newsletter-form-1 input {
   padding: 0;
-  color: #fff;
+  /* color: #fff; */
   padding-right: 20px;
   border: 0 none;
 }
 .newsletter-form-1 input::placeholder {
-  color: #FFF;
+  color: var(--background-color-3);
   font-family: var(--font-secondary);
   font-size: 16px;
   font-weight: 400;
@@ -26548,7 +26555,7 @@ body.tmp-white-version.index-8 .tmp-contact-about-inner .info-box {
    Copyright Area One
   ================================*/
 .copyright-area-one {
-  background: var(--color-gray-2);
+  /* background: var(--color-gray-2); */
 }
 .copyright-area-one .main-wrapper {
   border-top: 1px solid var(--color-border);
@@ -27232,9 +27239,9 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
 }
 
 .tab-header .active {
-  border-bottom: 3px solid rgb(243, 0, 73);
+  border-bottom: 3px solid #09527E;
   font-weight: bold;
-  color: rgb(243, 0, 73);
+color: #09527E;
 }
 
 .tab-content {

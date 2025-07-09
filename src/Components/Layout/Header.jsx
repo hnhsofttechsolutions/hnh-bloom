@@ -138,7 +138,7 @@ const Header = () => {
           <div className="inner">
             <div className="top-area">
               <Link to="/" className="logo">
-                <h1 className="font-bold text-3xl">HNH SOFT TECH SOLUTIONS</h1>
+                <h1 className="font-bold text-3xl text-white">HNH SOFT TECH SOLUTIONS</h1>
               </Link>
               <div
                 onClick={() => {
@@ -240,7 +240,7 @@ const Header = () => {
       </div>
 
       {/* mobile responsive */}
-      <div className="d-block d-xl-none ">
+      <div className="d-block d-xl-none">
         <div
           className={`tmp-popup-mobile-menu ${mobileSideBar ? "active" : ""}`}
         >
@@ -308,7 +308,7 @@ const Header = () => {
                   </Link>
                 </button>
                 {service === "open" && (
-                  <ul className="z-50 absolute bg-black p-4 rounded-xl">
+                  <ul className="z-50 absolute bg-[#edf5ff] p-4 rounded-xl">
                     {serviceData?.map((e, i) => (
                       <li
                         key={i}

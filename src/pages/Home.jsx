@@ -25,19 +25,18 @@ const Home = () => {
     "PremiumID",
     "Celine Victor"
   ]
+  // eslint-disable-next-line no-unused-vars
   const { data , loading } = useQuery(GETDATA, {
     variables: { skip: 0, limit: 4, categoryId:undefined },
   });
   const { data:pro  } = useQuery(GETALLPROJECT);
-  // console.log("🚀 ~ Home ~ pro:", pro)
+  // console.log("fgv", pro)
 
   // eslint-disable-next-line no-unused-vars
 const filterData = pro?.allProjects?.filter((item) =>
   filterProject?.includes(item?.title)
 );
-
-  if (loading) return <div><Loading/></div>;
-
+  // if (loading) return <div><Loading/></div>;
   return (
     <>
       <HomeBanner />

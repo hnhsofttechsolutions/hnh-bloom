@@ -13,7 +13,7 @@ const HomeBanner = () => {
             <div className="banner-right-content ">
               <img
                 className="tmp-scroll-trigger tmp-zoom-in animation-order-1  "
-                src="assets/images/banner/HnH Soft Tech-whit.png"
+                src="/assets/images/banner/home-hero.jpeg"
                 alt="banner-img"
               />
             </div>

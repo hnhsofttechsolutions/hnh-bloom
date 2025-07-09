@@ -6,19 +6,21 @@ import InfiniteScroll from "react-infinite-scroll-component";
 // eslint-disable-next-line no-unused-vars
 import Loading from "../loading/Loading";
 
-const HomePortfolio = ({ data , filterData }) => {
+const HomePortfolio = ({ data, filterData }) => {
   // console.log("🚀 ~ HomePortfolio ~ filterData:", filterData)
   // eslint-disable-next-line no-unused-vars
   const { data: tabs, loading } = useQuery(PROJECT_CATEGORIES, {});
+  console.log("🚀 ~ HomePortfolio ~ tabs:", tabs);
   const [tabCurrent, setTabCurrent] = useState("App Development");
   const location = useLocation();
 
   const isProjectPage = location.pathname === "/project";
 
   // Filtered data based on active tab
-  const filtered = data?.allProjects?.filter(
-    (item) => item?.categories[0]?.name === tabCurrent
-  ) || [];
+  const filtered =
+    data?.allProjects?.filter(
+      (item) => item?.categories[0]?.name === tabCurrent
+    ) || [];
 
   // Infinite Scroll State
   const [visibleData, setVisibleData] = useState([]);
@@ -30,7 +32,7 @@ const HomePortfolio = ({ data , filterData }) => {
       setVisibleData(filtered.slice(0, itemsPerLoad));
       setHasMore(filtered.length > itemsPerLoad);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tabCurrent, data, location.pathname]);
 
   const fetchMoreData = () => {
@@ -46,7 +48,11 @@ const HomePortfolio = ({ data , filterData }) => {
 
   const renderCard = (item, index) => (
     <div className="col-lg-6 col-sm-6" key={index}>
-      <div className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${index + 1}`}>
+      <div
+        className={`latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-${
+          index + 1
+        }`}
+      >
         <div className="portfoli-card-img">
           <div className="img-box v2">
             <Link to={`/project-detail/${item?.id}`}>
@@ -61,11 +67,10 @@ const HomePortfolio = ({ data , filterData }) => {
         <div className="portfolio-card-content-wrap">
           <div className="content-left">
             <h3 className="portfolio-card-title">
-              <Link to={`/project-detail/${item?.id}`}>
-                {item.title}
-              </Link>
+              <Link to={`/project-detail/${item?.id}`}>{item?.title}</Link>
             </h3>
-            <p className="portfoli-card-para">{item.categories[0]?.name}</p>
+            <p>{item?.targetAudience}</p>
+            <p className="portfoli-card-para">{item?.categories[0]?.name}</p>
           </div>
           <Link to={item?.ProjectDemoLink?.link} className="tmp-arrow-icon-btn">
             <div className="btn-inner">
@@ -86,9 +91,12 @@ const HomePortfolio = ({ data , filterData }) => {
             <div className="section-sub-title center-title">
               <span className="subtitle">Our Featured Projects</span>
             </div>
-            <h2 className="title">Transforming Ideas into <br /> Exceptional</h2>
+            <h2 className="title">
+              Transforming Ideas into <br /> Exceptional
+            </h2>
             <p className="description section-sm">
-              Each project reflects our commitment to innovation, precision, and client success.
+              Each project reflects our commitment to innovation, precision, and
+              client success.
             </p>
           </div>
 
@@ -107,6 +115,14 @@ const HomePortfolio = ({ data , filterData }) => {
               </div>
             </div>
           )}
+          {isProjectPage && <div className="flex justify-center items-center">
+            <input
+              type="text"
+              name="text"
+              placeholder="Search"
+              className="m-[30px] text-center bg-transparent border-none outline-none max-w-[190px] px-5 py-2.5 text-base !rounded-full shadow-inner text-[#09527E]"
+            />
+          </div>}
 
           <div className="row">
             {isProjectPage ? (

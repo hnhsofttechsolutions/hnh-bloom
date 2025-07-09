@@ -67,7 +67,7 @@ const HomeGetInTouch = () => {
       <section className="get-in-touch-area tmp-section-gapTop">
         <div className="container">
           <div className="contact-get-in-touch-wrap">
-            <div className="get-in-touch-wrapper tmponhover">
+            <div className="get-in-touch-wrapper">
               <div className="row g-5 align-items-center">
                 <div className="col-lg-5">
                   <div className="section-head text-align-left">

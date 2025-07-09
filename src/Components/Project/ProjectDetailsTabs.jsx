@@ -12,7 +12,7 @@ const ProjectDetailsTabs = ({ project }) => {
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
-    <div className="mt-6 my-10 py-10 bg-[#141414] px-5 rounded-3xl ">
+    <div className="mt-6 my-10 py-10 bg-[#09527E] px-5 rounded-3xl ">
       {/* Tabs */}
       <div className="text-4xl font-bold text-white mb-3">
         <h2> {project?.projectById?.title}</h2>

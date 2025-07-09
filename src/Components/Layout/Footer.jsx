@@ -39,12 +39,12 @@ const Footer = () => {
                       <i className="fa-brands fa-facebook-f" />
                     </Link>
                   </div>
-                  <form action="#" className="newsletter-form-1 mt--10">
-                    <input type="email" placeholder="Email Address" />
+                  {/* <form action="#" className="newsletter-form-1 mt--10">
+                    <input type="email" className="text-black" placeholder="Email Address" />
                     <span className="form-icon">
                       <i className="fa-regular fa-envelope" />
                     </span>
-                  </form>
+                  </form> */}
                 </div>
               </div>
 
@@ -63,7 +63,10 @@ const Footer = () => {
                       <Link to="/service">Service</Link>
                     </li>
                     <li>
-                      <Link to="/project">Portfolio</Link>
+                      <Link to="/blog">Blog</Link>
+                    </li>
+                    <li>
+                      <Link to="/project">Project</Link>
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
