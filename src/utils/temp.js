@@ -104,13 +104,11 @@ export const serviceData = [
     paragraph:"Transform your data into a valuable asset with the help of our expert AI and ML services. We leverage the latest technologies in artificial intelligence, data analysis, and machine learning to provide businesses with solutions that drive results. Whether you need help with data optimization, strategy development, or problem-solving, we have the expertise to help.",
     p:"Contact us today to schedule a consultation and discover the power of intelligent data.",
   },
-
   // {
   //   id:8,
-  //   path:"Services",
+  //   path:"Service",
   //   title: "All Services",
   //   heading: "Driving digital innovation for a better tomorrow",
-  //   paragraph:
-  //     "In the constantly evolving technology landscape, businesses face the challenge of staying ahead of the curve. Our company is a leader in providing innovative technology solutions to help organizations reach their full potential. Our team of experts craft custom solutions tailored to meet the specific needs of each business, empowering them to succeed and thrive in this fast-paced world.",
+  //   paragraph:"In the constantly evolving technology landscape, businesses face the challenge of staying ahead of the curve. Our company is a leader in providing innovative technology solutions to help organizations reach their full potential. Our team of experts craft custom solutions tailored to meet the specific needs of each business, empowering them to succeed and thrive in this fast-paced world.",
   // },
 ];

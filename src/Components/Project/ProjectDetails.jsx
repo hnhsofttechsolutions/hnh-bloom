@@ -149,11 +149,11 @@ const nextId = currentIndex < data.projects.data.length - 1 ? data.projects.data
   return (
     <>
       <div className="project-details-area-wrapper tmp-section-gap relative">
-    <div className="w-full h-10 mt-24 z-50 absolute flex justify-between items-center px-8">
+    <div className="w-full h-10 mt-44 z-50 absolute flex justify-between items-center px-8">
       <Link to={prevId ? `/project-detail/${prevId}` : ""} ><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
       <Link to={nextId ? `/project-detail/${nextId}` : ""} ><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
     </div>
-        <div className="container">
+        <div className="container p-16 mt-10">
           <div className="row">
             <div className="col-lg-12">
               <div className="project-details-thumnail-wrap">
@@ -239,7 +239,7 @@ const nextId = currentIndex < data.projects.data.length - 1 ? data.projects.data
                         className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition"
                       >
                         <i
-                          className={`${iconClass} text-[#e50914] text-3xl`}
+                          className={`${iconClass} text-[#09527E] text-3xl`}
                         ></i>
                         <Link to={item?.link} target="_blank">
                           <span>{item?.title}</span>

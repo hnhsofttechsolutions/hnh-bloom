@@ -26,7 +26,7 @@ const HomeService = () => {
                     <img src={service.icon} alt="" />
                   </div>
                   <h4 className="service-title">
-                    <a href={service.link}>{service.title}</a>
+                    <h3>{service.title}</h3>
                   </h4>
                   <p className="service-para">{service.description}</p>
                 </div>

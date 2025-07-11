@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 const HomeBanner = () => {
   return (
    <>
-   <>
-  <div className="tmp-banner-one-area">
+  <div className="tmp-banner-one-area bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_40%)]">
     <div className="container">
       <div className="banner-one-main-wrapper">
         <div className="row align-items-center">
@@ -60,7 +59,6 @@ const HomeBanner = () => {
       </div>
     </div>
   </div>
-</>
 
    </>
   )

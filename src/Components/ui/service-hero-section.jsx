@@ -7,13 +7,15 @@ import ServiceAboutSection from "./ServiceAboutSection";
 // import HomeGetInTouch from "../Home/HomeGetInTouch";
 // console.log(serviceData)
 const ServiceHeroSection = ({ Data }) => {
-
+  console.log("🚀 ~ ServiceHeroSection ~ Data:", Data)
+  const serviceLength = serviceData.length;
+  console.log("🚀 ~ ServiceHeroSection ~ serviceLength:", serviceLength)
   
   return (
     <>
       <div className="w-full h-10 lg:mt-40 z-50 absolute flex justify-between items-center px-8">
-        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id-1 : serviceData?.[Data?.id-1]?.path}`}><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
-        <Link to={`/service?value=${serviceData?.Data?.child ? serviceData?.Data?.child?.id+1 : serviceData?.[Data?.id+1]?.path}`}><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
+        <Link to={`/service?value=${Data.id === 0 ? serviceData[serviceData.length - 1].path : serviceData[Data.id - 1].path}` }><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronLeft  className="text-white"/></div></Link>
+        <Link to={`/service?value=${serviceData[Data.id + 1] ? serviceData[Data.id + 1].path : serviceData[0].path}`}><div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2 "><ChevronRight  className="text-white"/></div></Link>
       </div>
       <div className="container py-20 px-10 relative">
         <div className="banner-one-main-wrapper">

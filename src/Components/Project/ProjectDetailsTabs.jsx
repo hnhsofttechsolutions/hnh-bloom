@@ -25,7 +25,7 @@ const ProjectDetailsTabs = ({ project }) => {
             className={`flex items-center gap-2 p-4 rounded-2xl font-bold text-3xl border transition-all
         ${
           activeTab === tab
-            ? "bg-[#ff014f] text-white border-[#ff014f]"
+            ? "bg-[] text-white border-[#ff014f]"
             : "bg-[#1a1a1a] text-gray-300 border-gray-600 hover:bg-[#2c2c2c]"
         }`}
           >
@@ -54,7 +54,7 @@ const ProjectDetailsTabs = ({ project }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-[#111] p-5 rounded-3xl border border-gray-700">
-              <div className="flex items-center gap-2 text-[#ff014f] mb-2">
+              <div className="flex items-center gap-2 text-[#09527E] mb-2">
                 <FaUsers />
                 <h3 className="font-semibold text-white">Target Audience</h3>
               </div>
@@ -65,7 +65,7 @@ const ProjectDetailsTabs = ({ project }) => {
             </div>
 
             <div className="bg-[#111] p-5 rounded-3xl border border-gray-700">
-              <div className="flex items-center gap-2 text-[#ff014f] mb-2">
+              <div className="flex items-center gap-2 text-[#09527E] mb-2">
                 <FaLightbulb />
                 <h3 className="font-semibold text-white">Key Features</h3>
               </div>
@@ -88,7 +88,7 @@ const ProjectDetailsTabs = ({ project }) => {
             {project?.projectById?.technologies?.map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-[#ff014f] to-[#ff014f] text-white px-5 py-2 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-default"
+                className="border text-white px-5 py-2 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-default"
               >
                 {item.name}
               </div>
@@ -104,7 +104,7 @@ const ProjectDetailsTabs = ({ project }) => {
           </h2>
           {project?.projectById?.ProjectTimeline?.map((item, idx) => (
             <div key={idx} className="w-full border p-4 rounded-3xl">
-              <h1 className="text-[20px] text-[#ff014f]">{item.duration}</h1>
+              <h1 className="text-[20px] text-white">{item.duration}</h1>
               <h4>{item.title}</h4>
               <p>{item.description}</p>
             </div>

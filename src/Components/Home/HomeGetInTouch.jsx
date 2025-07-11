@@ -72,7 +72,7 @@ const HomeGetInTouch = () => {
                 <div className="col-lg-5">
                   <div className="section-head text-align-left">
                     <div className="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                      <span className="subtitle !text-4xl">Contact Us</span>
+                      <span className="subtitle !text-4xl text-black">Contact Us</span>
                     </div>
                     <p className="description tmp-scroll-trigger tmp-fade-in animation-order-3">
                       Have a question or need assistance? Get in touch with our

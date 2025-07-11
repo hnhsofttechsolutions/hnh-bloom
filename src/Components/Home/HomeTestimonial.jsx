@@ -40,7 +40,7 @@ const testimonials = [
 
 const HomeTestimonial = () => {
   return (
-    <section className="py-20">
+    <section className="pt-20">
       <div className="container mx-auto px-4">
         <Swiper
           modules={[Navigation]}
@@ -58,7 +58,7 @@ const HomeTestimonial = () => {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" text-white flex flex-col md:flex-row items-center p-8 gap-6">
+              <div className=" text-white flex flex-col md:flex-row items-center p-8 gap-6 h-[350px]">
                 {/* Left: Text Content */}
                 <div className="flex-1">
                   <h2 className="text-black text-2xl md:text-2xl lg:text-3xl font-semibold leading-relaxed mb-6">
@@ -77,7 +77,7 @@ const HomeTestimonial = () => {
                 </div>
                 {/* Right: Image */}
                 <div className="flex-1">
-                  <div className='overflow-hidden h-72'>
+                  <div className='overflow-hidden h-96'>
                   <img
                     src={item.image}
                     alt="testimonial"

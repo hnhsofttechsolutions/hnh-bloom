@@ -14,6 +14,7 @@ import HomeSupportedCompany from "../Components/Home/HomeSupportedCompany";
 import HomeTestimonial from "../Components/Home/HomeTestimonial";
 // eslint-disable-next-line no-unused-vars
 import GETBYID, { GETALLPROJECT } from "../queries/get-post";
+// eslint-disable-next-line no-unused-vars
 import Loading from "../Components/loading/Loading";
 import GETDATA from "../queries/get-post";
 

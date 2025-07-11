@@ -9,15 +9,15 @@ const ContactInfo = () => {
             <div className="col-lg-4 col-md-6">
               <div className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-1">
                 <div className="contact-icon">
-                  <i className="fa-solid fa-location-dot" />
+                  <i className="fa-solid fa-location-dot text-white" />
                 </div>
-                <h3 className="title">Address</h3>
+                <h3 className="title text-white">Address</h3>
                 <p className="para">
                    <a
                         href="https://www.google.com/maps?q=3900+West+Northwest+Highway+Apt+1172+Dallas+TX+75220"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className=""
+                        className="text-white"
                       >
                         3900 West Northwest Highway Apt 1172, Dallas, TX 75220
                       </a>
@@ -28,11 +28,11 @@ const ContactInfo = () => {
             <div className="col-lg-4 col-md-6">
               <div className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-2">
                 <div className="contact-icon">
-                  <i className="fa-solid fa-envelope" />
+                  <i className="fa-solid fa-envelope text-white" />
                 </div>
-                <h3 className="title">E-mail</h3>
+                <h3 className="title text-white">E-mail</h3>
                 <a href="mailto:themespark11@gmail.com">
-                  <p className="para">info@hnhsofttechsolutions.com</p>
+                  <p className="para text-white">info@hnhsofttechsolutions.com</p>
                 </a>
                 {/* <a href="mailto:themespark11@gmail.com">
             <p className="para">themespark11@gmail.com</p>
@@ -42,15 +42,16 @@ const ContactInfo = () => {
             <div className="col-lg-4 col-md-6">
               <div className="contact-info tmp-scroll-trigger tmponhover tmp-fade-in animation-order-3">
                 <div className="contact-icon">
-                  <i className="fa-solid fa-phone" />
+                  <i className="fa-solid fa-phone text-white" />
                 </div>
-                <h3 className="title">Call Me</h3>
+                <h3 className="title text-white">Call Me</h3>
                 <p className="para">
                   {" "}
                   <a
                     href="https://wa.me/19403440682"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-white"
                   >
                     +1 940 3440 682
                   </a>

@@ -3,7 +3,7 @@ import React from 'react'
 const HomeSkills = () => {
   return (
    <>
-   <>
+   
   {/* tmp skill area start */}
   <div className="tmp-skill-area tmp-section-gapTop">
     <div className="container">
@@ -242,7 +242,7 @@ const HomeSkills = () => {
     </div>
   </div>
   {/* tmp skill area end */}
-</>
+
 
    </>
   )

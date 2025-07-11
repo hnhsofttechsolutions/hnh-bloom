@@ -72,7 +72,7 @@ const HomePortfolio = ({ data, filterData }) => {
             <p>{item?.targetAudience}</p>
             <p className="portfoli-card-para">{item?.categories[0]?.name}</p>
           </div>
-          <Link to={item?.ProjectDemoLink?.link} className="tmp-arrow-icon-btn">
+          <Link to={`/project-detail/${item?.id}`} className="tmp-arrow-icon-btn">
             <div className="btn-inner">
               <i className="tmp-icon fa-solid fa-arrow-up-right" />
               <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />

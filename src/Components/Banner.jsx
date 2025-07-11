@@ -5,10 +5,10 @@ const Banner = ({heading,text}) => {
   return (
    <>
   {/* Breadcrumb Area Start */}
-  <div className="breadcrumb-area breadcrumb-bg">
+  <div className="breadcrumb-area breadcrumb-bg bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_40%)] min-h-[500px]">
     <div className="container">
       <div className="row">
-        <div className="col-lg-12">
+        <div className="col-lg-12 mt-44">
           <div className="breadcrumb-inner text-center">
             <h1 className="title split-collab font-extrabold">{heading}</h1>
             <ul className="page-list">
