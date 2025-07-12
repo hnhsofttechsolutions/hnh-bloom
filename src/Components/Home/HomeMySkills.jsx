@@ -20,13 +20,13 @@ const HomeMySkills = () => {
         <div className="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
           <div className="my-skill-card">
             <div className="card-icon">
-              <i className="fa-light fa-building-columns" />
+              <i className="fa-light fa-building-columns text-white" />
             </div>
             <div className="card-title">
-              <h3 className="main-title">Ui/visual Design</h3>
-              <p className="sub-title">Projects Completed: 21</p>
+              <h3 className="main-title text-white">Ui/visual Design</h3>
+              <p className="sub-title text-white">Projects Completed: 21</p>
             </div>
-            <p className="card-para">
+            <p className="card-para"> text-white
               A showcase of sleek, responsive, and user-friendly interfaces designed for optimal user experience. From web to mobile, each design aligns with brand identity and user goals.
             </p>
             {/* <a href="#" className="read-more-btn">
@@ -41,17 +41,17 @@ const HomeMySkills = () => {
         <div className="service-item tmp-scroll-trigger tmp-fade-in animation-order-2">
           <div className="my-skill-card">
             <div className="card-icon">
-              <i className="fa-light fa-calendar" />
+              <i className="fa-light fa-calendar text-white" />
             </div>
             <div className="card-title">
-              <h3 className="main-title">Web Interface &  <br />Visual Strategy</h3>
-              <p className="sub-title">Projects Completed: 21</p>
+              <h3 className="main-title text-white">Web Interface &  <br />Visual Strategy</h3>
+              <p className="sub-title text-white">Projects Completed: 21</p>
             </div>
             <p className="card-para">
               Explore a curated portfolio featuring design solutions for responsive websites, SaaS platforms, and custom dashboards — all built for performance and scalability.
             </p>
             {/* <a href="#" className="read-more-btn">
-              Read More{" "}
+              Read More{" "} text-white
               <span className="read-more-icon">
                 <i className="fa-solid fa-angle-right" />
               </span>
@@ -62,11 +62,11 @@ const HomeMySkills = () => {
         <div className="service-item tmp-scroll-trigger tmp-fade-in animation-order-3">
           <div className="my-skill-card">
             <div className="card-icon">
-              <i className="fa-light fa-pen-nib" />
+              <i className="fa-light fa-pen-nib text-white" />
             </div>
             <div className="card-title">
-              <h3 className="main-title">Motion Design & <br />Animation</h3>
-              <p className="sub-title">Projects Completed: 20</p>
+              <h3 className="main-title text-white">Motion Design & <br />Animation</h3>
+              <p className="sub-title text-white">Projects Completed: 20</p>
             </div>
             <p className="card-para">
               From animated UI elements to full motion graphics, these projects reflect dynamic storytelling and brand communication through movement and interaction.

@@ -12,7 +12,7 @@ const ProjectDetailsTabs = ({ project }) => {
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
-    <div className="mt-6 my-10 py-10 bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_110%)] px-5 rounded-3xl ">
+    <div className="mt-6 my-10 py-10 bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] px-5 rounded-3xl ">
       {/* Tabs */}
       <div className="text-4xl font-bold text-white mb-3">
         <h2> {project?.projectById?.title}</h2>

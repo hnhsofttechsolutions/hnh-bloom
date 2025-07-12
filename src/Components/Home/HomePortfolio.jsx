@@ -7,24 +7,26 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Loading from "../loading/Loading";
 
 const HomePortfolio = ({ data, filterData }) => {
+  console.log("🚀 ~ HomePortfolio ~ data:", data);
   // console.log("🚀 ~ HomePortfolio ~ filterData:", filterData)
   // eslint-disable-next-line no-unused-vars
   const { data: tabs, loading } = useQuery(PROJECT_CATEGORIES, {});
-  console.log("🚀 ~ HomePortfolio ~ tabs:", tabs);
   const [tabCurrent, setTabCurrent] = useState("App Development");
   const location = useLocation();
-
   const isProjectPage = location.pathname === "/project";
+  
 
   // Filtered data based on active tab
   const filtered =
     data?.allProjects?.filter(
       (item) => item?.categories[0]?.name === tabCurrent
     ) || [];
+  console.log("🚀 ~ HomePortfolio ~ filtered:", filtered);
 
   // Infinite Scroll State
   const [visibleData, setVisibleData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  const [searchProjects, setsearchProjects] = useState("");
   const itemsPerLoad = 4;
 
   useEffect(() => {
@@ -45,6 +47,13 @@ const HomePortfolio = ({ data, filterData }) => {
       setHasMore(false);
     }
   };
+  // eslint-disable-next-line no-unused-vars
+  const searchResults =
+    filtered.filter((item) =>
+      item?.title?.toLowerCase().includes(searchProjects.trim().toLowerCase())
+    ) || [];
+  console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
+  
 
   const renderCard = (item, index) => (
     <div className="col-lg-6 col-sm-6" key={index}>
@@ -72,7 +81,10 @@ const HomePortfolio = ({ data, filterData }) => {
             <p>{item?.targetAudience}</p>
             <p className="portfoli-card-para">{item?.categories[0]?.name}</p>
           </div>
-          <Link to={`/project-detail/${item?.id}`} className="tmp-arrow-icon-btn">
+          <Link
+            to={`/project-detail/${item?.id}`}
+            className="tmp-arrow-icon-btn"
+          >
             <div className="btn-inner">
               <i className="tmp-icon fa-solid fa-arrow-up-right" />
               <i className="tmp-icon-bottom fa-solid fa-arrow-up-right" />
@@ -115,14 +127,18 @@ const HomePortfolio = ({ data, filterData }) => {
               </div>
             </div>
           )}
-          {isProjectPage && <div className="flex justify-center items-center">
-            <input
-              type="text"
-              name="text"
-              placeholder="Search"
-              className="m-[30px] text-center bg-transparent border-none outline-none max-w-[190px] px-5 py-2.5 text-base !rounded-full shadow-inner text-[#09527E]"
-            />
-          </div>}
+          {isProjectPage && (
+            <div className="flex justify-center items-center">
+              <input
+                type="text"
+                name="text"
+                value={searchProjects}
+                onChange={(e) => setsearchProjects(e.target.value)}
+                placeholder="Search"
+                className="m-[30px] text-center bg-transparent border-none outline-none max-w-[190px] px-5 py-2.5 text-base !rounded-full shadow-inner text-[#09527E]"
+              />
+            </div>
+          )}
 
           <div className="row">
             {isProjectPage ? (
@@ -130,10 +146,10 @@ const HomePortfolio = ({ data, filterData }) => {
                 dataLength={visibleData.length}
                 next={fetchMoreData}
                 hasMore={hasMore}
-                loader={<h4>Loading...</h4>}
+                loader={<div><Loading/></div>}
                 className="row w-100 !overflow-hidden"
               >
-                {visibleData.map(renderCard)}
+                {searchResults.length > 0 ? searchResults.map(renderCard) : visibleData.map(renderCard)}
               </InfiniteScroll>
             ) : (
               filterData?.map(renderCard)

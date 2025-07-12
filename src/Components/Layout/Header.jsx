@@ -135,7 +135,7 @@ const Header = () => {
             sidebar ? "tmp_side_bar_open" : ""
           }`}
         >
-          <div className="inner">
+          <div className="inner bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)]">
             <div className="top-area">
               <Link to="/" className="logo">
                 <h1 className="font-bold text-3xl text-white">HNH SOFT TECH SOLUTIONS</h1>
@@ -164,7 +164,7 @@ const Header = () => {
                 Have a question or need assistance? Get in touch with our team,
                 and we'll be happy to assist you with all your needs.
               </h5>
-              <p className="disc">
+              <p className="disc text-white">
                 Have a question or want to work together? Drop us a message, and
                 we'll get back to you as soon as possible.
               </p>
