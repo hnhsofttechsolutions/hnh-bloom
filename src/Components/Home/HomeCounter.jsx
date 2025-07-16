@@ -3,7 +3,6 @@ import CountUp from "react-countup";
 const HomeCounter = () => {
   return (
     <>
-      {/* Tpm Counter Area Start */}
       <section className="counter-area">
         <div className="container">
           <div className="row g-5">
