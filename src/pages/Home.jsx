@@ -40,7 +40,7 @@ const filterData = pro?.allProjects?.filter((item) =>
   // if (loading) return <div><Loading/></div>;
   return (
     <>
-      <HomeBanner />
+     <HomeBanner /> 
       <HomeService />
       <div className="my-10">
         <HomeCounter />

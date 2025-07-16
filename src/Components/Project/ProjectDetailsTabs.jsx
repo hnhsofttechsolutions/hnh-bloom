@@ -58,7 +58,7 @@ const ProjectDetailsTabs = ({ project }) => {
                 <FaUsers />
                 <h3 className="font-semibold text-white">Target Audience</h3>
               </div>
-              <p className="text-gray-300">
+              <p className="text-gray-300 font-bold">
                 {project?.projectById?.targetAudience}
                 {/* Retailers and entrepreneurs looking for an online presence. */}
               </p>
@@ -69,11 +69,11 @@ const ProjectDetailsTabs = ({ project }) => {
                 <FaLightbulb />
                 <h3 className="font-semibold text-white">Key Features</h3>
               </div>
-              <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <p className="list-disc list-inside text-gray-300 space-y-1">
                 {project?.projectById?.keyFeatures?.map((item, indx) => (
-                  <li className="" key={indx}>{item}</li>
+                  <li className=" font-bold" key={indx}>{item}</li>
                 ))}
-              </ul>
+              </p>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ const ProjectDetailsTabs = ({ project }) => {
             <div key={idx} className="w-full border p-4 rounded-3xl">
               <h1 className="text-[20px] text-white">{item.duration}</h1>
               <h4>{item.title}</h4>
-              <p>{item.description}</p>
+              <p className="text-white font-serif">{item.description}</p>
             </div>
           ))}
         </div>

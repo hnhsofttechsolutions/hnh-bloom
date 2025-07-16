@@ -21,6 +21,7 @@ const ImageSlider = ({ mediaList, handleMediaClick }) => {
     );
   };
 
+  
   const positions = ["center", "left1", "left", "right", "right1"];
 
   const imageVariants = {
@@ -30,9 +31,11 @@ const ImageSlider = ({ mediaList, handleMediaClick }) => {
     right: { x: "90%", scale: 0.5, zIndex: 1 },
     right1: { x: "50%", scale: 0.7, zIndex: 3 },
   };
+  
 
   return (
     <div className="relative flex items-center justify-center h-[500px] my-10 overflow-hidden">
+
       {mediaList.map((media, index) => {
         const positionKey = positions[positionIndexes[index % 5]];
 

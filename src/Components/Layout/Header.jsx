@@ -17,7 +17,7 @@ const Header = () => {
       {/* tpm-header-area start */}
       <header className="tmp-header-area-start header-one header--sticky header--transparent">
         <div className="container">
-          <div className="row">
+          <div className="row ">
             <div className="col-lg-12">
               <div className="header-content">
                 <div className="logo">
