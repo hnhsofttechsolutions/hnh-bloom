@@ -21,10 +21,10 @@ import GETDATA from "../queries/get-post";
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
   const filterProject = [
-    "Competence",
-    "Family Handbook",
-    "PremiumID",
-    "Celine Victor"
+    "PROVISTA AI PROJECT",
+    "TUDOR COLLEGIATE STRATEGIES",
+    "AUTOMOTOR AUCTIONS",
+    "FIND YOUR NEXT OPPORTUNITY – SMARTER, FASTER, BETTER JOB SEARCH"
   ]
   // eslint-disable-next-line no-unused-vars
   const { data , loading } = useQuery(GETDATA, {
