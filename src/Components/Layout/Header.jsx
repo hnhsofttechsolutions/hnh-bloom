@@ -91,10 +91,10 @@ const Header = () => {
                       <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                         <i className="fa-brands fa-instagram" />
                       </Link>
-                      <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                      <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                         <i className="fa-brands fa-linkedin-in" />
                       </Link>
-                      <Link to="https://www.facebook.com/hnhtechsolutions">
+                      <Link to="https://www.facebook.com/hnhsofttechsolutions">
                         <i className="fa-brands fa-facebook-f" />
                       </Link>
                     </div>
@@ -153,9 +153,9 @@ const Header = () => {
             </div>
             <div className="content-wrapper">
               <div className="image-area-feature">
-                <Link to="">
+                <Link to="/">
                   <img
-                    src="assets/images/banner/HnH Soft Tech-whit.png"
+                    src="/assets/images/banner/home-hero.jpeg"
                     alt="personal-logo"
                   />
                 </Link>
@@ -221,10 +221,10 @@ const Header = () => {
                   <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                     <i className="fa-brands fa-instagram" />
                   </Link>
-                  <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                  <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                     <i className="fa-brands fa-linkedin-in" />
                   </Link>
-                  <Link to="https://www.facebook.com/hnhtechsolutions">
+                  <Link to="https://www.facebook.com/hnhsofttechsolutions">
                     <i className="fa-brands fa-facebook-f" />
                   </Link>
                 </div>
@@ -361,10 +361,10 @@ const Header = () => {
                 <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                   <i className="fa-brands fa-instagram" />
                 </Link>
-                <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                   <i className="fa-brands fa-linkedin-in" />
                 </Link>
-                <Link to="https://www.facebook.com/hnhtechsolutions">
+                <Link to="https://www.facebook.com/hnhsofttechsolutions">
                   <i className="fa-brands fa-facebook-f" />
                 </Link>
               </div>

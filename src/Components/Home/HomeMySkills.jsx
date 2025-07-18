@@ -26,7 +26,7 @@ const HomeMySkills = () => {
               <h3 className="main-title text-white">Ui/visual Design</h3>
               <p className="sub-title text-white">Projects Completed: 21</p>
             </div>
-            <p className="card-para"> text-white
+            <p className="card-para"> Text-white
               A showcase of sleek, responsive, and user-friendly interfaces designed for optimal user experience. From web to mobile, each design aligns with brand identity and user goals.
             </p>
             {/* <a href="#" className="read-more-btn">

@@ -29,13 +29,13 @@ const Footer = () => {
                     and succeed in a competitive digital world.
                   </p>
                   <div className="social-link footer">
-                    <Link to="https://www.facebook.com/hnhtechsolutions">
+                    <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                       <i className="fa-brands fa-instagram" />
                     </Link>
-                    <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                    <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                       <i className="fa-brands fa-linkedin-in" />
                     </Link>
-                    <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
+                    <Link to="https://www.facebook.com/hnhsofttechsolutions">
                       <i className="fa-brands fa-facebook-f" />
                     </Link>
                   </div>
@@ -51,8 +51,8 @@ const Footer = () => {
               {/* Column 2: Quick Link Set 1 */}
               <div className="col-lg-3 col-md-6">
                 <div className="single-footer-wrapper quick-link-wrap">
-                  <h5 className="ft-title lg:text-center">Quick Link</h5>
-                  <ul className="ft-link tmp-link-animation  lg:flex flex-col justify-center items-center">
+                  <h5 className="ft-title">Quick Link</h5>
+                  <ul className="ft-link tmp-link-animation  lg:flex flex-col justify-start ">
                     <li className="">
                       <Link to="/">Home</Link>
                     </li>

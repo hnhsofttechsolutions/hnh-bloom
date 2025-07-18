@@ -15,20 +15,21 @@ const HomePortfolio = ({ data, filterData }) => {
   const location = useLocation();
   const isProjectPage = location.pathname === "/project";
   
-
+  
   // Filtered data based on active tab
   const filtered =
-    data?.allProjects?.filter(
-      (item) => item?.categories[0]?.name === tabCurrent
-    ) || [];
+  data?.allProjects?.filter(
+    (item) => item?.categories[0]?.name === tabCurrent
+  ) || [];
   console.log("🚀 ~ HomePortfolio ~ filtered:", filtered);
-
+  
+  
   // Infinite Scroll State
   const [visibleData, setVisibleData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [searchProjects, setsearchProjects] = useState("");
   const itemsPerLoad = 4;
-
+  
   useEffect(() => {
     if (isProjectPage) {
       setVisibleData(filtered.slice(0, itemsPerLoad));
@@ -49,11 +50,13 @@ const HomePortfolio = ({ data, filterData }) => {
   };
   // eslint-disable-next-line no-unused-vars
   const searchResults =
-    filtered.filter((item) =>
-      item?.title?.toLowerCase().includes(searchProjects.trim().toLowerCase())
-    ) || [];
-  console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
-  
+  filtered.filter((item) =>
+    item?.title?.toLowerCase().includes(searchProjects.trim().toLowerCase())
+) || [];
+console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
+
+
+
 
   const renderCard = (item, index) => (
     <div className="col-lg-6 col-sm-6" key={index}>

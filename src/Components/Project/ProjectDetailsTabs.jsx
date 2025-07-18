@@ -53,7 +53,7 @@ const ProjectDetailsTabs = ({ project }) => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-[#09527E] p-5 rounded-3xl border border-gray-700">
+            <div className="bg-[#09527E] p-5 rounded-3xl border border-gray-700 ">
               <div className="flex items-center gap-2 text-white mb-2">
                 <FaUsers />
                 <h3 className="font-semibold text-white">Target Audience</h3>
@@ -64,7 +64,7 @@ const ProjectDetailsTabs = ({ project }) => {
               </p>
             </div>
 
-            <div className="bg-[#09527E] p-5 rounded-3xl border border-gray-700">
+            <div className="bg-[#09527E] p-5 rounded-3xl border border-gray-700 ">
               <div className="flex items-center gap-2 text-white mb-2">
                 <FaLightbulb />
                 <h3 className="font-semibold text-white">Key Features</h3>
@@ -111,6 +111,8 @@ const ProjectDetailsTabs = ({ project }) => {
           ))}
         </div>
       )}
+
+      
     </div>
   );
 };

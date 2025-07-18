@@ -5,8 +5,12 @@ import { GETBYID } from "../../queries/get-post";
 import { useQuery } from "@apollo/client";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+// eslint-disable-next-line no-unused-vars
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Loading from "../loading/Loading";
+import ProjectImagesSection from "./ProjectImagesSection";
+// eslint-disable-next-line no-unused-vars
+import ProjectsSlider from "./ProjectsSlider";
 
 const ImageSlider = ({ mediaList, handleMediaClick }) => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
@@ -21,7 +25,6 @@ const ImageSlider = ({ mediaList, handleMediaClick }) => {
     );
   };
 
-  
   const positions = ["center", "left1", "left", "right", "right1"];
 
   const imageVariants = {
@@ -31,11 +34,9 @@ const ImageSlider = ({ mediaList, handleMediaClick }) => {
     right: { x: "90%", scale: 0.5, zIndex: 1 },
     right1: { x: "50%", scale: 0.7, zIndex: 3 },
   };
-  
 
   return (
     <div className="relative flex items-center justify-center h-[500px] my-10 overflow-hidden">
-
       {mediaList.map((media, index) => {
         const positionKey = positions[positionIndexes[index % 5]];
 
@@ -88,7 +89,7 @@ const ImageSlider = ({ mediaList, handleMediaClick }) => {
 };
 
 const ProjectDetails = ({ data }) => {
-  console.log("🚀 ~ ProjectDetails ~ data:", data);
+  console.log("🚀 ~ ProjectDetails ~ data:", data.images);
   const { id } = useParams();
   // eslint-disable-next-line no-unused-vars
   const currentIndex = data.projects.data.findIndex((p) => p.id === Number(id));
@@ -97,13 +98,13 @@ const ProjectDetails = ({ data }) => {
   });
   console.log("🚀 ~ ProjectDetails ~ project:", project);
   // eslint-disable-next-line no-unused-vars
-  const prevId =
-    currentIndex > 0 ? data.projects.data[currentIndex - 1].id : null;
+  // const prevId =
+  //   currentIndex > 0 ? data.projects.data[currentIndex - 1].id : null;
   // eslint-disable-next-line no-unused-vars
-  const nextId =
-    currentIndex < data.projects.data.length - 1
-      ? data.projects.data[currentIndex + 1].id
-      : null;
+  // const nextId =
+  //   currentIndex < data.projects.data.length - 1
+  //     ? data.projects.data[currentIndex + 1].id
+  //     : null;
 
   const imageArray =
     project?.projectById?.images?.flatMap((imgStr) =>
@@ -157,7 +158,7 @@ const ProjectDetails = ({ data }) => {
     <>
       <div className="project-details-area-wrapper tmp-section-gap relative bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_0%)]">
         {/* Navigation Arrows */}
-        <div className="w-full h-10 mt-44 z-50 absolute flex justify-between items-center px-8 lg:px-28 lg:mt-96">
+        {/* <div className="w-full h-10 mt-44 z-50 absolute flex justify-between items-center px-8 lg:px-28 lg:mt-96">
           <Link to={prevId ? `/project-detail/${prevId}` : "#"}>
             <div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2">
               <ChevronLeft className="text-white" />
@@ -168,14 +169,15 @@ const ProjectDetails = ({ data }) => {
               <ChevronRight className="text-white" />
             </div>
           </Link>
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div className="container px-6 py-20">
-          <div className="flex flex-col gap-12">
+          <div className="flex-col gap-12">
             {/* Video/Image Section */}
-            <div className="flex justify-center">
-              <div className="w-full max-w-[900px] bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] p-5 rounded-md">
+            <div className="flex flex-col lg:flex-row lg:space-x-5 py-5 justify-center">
+              {/* VIDEO/IMAGE SECTION FIRST ON MOBILE */}
+              <div className="w-full p-5 lg:h-[600px] rounded-2xl bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] mb-5 lg:mb-0">
                 {project?.projectById?.videos?.[0] ? (
                   <video
                     ref={mainVideoRef}
@@ -183,15 +185,31 @@ const ProjectDetails = ({ data }) => {
                     autoPlay
                     loop
                     playsInline
-                    className="w-[1300px] h-[500px] object-contain rounded-2xl"
+                    className="w-full h-[300px] sm:h-[400px] lg:w-[1300px] lg:h-[500px] object-contain rounded-2xl"
                   />
                 ) : (
                   <img
                     src={`https://api.hnhtechsolutions.com${project?.projectById?.images?.[0]}`}
                     alt="Project"
-                    className="w-[1300px] h-[500px] object-contain rounded-2xl"
+                    className="w-full h-[300px] sm:h-[400px] lg:w-[1300px] lg:h-[500px] object-contain rounded-2xl"
                   />
                 )}
+              </div>
+              {/* PROJECT DETAILS SECTION */}
+              <div className="max-w-full lg:max-w-[400px] lg:min-h-96">
+                <div className="signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] p-4 rounded-2xl">
+                  <div className="header mb-2">
+                    <h3 className="title text-lg font-bold">Project Details</h3>
+                  </div>
+                  <div className="body space-y-2">
+                    {project?.projectById?.ProjectDetail?.map((item, indx) => (
+                      <div key={indx} className="project-details-info">
+                        <p className="font-medium text-black">{item.title}</p>
+                        <span className="text-white">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -199,19 +217,18 @@ const ProjectDetails = ({ data }) => {
               {/* Left Side: Tabs, Slider, Contact */}
               <div className="w-full lg:w-2/3 space-y-8">
                 <ProjectDetailsTabs project={project} />
-
                 <ImageSlider
                   mediaList={mergeImageAndVideo}
                   handleMediaClick={handleMediaClick}
-                />
-
+                  />
+                  <ProjectImagesSection  project={project}/>
                 <ProjectGetInTouch />
               </div>
 
               {/* Right Side: Details Sidebar */}
               <div className="w-full lg:w-1/3 space-y-6 mt-4">
                 {/* Project Details */}
-                <div className="signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)]">
+                {/* <div className="signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)]">
                   <div className="header">
                     <h3 className="title">Project Details</h3>
                   </div>
@@ -223,7 +240,7 @@ const ProjectDetails = ({ data }) => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Project Stats */}
                 <div className="signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] ">
@@ -277,9 +294,11 @@ const ProjectDetails = ({ data }) => {
                 </div>
               </div>
             </div>
+           
           </div>
         </div>
       </div>
+      <ProjectsSlider data={data}/>
       {/* Modal */}
       {modalOpen && selectedMedia && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]">
