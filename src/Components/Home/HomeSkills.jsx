@@ -379,7 +379,7 @@ const HomeSkills = () => {
                     data-wow-delay=".3s"
                     role="progressbar"
                     style={{
-                      width: "100%",
+                      width: "90%",
                       visibility: "visible",
                       animationDuration: "0.5s",
                       animationDelay: "0.3s",
@@ -389,7 +389,7 @@ const HomeSkills = () => {
                     aria-valuemin={0}
                     aria-valuemax={100}
                   >
-                    <span className="percent-label">100%</span>
+                    <span className="percent-label">90%</span>
                   </div>
                 </div>
               </div>
@@ -404,7 +404,7 @@ const HomeSkills = () => {
                     data-wow-delay=".4s"
                     role="progressbar"
                     style={{
-                      width: "95%",
+                      width: "80%",
                       visibility: "visible",
                       animationDuration: "0.6s",
                       animationDelay: "0.4s",
@@ -414,7 +414,7 @@ const HomeSkills = () => {
                     aria-valuemin={0}
                     aria-valuemax={100}
                   >
-                    <span className="percent-label">95%</span>
+                    <span className="percent-label">80%</span>
                   </div>
                 </div>
               </div>

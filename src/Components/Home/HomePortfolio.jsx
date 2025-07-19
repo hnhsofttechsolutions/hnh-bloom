@@ -2,61 +2,41 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { Link, useLocation } from "react-router-dom";
 import { PROJECT_CATEGORIES } from "../../queries/get-post";
-import InfiniteScroll from "react-infinite-scroll-component";
 // eslint-disable-next-line no-unused-vars
 import Loading from "../loading/Loading";
 
 const HomePortfolio = ({ data, filterData }) => {
-  console.log("🚀 ~ HomePortfolio ~ data:", data);
-  // console.log("🚀 ~ HomePortfolio ~ filterData:", filterData)
-  // eslint-disable-next-line no-unused-vars
-  const { data: tabs, loading } = useQuery(PROJECT_CATEGORIES, {});
+  const { data: tabs } = useQuery(PROJECT_CATEGORIES, {});
   const [tabCurrent, setTabCurrent] = useState("App Development");
   const location = useLocation();
   const isProjectPage = location.pathname === "/project";
-  
-  
-  // Filtered data based on active tab
+
   const filtered =
-  data?.allProjects?.filter(
-    (item) => item?.categories[0]?.name === tabCurrent
-  ) || [];
-  console.log("🚀 ~ HomePortfolio ~ filtered:", filtered);
-  
-  
-  // Infinite Scroll State
-  const [visibleData, setVisibleData] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
+    data?.allProjects?.filter(
+      (item) => item?.categories[0]?.name === tabCurrent
+    ) || [];
+
   const [searchProjects, setsearchProjects] = useState("");
-  const itemsPerLoad = 4;
-  
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
   useEffect(() => {
     if (isProjectPage) {
-      setVisibleData(filtered.slice(0, itemsPerLoad));
-      setHasMore(filtered.length > itemsPerLoad);
+      setCurrentPage(1);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tabCurrent, data, location.pathname]);
 
-  const fetchMoreData = () => {
-    const nextItems = filtered.slice(
-      visibleData.length,
-      visibleData.length + itemsPerLoad
-    );
-    setVisibleData((prev) => [...prev, ...nextItems]);
-    if (visibleData.length + nextItems.length >= filtered.length) {
-      setHasMore(false);
-    }
-  };
-  // eslint-disable-next-line no-unused-vars
-  const searchResults =
-  filtered.filter((item) =>
+  const searchResults = filtered.filter((item) =>
     item?.title?.toLowerCase().includes(searchProjects.trim().toLowerCase())
-) || [];
-console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
+  );
 
+  const paginatedData = searchResults.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
-
+  const totalPages = Math.ceil(searchResults.length / itemsPerPage);
 
   const renderCard = (item, index) => (
     <div className="col-lg-6 col-sm-6" key={index}>
@@ -99,23 +79,22 @@ console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
   );
 
   return (
-    <>
-      <div className="latest-portfolio-area custom-column-grid tmp-section-gapTop">
-        <div className="container">
-          <div className="section-head mb--60">
-            <div className="section-sub-title center-title">
-              <span className="subtitle">Our Featured Projects</span>
-            </div>
-            <h2 className="title">
-              Transforming Ideas into <br /> Exceptional
-            </h2>
-            <p className="description section-sm">
-              Each project reflects our commitment to innovation, precision, and
-              client success.
-            </p>
+    <div className="latest-portfolio-area custom-column-grid tmp-section-gapTop">
+      <div className="container">
+        <div className="section-head mb--60">
+          <div className="section-sub-title center-title">
+            <span className="subtitle">Our Featured Projects</span>
           </div>
+          <h2 className="title">
+            Transforming Ideas into <br /> Exceptional
+          </h2>
+          <p className="description section-sm">
+            Each project reflects our commitment to innovation, precision, and client success.
+          </p>
+        </div>
 
-          {isProjectPage && (
+        {isProjectPage && (
+          <>
             <div className="tabs mb-4 overflow-x-auto">
               <div className="tab-header" id="tabButtons">
                 {tabs?.categories?.map((item, idx) => (
@@ -129,8 +108,7 @@ console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
                 ))}
               </div>
             </div>
-          )}
-          {isProjectPage && (
+
             <div className="flex justify-center items-center">
               <input
                 type="text"
@@ -138,29 +116,37 @@ console.log("🚀 ~ HomePortfolio ~ searchResults:", searchResults);
                 value={searchProjects}
                 onChange={(e) => setsearchProjects(e.target.value)}
                 placeholder="Search"
-                className="m-[30px] text-center bg-transparent border-none outline-none max-w-[190px] px-5 py-2.5 text-base !rounded-full shadow-inner text-[#09527E]"
+                className="m-[30px] text-center bg-transparent border-none outline-none max-w-[200px] px-5 py-2.5 text-base !rounded-full shadow-inner text-[#09527E]"
               />
             </div>
-          )}
+          </>
+        )}
 
-          <div className="row">
-            {isProjectPage ? (
-              <InfiniteScroll
-                dataLength={visibleData.length}
-                next={fetchMoreData}
-                hasMore={hasMore}
-                loader={<div><Loading/></div>}
-                className="row w-100 !overflow-hidden"
-              >
-                {searchResults.length > 0 ? searchResults.map(renderCard) : visibleData.map(renderCard)}
-              </InfiniteScroll>
-            ) : (
-              filterData?.map(renderCard)
-            )}
-          </div>
+        <div className="row">
+          {isProjectPage
+            ? paginatedData.map(renderCard)
+            : filterData?.length > 0
+            ? filterData.map(renderCard)
+            : <p className="text-center w-full">No projects found.</p>}
         </div>
+
+        {isProjectPage && totalPages > 1 && (
+          <div className="pagination flex justify-center mt-4 gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-4 py-2 rounded-full ${
+                  currentPage === page ? "bg-[#09527E] text-white" : "bg-gray-200 text-black"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

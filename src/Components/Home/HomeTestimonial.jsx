@@ -58,7 +58,7 @@ const HomeTestimonial = () => {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" text-white flex flex-col md:flex-row items-center p-8 gap-6 h-[350px]">
+              <div className=" text-white flex flex-col md:flex-row items-center p-8 gap-6 lg:h-[350px]">
                 {/* Left: Text Content */}
                 <div className="flex-1">
                   <h2 className="text-black text-2xl md:text-2xl lg:text-3xl font-semibold leading-relaxed mb-6">
