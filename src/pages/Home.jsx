@@ -22,8 +22,8 @@ const Home = () => {
   // eslint-disable-next-line no-unused-vars
   const filterProject = [
     "PROVISTA AI PROJECT",
-    "TUDOR COLLEGIATE STRATEGIES",
-    "AUTOMOTOR AUCTIONS",
+    "PREMIUM TALENT IDENTITY – WHERE AUTHENTICITY MEETS OPPORTUNITY",
+    "SCOPIUM AI",
     "FIND YOUR NEXT OPPORTUNITY – SMARTER, FASTER, BETTER JOB SEARCH"
   ]
   // eslint-disable-next-line no-unused-vars
