@@ -39,7 +39,6 @@ const GETDATA = gql`
 
 export default GETDATA;
 
-
 export const GETBYID = gql`
   query Client($projectId: Int!) {
     projectById(projectId: $projectId) {
@@ -101,18 +100,19 @@ export const GETCATGORY = gql`
 `;
 
 export const GETALLPROJECT = gql`
-query ProjectDemoLink {
-  allProjects {
-    id
-    title
-    images
-    categories {
+  query ProjectDemoLink {
+    allProjects {
       id
-      name
+      title
+      targetAudience
+      images
+      categories {
+        id
+        name
+      }
     }
   }
-}
-`
+`;
 export const CREATE_CONTACT_MUTATION = gql`
   mutation CreateContact(
     $firstName: String!
@@ -150,6 +150,13 @@ export const PROJECT_CATEGORIES = gql`
     }
   }
 `;
+export const GET_IMAGES =gql`
+query Query {
+  allProjects {
+    images
+  }
+}
+`
 // export const GETBYID: DocumentNode = gql`
 //    query ProjectDemoLink($projectId: Int!) {
 //     projectById(projectId: $projectId) {

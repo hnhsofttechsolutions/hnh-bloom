@@ -1,19 +1,39 @@
 import ProjectGetInTouch from "./ProjectGetInTouch";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import ProjectDetailsTabs from "./ProjectDetailsTabs";
 import { Link, useParams } from "react-router-dom";
 import { GETBYID } from "../../queries/get-post";
 import { useQuery } from "@apollo/client";
 import { useEffect, useRef, useState } from "react";
+import Loading from "../loading/Loading";
+// eslint-disable-next-line no-unused-vars
+import ProjectImagesSection from "./ProjectImagesSection";
+// eslint-disable-next-line no-unused-vars
+import ProjectsSlider from "./ProjectsSlider";
+import ImageSlider from "./ImageSlider";
+// import ProjectDetailHeroSection from "./ProjectDetailHeroSection";
 
 const ProjectDetails = ({ data }) => {
+  console.log("🚀 ~ ProjectDetails ~ data:", data.images);
   const { id } = useParams();
-  const { data: project } = useQuery(GETBYID, {
+  // eslint-disable-next-line no-unused-vars
+  const currentIndex = data.projects.data.findIndex((p) => p.id === Number(id));
+  const { data: project, loading } = useQuery(GETBYID, {
     variables: { projectId: Number(id) },
   });
+  const videoList = project?.projectById?.videos || [];
+  const imageList = project?.projectById?.images || [];
+
+  // eslint-disable-next-line no-unused-vars
+  const totalItems = videoList.length > 0 ? videoList.length : imageList.length;
+  console.log("🚀 ~ ProjectDetails ~ project:", project);
+  // eslint-disable-next-line no-unused-vars
+  // const prevId =
+  //   currentIndex > 0 ? data.projects.data[currentIndex - 1].id : null;
+  // eslint-disable-next-line no-unused-vars
+  // const nextId =
+  //   currentIndex < data.projects.data.length - 1
+  //     ? data.projects.data[currentIndex + 1].id
+  //     : null;
 
   const imageArray =
     project?.projectById?.images?.flatMap((imgStr) =>
@@ -46,28 +66,14 @@ const ProjectDetails = ({ data }) => {
       observer.unobserve(video);
       observer.disconnect();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project?.projectById?.videos?.[0]]);
 
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-  // eslint-disable-next-line no-unused-vars
-  const [navReady, setNavReady] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (prevRef.current && nextRef.current) {
-        setNavReady(true);
-      }
-    }, 100);
-
-    return () => clearTimeout(timeout);
-  }, [project]);
-
-  // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState(null);
-
+  // eslint-disable-next-line no-unused-vars
+  const [count, setCount] = useState(0);
+  console.log("🚀 ~ ProjectDetails ~ count:", count);
   const handleMediaClick = (media) => {
     setSelectedMedia(media);
     setModalOpen(true);
@@ -78,178 +84,175 @@ const ProjectDetails = ({ data }) => {
     setSelectedMedia(null);
   };
 
+  if (loading) return <Loading />;
   return (
     <>
-      <div className="project-details-area-wrapper tmp-section-gap">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="project-details-thumnail-wrap">
-                {project?.projectById?.videos?.[0] ? (
+      <div className="project-details-area-wrapper tmp-section-gap relative bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_0%)]">
+        {/* Navigation Arrows */}
+        {/* <div className="w-full h-10 mt-44 z-50 absolute flex justify-between items-center px-8 lg:px-28 lg:mt-96">
+          <Link to={prevId ? `/project-detail/${prevId}` : "#"}>
+            <div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2">
+              <ChevronLeft className="text-white" />
+            </div>
+          </Link>
+          <Link to={nextId ? `/project-detail/${nextId}` : "#"}>
+            <div className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2">
+              <ChevronRight className="text-white" />
+            </div>
+          </Link>
+        </div> */}
+
+        {/* Main Content */}
+        <div className="container px-6 py-20">
+          <div className="flex-col gap-12">
+            {/* <ProjectDetailHeroSection project={project}/> */}
+            {/* Video/Image Section */}
+            <div className="flex flex-col lg:flex-row lg:space-x-5 py-5 justify-center">
+              <div className="w-full lg:w-2/3 space-y-8">
+                <ImageSlider
+                  mediaList={mergeImageAndVideo}
+                  handleMediaClick={handleMediaClick}
+                />
+              </div>
+              {/* <div className="w-full p-5 lg:h-[600px] rounded-2xl relative bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] mb-5 lg:mb-0">
+                <div className="h-10 w-full flex justify-between z-50 absolute right-1 top-96">
+                <Link >
+                    <div onClick={() => count > 0 && setCount(count - 1)} className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2">
+                      <ChevronLeft className="text-white" />
+                    </div>
+                  </Link>
+                  <Link >
+                    <div  onClick={() => count < totalItems - 1 && setCount(count + 1)} className="bg-color-primary hover:bg-color-primary duration-300 rounded-full p-2">
+                      <ChevronRight className="text-white" />
+                    </div>
+                  </Link>
+                </div>
+                <div>{project?.projectById?.videos?.[0] ? (
                   <video
                     ref={mainVideoRef}
-                    src={`https://api.hnhtechsolutions.com${project.projectById.videos[0]}`}
+                    src={`https://api.hnhtechsolutions.com${project.projectById.videos[count]}`}
                     autoPlay
                     loop
                     playsInline
-                    className="!rounded-2xl w-full h-[500px] object-contain"
+                    className="w-full h-[300px] sm:h-[400px] lg:w-[1300px] lg:h-[500px] object-contain rounded-2xl"
                   />
                 ) : (
                   <img
-                    src={`https://api.hnhtechsolutions.com${project?.projectById?.images?.[0]}`}
+                    src={`https://api.hnhtechsolutions.com${project?.projectById?.images?.[count]}`}
                     alt="Project"
-                    className="!rounded-2xl w-full h-[500px] object-contain"
+                    className="w-full h-[300px] sm:h-[400px] lg:w-[1300px] lg:h-[500px] object-contain rounded-2xl"
                   />
-                )}
+                )}</div>
+              </div> */}
+              <div className="max-w-full lg:max-w-[400px] lg:min-h-96">
+                <div className="signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] p-4 rounded-2xl">
+                  <div className="header mb-2">
+                    <h3 className="title text-lg font-bold">Project Details</h3>
+                  </div>
+                  <div className="body space-y-2">
+                    {project?.projectById?.ProjectDetail?.map((item, indx) => (
+                      <div key={indx} className="project-details-info">
+                        <p className="font-medium text-black">{item.title}</p>
+                        <span className="text-white">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-lg-8">
-              <ProjectDetailsTabs project={project} />
-              <div className="project-details-content-wrap">
-                <div className="project-details-swiper-wrapper">
-                  <Swiper
-                    modules={[Navigation]}
-                    navigation={{
-                      prevEl: prevRef.current,
-                      nextEl: nextRef.current,
-                    }}
-                    onInit={(swiper) => {
-                      swiper.params.navigation.prevEl = prevRef.current;
-                      swiper.params.navigation.nextEl = nextRef.current;
-                      swiper.navigation.init();
-                      swiper.navigation.update();
-                    }}
-                    loop={true}
-                    slidesPerView={2}
-                    spaceBetween={30}
-                    className="swiper project-details-swiper"
-                  >
-                    {mergeImageAndVideo.map((media, indx) => (
-                      <SwiperSlide key={indx}>
-                        <div
-                          onClick={() => handleMediaClick(media)}
-                          className="cursor-pointer"
-                        >
-                          {media.trim().endsWith(".mp4") ? (
-                            <video
-                              src={`https://api.hnhtechsolutions.com${media.trim()}`}
-                              autoPlay
-                              loop
-                              muted
-                              className="w-full h-96 object-cover"
-                            />
-                          ) : (
-                            <img
-                              src={`https://api.hnhtechsolutions.com${media.trim()}`}
-                              alt={`project-media-${indx}`}
-                              className="w-full h-96 object-cover"
-                            />
-                          )}
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-
-                  <div className="project-details-swiper-btn flex justify-between mt-4">
-                    <div
-                      ref={prevRef}
-                      className="project-swiper-button-prev cursor-pointer"
-                    >
-                      <span>
-                        <i className="fa-solid fa-arrow-left" />
-                      </span>{" "}
-                      Previous
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="w-full lg:w-2/3 space-y-8">
+                <ProjectDetailsTabs project={project} />
+                {/* <ImageSlider
+                  mediaList={mergeImageAndVideo}
+                  handleMediaClick={handleMediaClick}
+                /> */}
+              </div>
+              <div></div>
+              {/* Right Side: Details Sidebar */}
+              <div className="w-full lg:w-1/3 space-y-6 mt-4">
+                <div>
+                  {/* Project Stats */}
+                  <div className="signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] ">
+                    <div className="header">
+                      <h3 className="title">Project Stats</h3>
                     </div>
-                    <div
-                      ref={nextRef}
-                      className="project-swiper-button-next cursor-pointer"
-                    >
-                      Next{" "}
-                      <span>
-                        <i className="fa-solid fa-arrow-right" />
-                      </span>
+                    <div className="body">
+                      {project?.projectById?.ProjectStat?.map((item, indx) => (
+                        <div key={indx} className="project-details-info">
+                          {item.title}:{" "}
+                          <span className="text-white">{item.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Project Links */}
+                  <div className=" signle-side-bar project-details-area tmponhover bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)]">
+                    <div className="header">
+                      <h3 className="title">Links</h3>
+                    </div>
+                    <div className="body space-y-3">
+                      {project?.projectById?.ProjectDemoLink?.map(
+                        (item, indx) => {
+                          let iconClass = "fas fa-link";
+                          if (item?.link.includes("github.com"))
+                            iconClass = "fab fa-github";
+                          else if (item?.link.includes("linkedin.com"))
+                            iconClass = "fab fa-linkedin";
+                          else if (item?.link.includes("facebook.com"))
+                            iconClass = "fab fa-facebook";
+                          else if (item?.link.includes("twitter.com"))
+                            iconClass = "fab fa-twitter";
+
+                          return (
+                            <div
+                              key={indx}
+                              className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition"
+                            >
+                              <i
+                                className={`${iconClass} text-[#09527E] text-3xl`}
+                              ></i>
+                              <Link to={item?.link} target="_blank">
+                                <span className="text-white">
+                                  {item?.title}
+                                </span>
+                              </Link>
+                            </div>
+                          );
+                        }
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
-              <ProjectGetInTouch />
             </div>
-            <div className="col-lg-4">
-              <div className="signle-side-bar project-details-area tmponhover">
-                <div className="header">
-                  <h3 className="title">Project Details</h3>
-                </div>
-                <div className="body">
-                  {project?.projectById?.ProjectDetail?.map((item, indx) => (
-                    <div key={indx} className="project-details-info">
-                      {item.title}
-                      <span>{item.value}</span>
-                    </div>
-                  ))}
-                </div>
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="w-full space-y-8">
+                <ProjectsSlider data={data} />
               </div>
-              <div className="signle-side-bar project-details-area tmponhover">
-                <div className="header">
-                  <h3 className="title">Project Stats</h3>
-                </div>
-                <div className="body">
-                  {project?.projectById?.ProjectStat?.map((item, indx) => (
-                    <div key={indx} className="project-details-info">
-                      {item.title}: <span>{item.value}</span>
-                    </div>
-                  ))}
-                </div>
+            </div>
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="w-full space-y-8">
+                {/* <ProjectsSlider data={data} /> */}
+                <ProjectGetInTouch />
               </div>
-              <div className="signle-side-bar project-details-area tmponhover">
-                <div className="header">
-                  <h3 className="title">Links</h3>
-                </div>
-                <div className="body space-y-3">
-                  {project?.projectById?.ProjectDemoLink.map((item, indx) => {
-                    let iconClass = "";
-
-                    if (item?.link.includes("github.com")) {
-                      iconClass = "fab fa-github";
-                    } else if (item?.link.includes("linkedin.com")) {
-                      iconClass = "fab fa-linkedin";
-                    } else if (item?.link.includes("facebook.com")) {
-                      iconClass = "fab fa-facebook";
-                    } else if (item?.link.includes("twitter.com")) {
-                      iconClass = "fab fa-twitter";
-                    } else {
-                      iconClass = "fas fa-link";
-                    }
-
-                    return (
-                      <div
-                        key={indx}
-                        className="project-details-info w-full border text-2xl text-white rounded-lg p-3 flex items-center gap-3 hover:bg-[#1e1e1e] transition"
-                      >
-                        <i className={`${iconClass} text-[#e50914] text-3xl`}></i>
-                        <Link to={item?.link} target="_blank">
-                          <span>{item?.title}</span>
-                        </Link>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+              {/* Right Side: Details Sidebar */}
             </div>
           </div>
         </div>
       </div>
-
       {/* Modal */}
       {modalOpen && selectedMedia && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]">
-            <div className="z-50 absolute top-0">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]" onClick={handleCloseModal}>
+          <div className="z-50 absolute top-0 ">
             <button
               onClick={handleCloseModal}
-              className=" text-white text-6xl "
+              className=" text-white text-7xl lg:ml-[300px] lg:mt-16 !border-none"
             >
               &times;
             </button>
-            </div>
+          </div>
           <div className="relative max-w-5xl w-full max-h-[90vh] p-4">
             {selectedMedia.trim().endsWith(".mp4") ? (
               <video

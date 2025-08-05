@@ -1,10 +1,9 @@
 import React from "react";
-// import AboutOurPricing from "../Components/About/AboutOurPricing";
 import Banner from "../Components/Banner";
-import ServiceHero from "../Components/Service/ServiceHero";
-import WhyChooseUs from "../Components/Service/WhyChooseUs";
-import ServiceCards from "../Components/Service/ServiceCards";
-import OurProcess from "../Components/Service/OurProcess";
+// import ServiceHero from "../Components/Service/ServiceHero";
+// import WhyChooseUs from "../Components/Service/WhyChooseUs";
+// import ServiceCards from "../Components/Service/ServiceCards";
+// import OurProcess from "../Components/Service/OurProcess";
 import { useLocation } from "react-router-dom";
 import ServiceHeroSection from "../Components/ui/service-hero-section";
 import { serviceData } from "../utils/temp";
@@ -57,10 +56,10 @@ const Service = () => {
   const DefaultLayout = (
     <>
       <Banner heading="Service" text="Explore our professional services." />
-      <ServiceHero />
-      <WhyChooseUs />
+      {/* <ServiceHero /> */}
+      {/* <WhyChooseUs />
       <ServiceCards />
-      <OurProcess />
+      <OurProcess /> */}
       {/* <AboutOurPricing /> */}
     </>
   );

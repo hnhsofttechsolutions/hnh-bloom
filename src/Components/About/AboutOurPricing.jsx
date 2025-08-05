@@ -18,7 +18,7 @@ const AboutOurPricing = () => {
       </div>
       <div className="row align-items-center">
         <div className="col-lg-4 col-md-6">
-          <div className="price-plan-card tmponhover blur-style-two tmp-scroll-trigger tmp-fade-in animation-order-1">
+          <div className="price-plan-card blur-style-two tmp-scroll-trigger tmp-fade-in animation-order-1">
             <span className="price-sub-title">Starter</span>
             <h3 className="main-price">$ 5.00</h3>
             <p className="per-month">Per Month</p>
@@ -69,7 +69,7 @@ const AboutOurPricing = () => {
           </div>
         </div>
         <div className="col-lg-4 col-md-6 tmp-scroll-trigger tmp-fade-in animation-order-2">
-          <div className="price-plan-card tmponhover blur-style-two active">
+          <div className="price-plan-card blur-style-two active">
             <span className="price-sub-title">Basic</span>
             <h3 className="main-price">$ 230.00</h3>
             <p className="per-month">Per Month</p>
@@ -136,7 +136,7 @@ const AboutOurPricing = () => {
           </div>
         </div>
         <div className="col-lg-4 col-md-6">
-          <div className="price-plan-card tmponhover blur-style-two tmp-scroll-trigger tmp-fade-in animation-order-3">
+          <div className="price-plan-card blur-style-two tmp-scroll-trigger tmp-fade-in animation-order-3">
             <span className="price-sub-title">Premium</span>
             <h3 className="main-price">$ 45.00</h3>
             <p className="per-month">Per Month</p>

@@ -3,13 +3,12 @@ import React from 'react'
 const HomeExperience = () => {
   return (
    <>
-   <>
   {/* Tpm Education Experience Area Start */}
-  <section className="education-experience tmp-section-gapTop">
+  <section className="education-experience tmp-section-gapTop ">
     <div className="container">
       <div className="section-head mb--50">
         <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-          <span className="subtitle">Education & Experience</span>
+          <span className="subtitle ">Education & Experience</span>
         </div>
         <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2 !text-6xl">
           Empowering Creativity Through Expertise & Strategic Insight
@@ -120,7 +119,6 @@ const HomeExperience = () => {
     </div>
   </section>
   {/* Tpm Education Experience Area End */}
-</>
 
    </>
   )

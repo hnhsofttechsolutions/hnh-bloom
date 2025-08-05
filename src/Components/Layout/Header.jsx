@@ -17,7 +17,7 @@ const Header = () => {
       {/* tpm-header-area start */}
       <header className="tmp-header-area-start header-one header--sticky header--transparent">
         <div className="container">
-          <div className="row">
+          <div className="row ">
             <div className="col-lg-12">
               <div className="header-content">
                 <div className="logo">
@@ -88,14 +88,14 @@ const Header = () => {
                 <div className="tmp-header-right">
                   <div className="social-share-wrapper d-none d-md-block">
                     <div className="social-link">
-                      <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
+                      <Link target="_blank" to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                         <i className="fa-brands fa-instagram" />
                       </Link>
-                      <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                      <Link target="_blank" to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                         <i className="fa-brands fa-linkedin-in" />
                       </Link>
-                      <Link to="https://www.facebook.com/hnhtechsolutions">
-                        <i className="fa-brands fa-facebook-f" />
+                      <Link target="_blank" to="https://www.facebook.com/hnhsofttechsolutions">
+                        <i className="fa-brands fa-facebook-f" /> 
                       </Link>
                     </div>
                   </div>
@@ -135,10 +135,10 @@ const Header = () => {
             sidebar ? "tmp_side_bar_open" : ""
           }`}
         >
-          <div className="inner">
+          <div className="inner bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)]">
             <div className="top-area">
               <Link to="/" className="logo">
-                <h1 className="font-bold text-3xl">HNH SOFT TECH SOLUTIONS</h1>
+                <h1 className="font-bold text-3xl text-white">HNH SOFT TECH SOLUTIONS</h1>
               </Link>
               <div
                 onClick={() => {
@@ -153,9 +153,9 @@ const Header = () => {
             </div>
             <div className="content-wrapper">
               <div className="image-area-feature">
-                <Link to="">
+                <Link to="/">
                   <img
-                    src="assets/images/banner/HnH Soft Tech-whit.png"
+                    src="/assets/images/banner/home-hero.jpeg"
                     alt="personal-logo"
                   />
                 </Link>
@@ -164,7 +164,7 @@ const Header = () => {
                 Have a question or need assistance? Get in touch with our team,
                 and we'll be happy to assist you with all your needs.
               </h5>
-              <p className="disc">
+              <p className="disc text-white">
                 Have a question or want to work together? Drop us a message, and
                 we'll get back to you as soon as possible.
               </p>
@@ -218,13 +218,13 @@ const Header = () => {
               <div className="social-wrapper mt--20">
                 <span className="subtitle">find with me</span>
                 <div className="social-link">
-                  <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
+                  <Link target="_blank" to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                     <i className="fa-brands fa-instagram" />
                   </Link>
-                  <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                  <Link target="_blank" to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                     <i className="fa-brands fa-linkedin-in" />
                   </Link>
-                  <Link to="https://www.facebook.com/hnhtechsolutions">
+                  <Link target="_blank" to="https://www.facebook.com/hnhsofttechsolutions">
                     <i className="fa-brands fa-facebook-f" />
                   </Link>
                 </div>
@@ -240,7 +240,7 @@ const Header = () => {
       </div>
 
       {/* mobile responsive */}
-      <div className="d-block d-xl-none ">
+      <div className="d-block d-xl-none">
         <div
           className={`tmp-popup-mobile-menu ${mobileSideBar ? "active" : ""}`}
         >
@@ -308,7 +308,7 @@ const Header = () => {
                   </Link>
                 </button>
                 {service === "open" && (
-                  <ul className="z-50 absolute bg-black p-4 rounded-xl">
+                  <ul className="z-50 absolute bg-[#edf5ff] p-4 rounded-xl">
                     {serviceData?.map((e, i) => (
                       <li
                         key={i}
@@ -361,10 +361,10 @@ const Header = () => {
                 <Link to="https://www.instagram.com/hnhsofttechsolutions/?hl=en">
                   <i className="fa-brands fa-instagram" />
                 </Link>
-                <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd/">
+                <Link to="https://www.linkedin.com/company/hnh-soft-tech-solutions-pvt-ltd">
                   <i className="fa-brands fa-linkedin-in" />
                 </Link>
-                <Link to="https://www.facebook.com/hnhtechsolutions">
+                <Link to="https://www.facebook.com/hnhsofttechsolutions">
                   <i className="fa-brands fa-facebook-f" />
                 </Link>
               </div>

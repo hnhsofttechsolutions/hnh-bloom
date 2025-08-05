@@ -6,6 +6,8 @@ import { useQuery } from '@apollo/client';
 // eslint-disable-next-line no-unused-vars
 import GETDATA, { GETBYID } from '../queries/get-post';
 import Loading from '../Components/loading/Loading';
+// eslint-disable-next-line no-unused-vars
+import ProjectsSlider from '../Components/Project/ProjectsSlider';
 
 
 const ProjectDetail = () => {

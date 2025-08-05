@@ -51,7 +51,7 @@ const HomeLatestService = () => {
           <div className="service-card-user-image">
             <img
               className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-              src="assets/images/services/latest-services-user-image.png"
+              src="/assets/images/services/latest-services-user-image-blue3.png"
               alt="latest-user-image"
             />
           </div>

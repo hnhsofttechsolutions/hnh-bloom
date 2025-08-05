@@ -12,7 +12,8 @@ const ProjectDetailsTabs = ({ project }) => {
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
-    <div className="mt-6 my-10 py-10 bg-[#141414] px-5 rounded-3xl ">
+    < >
+    <div className="mt-6 my-10 py-10 bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_100%,_rgba(237,_245,_255,_1)_100%)] px-5 rounded-3xl ">
       {/* Tabs */}
       <div className="text-4xl font-bold text-white mb-3">
         <h2> {project?.projectById?.title}</h2>
@@ -25,8 +26,8 @@ const ProjectDetailsTabs = ({ project }) => {
             className={`flex items-center gap-2 p-4 rounded-2xl font-bold text-3xl border transition-all
         ${
           activeTab === tab
-            ? "bg-[#ff014f] text-white border-[#ff014f]"
-            : "bg-[#1a1a1a] text-gray-300 border-gray-600 hover:bg-[#2c2c2c]"
+            ? "bg-[] text-white border-[#ff014f]"
+            : "bg-[#09527E] text-gray-300 border-gray-600 hover:bg-[#2c2c2c]"
         }`}
           >
             {tab === "Overview" && <FaClipboardList />}
@@ -53,27 +54,27 @@ const ProjectDetailsTabs = ({ project }) => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-[#111] p-5 rounded-3xl border border-gray-700">
-              <div className="flex items-center gap-2 text-[#ff014f] mb-2">
+            <div className="bg-[#09527E] p-5 rounded-3xl border border-gray-700 ">
+              <div className="flex items-center gap-2 text-white mb-2">
                 <FaUsers />
                 <h3 className="font-semibold text-white">Target Audience</h3>
               </div>
-              <p className="text-gray-300">
+              <p className="text-gray-300 font-bold">
                 {project?.projectById?.targetAudience}
                 {/* Retailers and entrepreneurs looking for an online presence. */}
               </p>
             </div>
 
-            <div className="bg-[#111] p-5 rounded-3xl border border-gray-700">
-              <div className="flex items-center gap-2 text-[#ff014f] mb-2">
+            <div className="bg-[#09527E] p-5 rounded-3xl border border-gray-700 ">
+              <div className="flex items-center gap-2 text-white mb-2">
                 <FaLightbulb />
                 <h3 className="font-semibold text-white">Key Features</h3>
               </div>
-              <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <p className="list-disc list-inside text-gray-300 space-y-1">
                 {project?.projectById?.keyFeatures?.map((item, indx) => (
-                  <li className="" key={indx}>{item}</li>
+                  <li className=" font-bold" key={indx}>{item}</li>
                 ))}
-              </ul>
+              </p>
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@ const ProjectDetailsTabs = ({ project }) => {
             {project?.projectById?.technologies?.map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-[#ff014f] to-[#ff014f] text-white px-5 py-2 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-default"
+                className="border bg-[#09527E] text-white px-5 py-2 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-default"
               >
                 {item.name}
               </div>
@@ -104,14 +105,17 @@ const ProjectDetailsTabs = ({ project }) => {
           </h2>
           {project?.projectById?.ProjectTimeline?.map((item, idx) => (
             <div key={idx} className="w-full border p-4 rounded-3xl">
-              <h1 className="text-[20px] text-[#ff014f]">{item.duration}</h1>
+              <h1 className="text-[20px] text-white">{item.duration}</h1>
               <h4>{item.title}</h4>
-              <p>{item.description}</p>
+              <p className="text-white font-serif">{item.description}</p>
             </div>
           ))}
         </div>
       )}
+
+      
     </div>
+    </>
   );
 };
 

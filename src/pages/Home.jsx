@@ -14,33 +14,33 @@ import HomeSupportedCompany from "../Components/Home/HomeSupportedCompany";
 import HomeTestimonial from "../Components/Home/HomeTestimonial";
 // eslint-disable-next-line no-unused-vars
 import GETBYID, { GETALLPROJECT } from "../queries/get-post";
+// eslint-disable-next-line no-unused-vars
 import Loading from "../Components/loading/Loading";
 import GETDATA from "../queries/get-post";
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
   const filterProject = [
-    "Competence",
-    "Family Handbook",
-    "PremiumID",
-    "Celine Victor"
+    "PROVISTA AI PROJECT",
+    "PREMIUM TALENT IDENTITY – WHERE AUTHENTICITY MEETS OPPORTUNITY",
+    "SCOPIUM AI",
+    "FIND YOUR NEXT OPPORTUNITY – SMARTER, FASTER, BETTER JOB SEARCH"
   ]
+  // eslint-disable-next-line no-unused-vars
   const { data , loading } = useQuery(GETDATA, {
     variables: { skip: 0, limit: 4, categoryId:undefined },
   });
   const { data:pro  } = useQuery(GETALLPROJECT);
-  // console.log("🚀 ~ Home ~ pro:", pro)
+  // console.log("fgv", pro)
 
   // eslint-disable-next-line no-unused-vars
 const filterData = pro?.allProjects?.filter((item) =>
   filterProject?.includes(item?.title)
 );
-
-  if (loading) return <div><Loading/></div>;
-
+  // if (loading) return <div><Loading/></div>;
   return (
     <>
-      <HomeBanner />
+     <HomeBanner /> 
       <HomeService />
       <div className="my-10">
         <HomeCounter />
