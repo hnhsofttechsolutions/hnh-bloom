@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ProjectImagesSection = ({project}) => {
-console.log("🚀 ~ ProjectImagesSection ~ project:", project)
+// console.log("🚀 ~ ProjectImagesSection ~ project:", project)
 
   return (
     <div className='w-full '>

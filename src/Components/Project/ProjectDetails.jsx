@@ -13,7 +13,7 @@ import ImageSlider from "./ImageSlider";
 // import ProjectDetailHeroSection from "./ProjectDetailHeroSection";
 
 const ProjectDetails = ({ data }) => {
-  console.log("🚀 ~ ProjectDetails ~ data:", data.images);
+  // console.log("🚀 ~ ProjectDetails ~ data:", data.images);
   const { id } = useParams();
   // eslint-disable-next-line no-unused-vars
   const currentIndex = data.projects.data.findIndex((p) => p.id === Number(id));
@@ -25,7 +25,7 @@ const ProjectDetails = ({ data }) => {
 
   // eslint-disable-next-line no-unused-vars
   const totalItems = videoList.length > 0 ? videoList.length : imageList.length;
-  console.log("🚀 ~ ProjectDetails ~ project:", project);
+  // console.log("🚀 ~ ProjectDetails ~ project:", project);
   // eslint-disable-next-line no-unused-vars
   // const prevId =
   //   currentIndex > 0 ? data.projects.data[currentIndex - 1].id : null;
@@ -73,7 +73,7 @@ const ProjectDetails = ({ data }) => {
   const [selectedMedia, setSelectedMedia] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0);
-  console.log("🚀 ~ ProjectDetails ~ count:", count);
+  // console.log("🚀 ~ ProjectDetails ~ count:", count);
   const handleMediaClick = (media) => {
     setSelectedMedia(media);
     setModalOpen(true);

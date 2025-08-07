@@ -1,16 +1,17 @@
+/* eslint-disable no-mixed-operators */
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { Link, useLocation } from "react-router-dom";
 import { PROJECT_CATEGORIES } from "../../queries/get-post";
 // eslint-disable-next-line no-unused-vars
 import Loading from "../loading/Loading";
+import GraphicPortfolio from "../ghraphic/GraphicPortfolio";
 
 const HomePortfolio = ({ data, filterData }) => {
   const { data: tabs } = useQuery(PROJECT_CATEGORIES, {});
-  const [tabCurrent, setTabCurrent] = useState("App Development");
+  const [tabCurrent, setTabCurrent] = useState("Web & App Development");
   const location = useLocation();
   const isProjectPage = location.pathname === "/project";
-
   const filtered =
     data?.allProjects?.filter(
       (item) => item?.categories[0]?.name === tabCurrent
@@ -24,18 +25,16 @@ const HomePortfolio = ({ data, filterData }) => {
     if (isProjectPage) {
       setCurrentPage(1);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tabCurrent, data, location.pathname]);
 
   const searchResults = filtered.filter((item) =>
     item?.title?.toLowerCase().includes(searchProjects.trim().toLowerCase())
   );
-
   const paginatedData = searchResults.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-
   const totalPages = Math.ceil(searchResults.length / itemsPerPage);
 
   const renderCard = (item, index) => (
@@ -89,7 +88,8 @@ const HomePortfolio = ({ data, filterData }) => {
             Transforming Ideas into <br /> Exceptional
           </h2>
           <p className="description section-sm">
-            Each project reflects our commitment to innovation, precision, and client success.
+            Each project reflects our commitment to innovation, precision, and
+            client success.
           </p>
         </div>
 
@@ -108,7 +108,6 @@ const HomePortfolio = ({ data, filterData }) => {
                 ))}
               </div>
             </div>
-
             <div className="flex justify-center items-center">
               <input
                 type="text"
@@ -119,25 +118,33 @@ const HomePortfolio = ({ data, filterData }) => {
                 className="m-[30px] text-center bg-transparent border-none outline-none max-w-[200px] px-5 py-2.5 text-base !rounded-full shadow-inner text-[#09527E]"
               />
             </div>
+            <div></div>
           </>
         )}
-
-        <div className="row">
-          {isProjectPage
-            ? paginatedData.map(renderCard)
-            : filterData?.length > 0
-            ? filterData.map(renderCard)
-            : <p className="text-center w-full">No projects found.</p>}
-        </div>
+        {tabCurrent === "Graphic Design" ? (
+          <GraphicPortfolio/>
+        ) : (
+          <div className="row">
+            {isProjectPage ? (
+              paginatedData.map(renderCard)
+            ) : filterData?.length > 0 ? (
+              filterData.map(renderCard)
+            ) : (
+              <p className="text-center w-full">No projects found.</p>
+            )}
+          </div>
+        )}
 
         {isProjectPage && totalPages > 1 && (
-          <div className="pagination flex justify-center mt-4 gap-2">
+          <div className="pagination flex justify-center mt-4 gap-2 overflow-auto">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
                 onClick={() => setCurrentPage(page)}
                 className={`px-4 py-2 rounded-full ${
-                  currentPage === page ? "bg-[#09527E] text-white" : "bg-gray-200 text-black"
+                  currentPage === page
+                    ? "bg-[#09527E] text-white"
+                    : "bg-gray-200 text-black"
                 }`}
               >
                 {page}

@@ -48,7 +48,7 @@ const ContactForm = () => {
           companyName: "HNH Soft Tech Solutions",
         },
       });
-      console.log("🚀 ~ submitData ~ response:", response);
+      // console.log("🚀 ~ submitData ~ response:", response);
       toast.success("Message received! I’ll contact you shortly.");
       setContactData({
         name: "",
