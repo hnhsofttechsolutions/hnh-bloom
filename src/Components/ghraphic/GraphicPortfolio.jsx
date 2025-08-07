@@ -27,7 +27,7 @@ const GraphicPortfolio = () => {
   return (
     <>
       <div className="flex justify-center items-center flex-wrap gap-4 mb-10">
-        <div className="flex flex-wrap w-[300px] rounded-md bg-gray-200 shadow-sm text-sm">
+        <div className="flex flex-wrap w-[500px] overflow-auto rounded-md bg-gray-200 shadow-sm text-sm">
           {allSubCategories?.map((sub, index) => {
             return (
               <label key={index} className="flex-1 text-center">
@@ -48,7 +48,7 @@ const GraphicPortfolio = () => {
           {selectedSubCategory.images.map((imgPath, imgIndex) => (
             <img
               key={imgIndex}
-              className="p-2 object-cover h-[300px] rounded-2xl mx-auto"
+              className="p-2 object-contain h-[300px] rounded-2xl mx-auto"
               src={`https://api.hnhtechsolutions.com${imgPath}`}
             />
           ))}
