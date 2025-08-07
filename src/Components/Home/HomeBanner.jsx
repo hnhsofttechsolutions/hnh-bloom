@@ -7,7 +7,7 @@ const HomeBanner = () => {
    {/* <div className='w-full h-screen overflow-hidden'>
   <video autoPlay loop muted src="/assets/images/banner/bvideo.mp4" className='z-0 absolute w-full h-screen object-cover'></video>
   </div> */}
-  <div className="tmp-banner-one-area bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_40%)] ">
+  <div className="tmp-banner-one-area bg-[linear-gradient(245deg,_rgba(148,_181,_204,_1)_0%,_rgba(237,_245,_255,_1)_40%)]">
     <div className="container">
       <div className="banner-one-main-wrapper ">
         <div className="row align-items-center ">

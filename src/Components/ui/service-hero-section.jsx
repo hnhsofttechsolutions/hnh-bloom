@@ -7,9 +7,10 @@ import ServiceAboutSection from "./ServiceAboutSection";
 // import HomeGetInTouch from "../Home/HomeGetInTouch";
 // console.log(serviceData)
 const ServiceHeroSection = ({ Data }) => {
-  console.log("🚀 ~ ServiceHeroSection ~ Data:", Data)
+  // console.log("🚀 ~ ServiceHeroSection ~ Data:", Data)
+  // eslint-disable-next-line no-unused-vars
   const serviceLength = serviceData.length;
-  console.log("🚀 ~ ServiceHeroSection ~ serviceLength:", serviceLength)
+  // console.log("🚀 ~ ServiceHeroSection ~ serviceLength:", serviceLength)
   
   return (
     <>

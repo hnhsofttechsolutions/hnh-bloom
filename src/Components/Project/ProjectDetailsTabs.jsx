@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 
 const ProjectDetailsTabs = ({ project }) => {
-  console.log("🚀 ~ ProjectDetailsTabs ~ project:", project)
+  // console.log("🚀 ~ ProjectDetailsTabs ~ project:", project)
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (

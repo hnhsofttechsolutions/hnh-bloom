@@ -15,7 +15,7 @@ const BlogDetail = () => {
   const storedBlog = localStorage.getItem("lastViewedBlog");
   const blog = locationBlog || (storedBlog && JSON.parse(storedBlog));
 
-  console.log(blog, "blog");
+  // console.log(blog, "blog");
 
   return (
     <div className="blog-classic-area-wrapper tmp-section-gap">

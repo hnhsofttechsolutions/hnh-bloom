@@ -14,7 +14,7 @@ const ProjectDetail = () => {
     const { data, loading } = useQuery(GETDATA, {
       variables: { skip: 0, limit: 130, categoryId: undefined },
     });
-    console.log("🚀 ~ ProjectDetail ~ data:", data)
+    // console.log("🚀 ~ ProjectDetail ~ data:", data)
     
     if (loading) return <div><Loading/></div>;
   

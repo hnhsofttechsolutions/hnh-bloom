@@ -150,13 +150,24 @@ export const PROJECT_CATEGORIES = gql`
     }
   }
 `;
-export const GET_IMAGES =gql`
-query Query {
-  allProjects {
-    images
+export const GET_IMAGES = gql`
+  query Query {
+    allProjects {
+      images
+    }
   }
-}
-`
+`;
+export const GET_SUB_CATEGORIES = gql`
+  query Categories {
+    categories {
+      name
+      subCategories {
+        name
+        images
+      }
+    }
+  }
+`;
 // export const GETBYID: DocumentNode = gql`
 //    query ProjectDemoLink($projectId: Int!) {
 //     projectById(projectId: $projectId) {
