@@ -24,7 +24,7 @@ const Home = () => {
     "PROVISTA AI PROJECT",
     "PREMIUM TALENT IDENTITY – WHERE AUTHENTICITY MEETS OPPORTUNITY",
     "SCOPIUM AI",
-    "FIND YOUR NEXT OPPORTUNITY – SMARTER, FASTER, BETTER JOB SEARCH"
+    "AUTOMOTOR AUCTIONS"
   ]
   // eslint-disable-next-line no-unused-vars
   const { data , loading } = useQuery(GETDATA, {
